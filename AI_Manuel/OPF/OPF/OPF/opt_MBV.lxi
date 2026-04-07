@@ -1,0 +1,29 @@
+B 2 C o m p i l a t i o n
+B 82 Equation Listing    SOLVE Modelo_costes_gen_bate Using NLP From line 66
+D 83 eq_bal
+D 101 eq_SOC
+D 116 eq_coste
+D 127 eq_coste_total
+D 138 eq_Pmax
+D 149 eq_Pmin
+B 162 Column Listing      SOLVE Modelo_costes_gen_bate Using NLP From line 66
+E 163 Pgen
+E 189 Pd
+E 207 Pc
+E 225 SOC
+E 243 coste
+E 262 coste_total
+B 272 Model Statistics    SOLVE Modelo_costes_gen_bate Using NLP From line 66
+B 290 Solution Report     SOLVE Modelo_costes_gen_bate Using NLP From line 66
+F 314 eq_bal
+F 323 eq_SOC
+F 331 eq_coste
+F 346 eq_coste_total
+F 354 eq_Pmax
+F 371 eq_Pmin
+G 383 Pgen
+G 400 Pd
+G 409 Pc
+G 418 SOC
+G 427 coste
+G 444 coste_total

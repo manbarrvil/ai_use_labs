@@ -1,0 +1,294 @@
+[PROJECT]
+
+[RP:MODELO_UPFC_1]
+1=
+
+[RP:MINPERD_B2B (2)]
+1=
+
+[RP:MAXGEN_UPFC1]
+1=r=minuto0818 --NUM=prueba --caso=p0q
+2=r=minuto0818 --NUM=prueba --caso=p1q
+3=r=minuto0708 --NUM=prueba
+4=r=minuto0818 --NUM=prueba
+5=r=minuto0003 --NUM=prueba --caso=p1q
+6=r=minuto0003 --NUM=prueba
+7=r=minuto0003--NUM=prueba
+8=
+
+[RP:MAXGEN_VESC]
+1=r=minuto0003 --NUM=prueba
+2=r=minuto0723 --NUM=prueba
+3=r=minuto0818 --NUM=prueba
+4=
+
+[RP:MAXGEN_UPFC_P1Q]
+1=r=minuto0723 --NUM=prueba 
+2=r=minuto0003 --NUM=prueba 
+3=
+
+[RP:MAXGEN_UPFC_P0Q]
+1=r=minuto0723 --NUM=prueba 
+2=r=minuto0003 --NUM=prueba 
+3=
+
+[RP:MINPERD_B2B_V_PRUEBA]
+1=r=minuto1193 --Num= prueba --caso=vsc_pq
+2=r=minuto0723 --NUM=prueba --caso=vsc_pq
+3=
+
+[RP:MAXGEN_UPFC_P2Q]
+1=r=minuto0723 --NUM=prueba 
+2=r=minuto0003 --NUM=prueba 
+3=
+
+[RP:MAXGEN_B2B]
+1=r=minuto0723 --NUM=prueba --caso=vsc_pq
+2=r=minuto0723 --NUM=prueba
+3=r=minuto0003 --NUM=prueba --caso=vsc_pq
+4=r=minuto0003 --NUM=prueba--caso=vsc_pq
+5=r=minuto0003 --NUM=prueba
+6=r=minuto0818 --NUM=prueba
+7=r=minuto0818--NUM=prueba
+8=r=minuto0823 --NUM=prueba
+9=r=minuto0783 --NUM=prueba
+10=r=minuto0503 --NUM=prueba
+11=r=minuto0783 --prueba
+12=
+
+[RP:MINPERD_VESC]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0008 --NUM=PRUEBA_VESC
+3=r=minuto0003 --NUM=PRUEBA_VESC
+4=r=minuto0368 --NUM=PRUEBA_VESC
+5=r=minuto0098 --NUM=PRUEBA_VESC
+6=r=minuto0108 --NUM=PRUEBA_VESC
+7=r=minuto0113 --NUM=PRUEBA_VESC
+8=r=minuto0363 --NUM=PRUEBA_VESC
+9=r=minuto0365 --NUM=PRUEBA_VESC
+10=r=minuto0188 --NUM=PRUEBA_VESC
+11=r=minuto0183 --NUM=PRUEBA_VESC
+12=r=minuto1223 --NUM=PRUEBA_VESC
+13=r=minuto0473 --NUM=PRUEBA_VESC
+14=r=minuto1193 --NUM=PRUEBA_VESC
+15=r=minuto0273 --NUM=PRUEBA_VESC
+16=r=minuto0268 --NUM=PRUEBA_VESC
+17=r=minuto0038 --NUM=PRUEBA_VESC
+18=r=minuto0218 --NUM=PRUEBA_VESC
+19=r=minuto0853 --NUM=PRUEBA_VESC
+20=r=minuto0083 --NUM=PRUEBA_VESC
+
+[RP:MINPERD_VESC_AS_MOD]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto1140 --NUM=PRUEBA_VESC
+3=
+
+[RP:MINPERD_GAMMA_CONTROLLER]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0008 --NUM=PRUEBA_VESC
+3=
+
+[RP:MINPERD_UPFC1_PERDIDAS]
+1=
+
+[RP:MINPERD_UPFC1]
+1=r=minuto1193 --Num= prueba 
+2=r=minuto1193 --Num= prueba --caso=p1q
+3=r=minuto1193 --Num= min1113
+4=r=minuto1193 --Num= min0003 
+5=r=minuto1193 --Num= min0003 --caso=p1q
+6=r=minuto0003 --Num= min0003 --caso=p1q
+7=r=minuto0003 --Num= min0003 
+8=
+
+[RP:MINPERD_B2B]
+1=r=minuto1143 --Num= prueba --caso=vsc_pq
+2=r=minuto1143 --Num= prueba 
+3=r=minuto1193 --Num= prueba 
+4=r=minuto1193 --Num= prueba --caso=vsc_pq
+5=r=minuto1193 --Num= min0003 --caso=vsc_pq
+6=r=minuto1223 --Num= min0003 --caso=vsc_pq
+7=r=minuto0003 --Num= min0003 --caso=vsc_pq
+8=
+
+[RP:MINPERD_UPFC_P0Q]
+1=r=minuto1133 --NUM=pureba
+2=r=minuto0003 --NUM=pureba
+3=
+
+[RP:MINPERD_UPFC]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0003 --NUM=pureba
+3=r=minuto0008 --NUM=min0008
+4=r=minuto0478 --NUM=min0478
+5=r=minuto0963 --NUM=min0963
+6=r=minuto0958 --NUM=min0958
+7=r=minuto0958--NUM=pureba
+8=r=minuto0478 --NUM=pureba
+9=r=minuto0473 --NUM=pureba
+10=r=minuto1318 --NUM=min1318
+11=r=minuto1133 --NUM=min1133
+12=r=minuto0893 --NUM=min0893
+13=r=minuto0708 --NUM=min0708
+14=r=minuto0413 --NUM=min0413
+15=r=minuto0228 --NUM=min0228
+16=r=minuto0088 --NUM=min0088
+17=r=minuto0068 --NUM=min0068
+18=r=minuto0048 --NUM=min0068
+19=r=minuto0048 --NUM=min0048
+20=r=minuto0038 --NUM=min0038
+
+[RP:MINPERD_UPFC_P1Q_PERDIDAS_MODIFICADO]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0543 --NUM=PRUEBA_VESC
+3=r=minuto0903 --NUM=PRUEBA_VESC
+4=
+
+[RP:MINPERD_UPFC_P1Q_PERDIDAS]
+1=r=minuto1143  --NUM=PRUEBA_VESC 
+2=r=minuto0653  --NUM=PRUEBA_VESC 
+3=r=minuto0363  --NUM=PRUEBA_VESC 
+4=r=minuto0358  --NUM=PRUEBA_VESC 
+5=r=minuto0368  --NUM=PRUEBA_VESC 
+6=r=minuto0938  --NUM=PRUEBA_VESC 
+7=r=minuto0948  --NUM=PRUEBA_VESC 
+8=r=minuto0943  --NUM=PRUEBA_VESC 
+9=r=minuto0543  --NUM=PRUEBA_VESC 
+10=
+
+[RP:MINPERD_UPFC_P2Q_PERDIDAS]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0653  --NUM=PRUEBA_VESC 
+3=r=minuto0543 --NUM=PRUEBA_VESC
+4=
+
+[RP:MINPERD_VESC_PERDIDAS]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=
+
+[RP:MINPERD_BASE]
+1=
+
+[RP:MINPERD_UPFC_P0Q_PERDIDAS]
+1=r=minuto1143  --NUM=PRUEBA_VESC --caso=p1q
+2=r=minuto1143 caso==p1q"--NUM=PRUEBA_VESC
+3=r=minuto1143 "caso"=="p1q" --NUM=PRUEBA_VESC
+4=r=minuto1143 "%caso%"=="p1q" --NUM=PRUEBA_VESC
+5=r=minuto1143 --NUM=PRUEBA_VESC
+6=
+
+[RP:MINPERD_GAMMA_CONTROLLER_PERDIDAS]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0008 --NUM=PRUEBA_VESC
+3=r=minuto0318 --NUM=PRUEBA_VESC
+4=r=minuto0588 --NUM=PRUEBA_VESC
+5=r=minuto0923 --NUM=PRUEBA_VESC
+6=r=minuto1373 --NUM=PRUEBA_VESC
+7=
+
+[RP:MINPERD_GAMMA_CONTROLLER_PERDIDAS_MOD_P0Q]
+1=
+
+[RP:MODELO_3]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=
+
+[RP:MINPERD_B2B_PERDIDAS]
+1=r=minuto1143 --NUM=PRUEBA_VESC --caso=vsc_pq
+2=
+
+[RP:MODELO_REAL_RAD_TIEMPO]
+1=
+
+[RP:LINEA_DC_INTERMEDIA_BAT]
+1=
+
+[RP:VSC2_VOL2]
+1=
+
+[RP:UNTITLED_1]
+1=
+
+[RP:LINEA_DC_INTERMEDIA]
+1=
+
+[RP:PROGRAMA_MODELO]
+1=
+
+[RP:OPT_MBV]
+1=
+
+[RP:LINEA_INTERMEDIA_PERFIL]
+1=
+
+[RP:MINPERD_BASE_PERDIDAS_QOPT]
+1=r=minuto1143 --NUM=PRUEBA_VESC
+2=r=minuto0003 --Num= min0003
+3=r=minuto0648 --Num= min0003
+4=r=minuto1158 --Num= min
+5=r=minuto0008 --Num= min0003
+6=
+
+[RP:READ_DATA]
+1=
+
+[RP:SEGUNDO_CASO]
+1=
+
+[RP:CONV_DATA]
+1=s=minuto0003 Idir=minuto0003
+2=
+
+[SOLVERS]
+CNS=CONOPT
+DNLP=CONOPT
+LP=CONOPT
+NLP=CONOPT
+QCP=CONOPT
+RMINLP=CONOPT
+RMIP=CONOPT
+RMIQCP=CONOPT
+
+[RP:MINPERD_BASE_PERDIDAS]
+1=r=minuto1143 --Num= min0003
+2=r=minuto0003 -NUM= min0003
+3=r=minuto0003
+4=MinPerd_Base_perdidas r=minuto0003
+5=gams MinPerd_Base_perdidas r=minuto0003
+6=r=minuto0003.g00
+7=r=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\minuto0003.g00
+8=
+
+[RP:MINPERD_PF_MV]
+1=r=minuto0443 --Num= min0003
+2=r=minuto1143 --Num= min0003
+3=r=minuto0003 --Num= min0003
+4=
+
+[RP:MINPERD_BASE_PERDIDAS_QOPT_V1]
+1=r=minuto0443 --Num= min0003
+2=r=minuto1143 --Num= min0003
+3=
+
+[MRUFILES]
+1=C:\workspace\OPF\OPF\MinPerd_Base_perdidas.lst
+2=C:\workspace\OPF\OPF\MinPerd_Base_perdidas.gms
+3=C:\Users\manba\OneDrive - UNIVERSIDAD DE SEVILLA\Proyectos\Nacionales\FlexOnGrid\simulaciones\OPFvsDL\OPF\MinPerd_Base_perdidas.lst
+4=C:\Users\manba\OneDrive - UNIVERSIDAD DE SEVILLA\Proyectos\Nacionales\FlexOnGrid\simulaciones\OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+5=C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyectos\FlexOnGrid\simulaciones\OPFvsDL\OPF\conv_data.gms
+6=C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyectos\FlexOnGrid\simulaciones\OPFvsDL\OPF\conv_data.lst
+7=C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyectos\FlexOnGrid\simulaciones\OPFvsDL\OPF\read_data.gms
+8=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas_Qopt.gms
+9=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas_Qopt_v1.gms
+
+[OPENWINDOW_1]
+FILE0=C:\workspace\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.gms
+FILE1=C:\workspace\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.lst
+FILE2=C:\workspace\OPF\OPF\MinPerd_PF_MV.gms
+FILE3=C:\workspace\OPF\OPF\MinPerd_PF_MV.lst
+FILE4=C:\workspace\OPF\OPF\MinPerd_Base_perdidas_Qopt_v1.gms
+MAXIM=1
+TOP=49
+LEFT=50
+HEIGHT=401
+WIDTH=400

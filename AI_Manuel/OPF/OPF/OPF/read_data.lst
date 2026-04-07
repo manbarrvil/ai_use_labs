@@ -1,0 +1,228 @@
+GAMS Rev 147  x86_64/MS Windows                         10/18/22 19:32:38 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * Data input for PES2012
+   2  * The data comes from tables in CSV format.
+   3  *
+   7  *** RED EN ESTUDIO ***
+   8  *$ SETGLOBAL rsyst EDF1994
+   9  *$ SETGLOBAL rsyst 60bus_MGC
+  10  * Declaración de conjuntos básicos (nudos, líneas, trafos, generadores)
+  11  SET     ND  nombre de los nudos del sistema /  0 * 15, F15, F8, F14  /
+  12  *$INCLUDE ND.CSV
+  13  *        /
+  14          NL  nombre de las lineas del sistema /
+INCLUDE    C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\NL.CSV
+  16  Line_01
+  17  Line_02
+  18  Line_1
+  19  Line_2
+  20  Line_3
+  21  Line_4
+  22  Line_5
+  23  Line_6
+  24  Line_7
+  25  Line_8
+  26  Line_9
+  27  Line_10
+  28  Line_11
+  29  Line_12
+  30  Line_13
+  31  Line_14
+  32  Line_15
+  33          /
+  34  *        NT nombre de los trafos del sistema   /
+  35  *$INCLUDE NT.CSV
+  36  *        /
+  37          NG nombre de los generadores   /
+INCLUDE    C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\NG.CSV
+  39  GP3
+  40  GP4
+  41  GP5
+  42  GB5
+  43  GFC5
+  44  GP6
+  45  GWT7
+  46  GP8
+  47  GP9
+  48  GCHPD9
+  49  GCHPFC9
+  50  GP10
+  51  GB10
+  52  GFC10
+  53  GP11
+  54          /   ;
+  55   
+  56  ALIAS(nd,ni,nf,n,nn,n2)   ;
+  57   
+  58  SET NG / GF0, GF15, GF8, GF14 / ;  ! Generadores ficticios modelan la inye
+      ccion desde la S/E
+  59                          ! y la inyeccion de cada convertidor  - SE SUMA AL
+       NG QUE VIENE DEL $INCLUDE
+  60  SET SL(NG) generadores que modelan las inyecciones desde las SE  ;
+  61  SL('GF0') = YES ;
+  62  SET GS(NG) generadores que modelan la inyeccion de cada convertidor  ;
+  63  GS('GF15') = YES ; GS('GF8') = YES ; GS('GF14') = YES ;
+  64  SET NL / TC1, TC2, TC3  /  ;  ! transformadores de conexion al convertidor
+  65   
+  66  * Inclusión de datos
+  67  TABLE BUS_DATA(nd, *)
+INCLUDE    C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\BUS_DATA.CSV
+  70  NUDO,Vnom
+  71  0,20
+  72  1,20
+  73  2,20
+  74  3,20
+  75  4,20
+  76  5,20
+  77  6,20
+  78  7,20
+  79  8,20
+  80  9,20
+  81  10,20
+  82  11,20
+  83  12,20
+  84  13,20
+  85  14,20
+  86  15,1.1
+  88   
+  89  TABLE LINE_DATA(nl, nd, nd, *)
+INCLUDE    C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\LINE_DATA.CSV
+  92  Nombre,N_inicio,N_fin,R,X,C,L,Inom,STATUS
+  93  Line_01,0,1,0.001,0.001,0.001,1,100,1
+  94  Line_02,0,12,0.001,0.001,0.001,1,100,1
+  95  Line_1,1,2,0.06,0.0393,0.001,1,100,1
+  96  Line_2,2,3,0.03,0.0157,0.001,1,100,1
+  97  Line_3,3,4,0.005,0.0031,0.001,1,100,1
+  98  Line_4,4,5,0.0075,0.0031,0.001,1,100,1
+  99  Line_5,5,6,0.025,0.0079,0.001,1,100,1
+ 100  Line_6,6,7,0.0015,0.0016,0.001,1,100,0
+ 101  Line_7,7,8,0.025,0.0079,0.001,1,100,1
+ 102  Line_8,8,9,0.005,0.0016,0.001,1,100,1
+ 103  Line_9,9,10,0.01,0.0031,0.001,1,100,1
+ 104  Line_10,10,11,0.005,0.0016,0.001,1,100,1
+ 105  Line_11,11,4,0.01,0.0031,0.001,1,100,0
+ 106  Line_12,8,3,0.01,0.0063,0.001,1,100,1
+ 107  Line_13,6,15,0.262,0.121,0.001,1,260,0
+ 108  Line_14,12,13,0.06,0.0628,0.001,1,361,1
+ 109  Line_15,13,14,0.025,0.0157,0.001,1,100,1
+ 110   
+ 112   
+ 113  TABLE GEN_DATA(ng, nd, *)
+ 115  $INCLUDE GEN_DATA.txt
+****                      $282
+**** LINE     47 INPUT       C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE 
+                             SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi
+                             -Platform Lab for Teaching and Research in Active D
+                             istribution Networks\IEEE PS Education\EJECUTABLES_
+                             red_escala_dinamicos\read_data.gms
+ 117   
+ 118  TABLE LOADH_DATA(nd, *)
+ 120  $INCLUDE LOAD_H_DATA.txt
+****                         $282
+**** LINE     52 INPUT       C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE 
+                             SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi
+                             -Platform Lab for Teaching and Research in Active D
+                             istribution Networks\IEEE PS Education\EJECUTABLES_
+                             red_escala_dinamicos\read_data.gms
+ 122   
+ 123  TABLE LOADI_DATA(nd, *)
+ 125  $INCLUDE LOAD_I_DATA.txt
+****                         $282
+**** LINE     57 INPUT       C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE 
+                             SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi
+                             -Platform Lab for Teaching and Research in Active D
+                             istribution Networks\IEEE PS Education\EJECUTABLES_
+                             red_escala_dinamicos\read_data.gms
+ 127   
+ 128  * Tuplas que declaran la ubicación y estado de líneas, trafos y generadore
+      s
+ 129  SET KL(nl, nd, nd) lineas presentes  ;
+ 130  kl(nl,ni,nf) $ LINE_DATA(nl,ni,nf,'status') = YES  ;
+ 131  kl('tc1', '8','F8') = YES; kl('tc2','14','F14') = YES  ;
+ 132  kl('tc3','15','F15')  = YES ;
+ 133  kl('Line_01','0','1') = YES ; kl('Line_02','0','12') = YES ;
+ 134   
+ 135  *SET KTRFO(nt, nd, nd)  trafos presentes  ;
+ 136  *ktrfo(nt, ni, nf) $  TRFO_DATA(nt, ni, nf, 'status') = YES  ;
+ 137   
+ 138  SET NDGR(ng,nd)  localización de generadores en nudos   ;
+ 139  ndgr(ng, nd) $ GEN_DATA(ng, nd,'P') = YES   ;
+****                                   $116
+**** LINE     71 INPUT       C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE 
+                             SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi
+                             -Platform Lab for Teaching and Research in Active D
+                             istribution Networks\IEEE PS Education\EJECUTABLES_
+                             red_escala_dinamicos\read_data.gms
+ 140  ndgr('GF0','0') = YES;
+ 141  ndgr('GF15','F15') = YES;  ndgr('GF8','F8') = YES  ; ndgr('GF14','F14') = 
+      YES;
+ 142   
+ 143  DISPLAY KL, NDGR, NG
+ 144  *SET SLACK(nd) nudo slack  /
+ 145  *$INCLUDE SLACK.CSV
+GAMS Rev 147  x86_64/MS Windows                         10/18/22 19:32:38 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+282  Unable to open include file
+
+**** 4 ERROR(S)   0 WARNING(S)
+GAMS Rev 147  x86_64/MS Windows                         10/18/22 19:32:38 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\Manuel Barragan\OneDrive - UN
+                                          IVERSIDAD DE SEVILLA (1)\Investigacion
+                                          \Trabajos Acabados\A Multi-Platform La
+                                          b for Teaching and Research in Active 
+                                          Distribution Networks\IEEE PS Educatio
+                                          n\EJECUTABLES_red_escala_dinamicos\rea
+                                          d_data.gms
+     2       15 INCLUDE        1      15  .C:\Users\Manuel Barragan\OneDrive - U
+                                           NIVERSIDAD DE SEVILLA (1)\Proyectos\F
+                                           lexOnGrid\simulaciones\OPFvsDL\OPF\NL
+                                           .CSV
+     3       38 INCLUDE        1      21  .C:\Users\Manuel Barragan\OneDrive - U
+                                           NIVERSIDAD DE SEVILLA (1)\Proyectos\F
+                                           lexOnGrid\simulaciones\OPFvsDL\OPF\NG
+                                           .CSV
+     4       69 INCLUDE        1      37  .C:\Users\Manuel Barragan\OneDrive - U
+                                           NIVERSIDAD DE SEVILLA (1)\Proyectos\F
+                                           lexOnGrid\simulaciones\OPFvsDL\OPF\BU
+                                           S_DATA.CSV
+     5       91 INCLUDE        1      42  .C:\Users\Manuel Barragan\OneDrive - U
+                                           NIVERSIDAD DE SEVILLA (1)\Proyectos\F
+                                           lexOnGrid\simulaciones\OPFvsDL\OPF\LI
+                                           NE_DATA.CSV
+
+
+COMPILATION TIME     =        0.047 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Invest
+           igacion\Trabajos Acabados\A Multi-Platform Lab for Teaching and Resea
+           rch in Active Distribution Networks\IEEE PS Education\EJECUTABLES_red
+           _escala_dinamicos\read_data.gms
+Output     C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\read_data.lst
+
+**** USER ERROR(S) ENCOUNTERED

@@ -1,0 +1,268 @@
+GAMS Rev 147  x86_64/MS Windows                         12/13/22 19:34:12 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  *Defino los conjuntos
+   2  * Ub=400 V
+   3  * Sb=100 kVA
+   4   
+   5  set
+   6  i nudo /i1*i14/
+   7  t tiempo /t0*t287/
+   8  k indices dc /k5, k6,k7/
+   9      ;
+  10   
+  11  alias (i,j)
+  12  table
+  13  B(i,j) susceptancia
+  15  $include matriz_B_mallada_real_doblevsc.CSV
+****                                            $282
+  17  table
+****  $463
+  18  G(i,j) conductancias
+  20  $include matriz_G_mallada_real_doblevsc.CSV
+****                                            $282
+  22  table
+****  $463
+  23  R(i,j) resistencias
+  25  $include matriz_R_mallada_real_doblevsc.CSV
+****                                            $282
+  27  table
+****  $463
+  28  Pesp(i,t) potencia activa
+  30  $include Perfil de Activa_v2.CSV
+****                                 $282
+  32   
+  33  table
+****  $463
+  34  Qesp(i,t) potencia reactiva
+  36  $include Perfil de Reactiva_v2.CSV
+****                                   $282
+  38   
+  39   
+  40   
+  41  scalar
+****  $463
+  42   
+  43            Sconv reactiva del convertidor en pu /0.2/
+  44            Sconv2 reactiva del convertidor en pu /0.2/
+  45      a_1 constante cuadratica del VSC /0.00000000038832/
+  46            b_1 constante lineal del VSC /0.0000102/
+  47            c constante del VSC /0.011856/
+  48     R67 resistencia continua pu /0.1036875/
+  49       R75 resistencia continua pu /0.1036875/
+  50  ;
+  51   
+  52  PARAMETERS
+  53  *Pesp(i) potencia activa consumida por las cargas /i11 -0.040328, i8 -0.1,
+       i9 -0.05, i10 0, i12 -0.03407/
+  54  *Qesp(i) potencia reactiva consumida por las cargas /i11 -0.01325, i8 -0.0
+      2, i9 -0.01, i10 0, i12 -0.0069183/
+  55  *lambda(t) nivel de carga hora t /t0 1,t1 1, t2 1, t3 1, t4 1/
+  56  generacion_13(i) consumo en cada nudo / i1 0, i2 0, i3 0, i4  0, i5 0, i6 
+      0, i7  0, i8 0, i9 0, i10  0, i11 0, i12 0, i13 1/
+  57  generacion_14(i) consumo en cada nudo / i1 0, i2 0, i3 0, i4  0, i5 0, i6 
+      0, i7  0, i8 0, i9 0, i10  0, i11 0, i12 0, i13 0, i14 1/
+  58   
+  59  ;
+  60   
+  61  Variables
+  62  P(i,t) incrementos de P
+  63  Q(i,t)  incrementos de Q
+  64  Pg potencia activa generador
+  65  Qg potencia reactiva generador
+  66  V(i,t) Tension
+  67  a(i,t) angulo
+  68  Pcargas(i,t) potencia activa de las cargas nudo i en el instante t
+  69  Qcargas(i,t) potencia reactiva de las cargas nudo i en el instante t
+  70  Qgen13(t)
+  71  Qgen14(t)
+  72  Pgen13(t)
+  73  Pgen14(t)
+  74  perdidas_VSC_13(t)
+  75  perdidas_VSC_14(t)
+  76  I2(i,j,t) corrientes al cuadrado
+  77  I2_i(i,j,t)
+  78  I2_r(i,j,t)
+  79  Perdidas_AC(t)
+  80  Idc(t)
+  81  Pdc(t)
+  82  Vdc(k,t) tension de continua
+  83  perdidas_dc(t)
+  84  Perdidas_T(t)
+  85  Intensidad(i,t)
+  86  Pgen7(t)
+  87  Igen7(t)
+  88  Idc_2(t)
+  89  Idc_1(t)
+  90  Intensidad(i,t);
+  91  *Perfil plano de tensiones
+  92  V.l(i,t) = 1;
+  93  Vdc.l('k7',t) = 2;
+  94  P.fx(i,t) = 0;
+  95  Q.fx(i,t) = 0;
+  96  P.up('i1',t)=100;
+  97  P.lo('i1',t)=-100;
+  98  Q.up('i1',t)=100;
+  99  Q.lo('i1',t)=-100;
+ 100  V.up (i,t) = 1.1 ;
+ 101  V.lo (i,t) = 0.5 ;
+ 102  a.up (i,t) = pi;
+ 103  a.lo (i,t) = -pi;
+ 104  V.fx('i1',t) = 1.0;
+ 105  a.fx('i1',t) = 0.0;
+ 106  Pcargas.fx('i8',t) =   Pcargas('i8',t)*0.8;
+****                               $143,141
+ 107  Pcargas.fx('i9',t) =   Pcargas('i9',t)*0.8;
+****                               $143
+ 108  Pcargas.fx('i10',t) =   Pcargas('i10',t)*0.8;
+****                                $143
+ 109  Pgen7.fx(t) = Pcargas('i10',t)*0.2;
+****                      $143
+ 110  equations
+ 111  eq_calculoP(i,t) Pcalculada
+ 112  eq_calculoQ(i,t) Qcalculada
+ 113  eq_balancepotencia balance
+ 114  eq_cargas_activa(i,t) ecuacion horaria cargas activas
+ 115  eq_cargas_reactiva(i,t) ecuacion horaria cargas reactivas
+ 116  eq_balancereactiva
+ 117  eq_triangulopot(t)
+ 118  eq_triangulopot2(t)
+ 119  eq_perdidas_VSC_13(t)
+ 120  eq_perdidas_VSC_14(t)
+ 121  eq_I2(i,j,t)
+ 122  eq_I2_r(i,j,t)
+ 123  eq_I2_i(i,j,t)
+ 124  eq_perdidas_AC(t)
+ 125  eq_intensidad_dc_1(t)
+ 126  eq_intensidad_dc_2(t)
+ 127  eq_potencia_dc(t)
+ 128  eq_balance_14(t)
+ 129  eq_balance_13(t)
+ 130  eq_perdidas_dc(t)
+ 131  eq_perdidas_total(t)
+ 132  eq_bus_DC(t)
+ 133  eq_nudo_dc(t)
+ 134  eq_nudo_7(t)
+ 135  *eq_pot1(t)
+ 136  *eq_pot2(t)
+ 137  eq_intensidadrama(i,t);
+ 138   
+ 139  eq_intensidadrama(i,t).. Intensidad(i,t) =e= sum(j,I2(i,j,t));
+ 140  *eq_pot1(t).. Pesp('i8',t) =e= Pesp('i8',t)*0.75;
+ 141  *eq_pot2(t).. Pgen7(t) =e= Pesp('i8',t)*0.25;
+ 142  eq_nudo_7(t)..      Igen7(t) =e= Pgen7(t)/Vdc('k7',t);
+ 143  eq_nudo_dc(t)..     Idc_2(t) =e= Idc_1(t) + Igen7(t);
+ 144  eq_bus_DC(t)..    Vdc('k6',t) =e= 2*1;
+ 145  eq_balance_14(t).. Pgen14(t) =e= Pdc(t) - Perdidas_VSC_14(t) ;
+ 146  eq_balance_13(t).. -Pgen13(t) =e= (Pdc(t) + Perdidas_VSC_13(t)) ;
+ 147  eq_potencia_dc(t).. Pdc(t) =e= Idc_1(t)*Vdc('k6',t) ;
+ 148  eq_intensidad_dc_1(t).. Idc_1(t) =e= (Vdc('k6',t)-Vdc('k7',t))/(2*R67);
+ 149  eq_intensidad_dc_2(t).. Idc_2(t) =e= (Vdc('k7',t)-Vdc('k5',t))/(2*R75);
+ 150  eq_I2(i,j,t)..         I2(i,j,t) =e= power(I2_r(i,j,t),2) + power(I2_i(i,j
+      ,t),2) ;
+ 151  eq_I2_r(i,j,t)..       I2_r(i,j,t) =e= V(i,t)*(G(i,j)*cos(a(i,t))-B(i,j)*s
+      in(a(i,t))) + V(j,t)*(B(i,j)*sin(a(j,t)) - G(i,j)*cos(a(j,t)));
+ 152  eq_I2_i(i,j,t)..        I2_i(i,j,t) =e=  V(i,t)*(B(i,j)*cos(a(i,t))+G(i,j)
+      *sin(a(i,t))) + V(j,t)*(-B(i,j)*cos(a(j,t)) - G(i,j)*sin(a(j,t)));
+ 153  eq_perdidas_VSC_13(t)..      Perdidas_VSC_13(t) =e= (I2('i3','i13',t))*a_1
+       +sqrt(abs(I2('i3','i13',t)))*b_1 + c ;
+ 154  eq_perdidas_VSC_14(t)..      Perdidas_VSC_14(t) =e= (I2('i14','i7',t))*a_1
+       +sqrt(abs(I2('i14','i7',t)))*b_1 + c ;
+ 155  eq_triangulopot(t).. Sconv =G= sqrt(sqr(Pgen13(t))+sqr(Qgen13(t)))  ;
+ 156  eq_triangulopot2(t).. Sconv2 =G= sqrt(sqr(Pgen14(t))+sqr(Qgen14(t)))  ;
+ 157  eq_cargas_activa(i,t)..   Pcargas(i,t)  =e= Pesp(i,t);
+ 158  eq_cargas_reactiva(i,t).. Qcargas(i,t) =e= Qesp(i,t);
+ 159  eq_calculoP(i,t)..  P(i,t)+ Pcargas(i,t) + Pgen13(t)*generacion_13(i) + Pg
+      en14(t)*generacion_14(i) =e= V(i,t)* sum(j, V(j,t)*(G(i,j)*cos(a(i,t)-a(j,
+      t)) + B(i,j)*sin(a(i,t)-a(j,t))))  ;
+ 160  eq_calculoQ(i,t)..  Q(i,t)+ Qcargas(i,t) + Qgen13(t)*generacion_13(i) + Qg
+      en14(t)*generacion_14(i)  =e= V(i,t)* sum(j, V(j,t)*(G(i,j)*sin(a(i,t)-a(j
+      ,t)) - B(i,j)*cos(a(i,t)-a(j,t))))    ;
+ 161  eq_balancepotencia.. Pg =e= sum(t,P('i1',t))              ;
+ 162  eq_balancereactiva.. Qg =e= sum(t,Q('i1',t))              ;
+ 163  eq_perdidas_AC(t)..    Perdidas_AC(t) =e= sum(i,sum(j,I2(i,j,t)*R(i,j)));
+ 164  eq_perdidas_dc(t).. perdidas_dc(t) =e= sqr(Idc_1(t))*2*R67 + sqr(Idc_2(t))
+      *2*R75 ;
+ 165  eq_perdidas_total(t).. Perdidas_T(t) =e= perdidas_dc(t) + Perdidas_AC(t) +
+       Perdidas_VSC_13(t) + Perdidas_VSC_14(t);
+ 166   
+ 167  model Modelo_Real_rad_tiempo /all/    ;
+ 168  solve Modelo_Real_rad_tiempo minimizing Pg using MInlp;
+****                                                       $257
+ 169  parameter
+ 170  Pnudos(i,t) Potencia de nudos
+ 171  Vnudos(i,t) tension de nudos
+ 172  Iramas(i,t) tension ramas
+ 173  Perdidasnudos(t) perdidas para t
+ 174  Pslack potencia del slack
+ 175  Pcabecera(t) potencia cabecera
+ 176  Pcola(t) potencia cola
+ 177  Qcabecera(t) potencia cabecera
+ 178  Qcola(t) potencia cola
+ 179  Vcc(k,t) pontecia de continua
+ 180  Icc(t) Intensidad de continua;
+ 181  Pnudos(i,t) =  P.l(i,t) ;
+ 182  Vnudos(i,t) =  V.l(i,t) ;
+ 183  Iramas(i,t) =  Intensidad.l(i,t) ;
+****                            $141
+ 184  Vnudos(i,t) =  V.l(i,t) ;
+ 185  Perdidasnudos(t) =  perdidas_AC.l(t) ;
+****                                  $141
+ 186  Pcabecera(t) = Pgen13.l(t) ;
+****                        $141
+ 187  Pcola(t) = Pgen14.l(t)  ;
+****                    $141
+ 188  Qcabecera(t) = Qgen13.l(t);
+****                        $141
+ 189  Qcola(t) = Qgen14.l(t)  ;
+****                    $141
+ 190  Pslack = Pg.l;
+****              $141
+ 191  Icc (t)= Idc_1.l(t);
+****                 $141
+ 192   
+ 193  option Pnudos:4, Vnudos:4,Iramas:4, Perdidasnudos:4, Pslack:4, Pcabecera:4
+      , Pcola:4, Qcabecera:4, Qcola:4, Vcc:4, Icc:4;
+ 194  file BacktoBackIntermediaDC_Perfil;
+ 195  Put BacktoBackIntermediaDC_Perfil;
+ 196   
+ 197  Put 'Potencia'  /
+ 198   
+ 199  Loop (i, put i.TL / Loop(t, put t.TL  Pnudos(i,t):<:4 , put t.TL Vnudos(i,
+      t):<:4, put t.TL Iramas(i,t):<:4 , put t.TL Perdidasnudos(t):<:4 , put t.T
+      L Pslack :<:4 ,put t.TL Pcabecera(t):<:4,put t.TL Pcola(t):<:4 ,put t.TL Q
+      cabecera(t):<:4 ,put t.TL Qcola(t):<:4 ,put t.TL Icc(t):<:4 /) )      ;
+GAMS Rev 147  x86_64/MS Windows                         12/13/22 19:34:12 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+141  Symbol neither initialized nor assigned
+        A wild shot: You may have spurious commas in the explanatory
+        text of a declaration. Check symbol reference list.
+143  A suffix is missing
+257  Solve statement not checked because of previous errors
+282  Unable to open include file
+463  The column section in the previous table is missing
+
+**** 24 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.063 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Manuel Barragan\UNIVERSIDAD DE SEVILLA\JAVIER LONGOBARDO DUE
+           ÑAS - TFG JAVIER\linea_intermedia_perfil.gms
+Output     C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\linea_intermedia_perfil.lst
+
+**** USER ERROR(S) ENCOUNTERED

@@ -1,0 +1,371 @@
+GAMS Rev 147  x86_64/MS Windows                         04/08/24 11:03:31 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * File for data modification
+   2  * In read_data.gms data inputs in physical units
+   3  * in this file the conversion to p.u. is done.
+GAMS Rev 147  x86_64/MS Windows                         04/08/24 11:03:31 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\Usuario\UNIVERSIDAD DE SEVILL
+                                          A\MANUEL BARRAGAN VILLAREJO - OPFvsDL\
+                                          OPF\conv_data.gms
+     2        5 INCLUDE        1       5  .C:\Users\Usuario\UNIVERSIDAD DE SEVIL
+                                           LA\MANUEL BARRAGAN VILLAREJO - OPFvsD
+                                           L\OPF\read_data.gms
+     3       20 INCLUDE        2      15  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\NL.CSV
+     4       43 INCLUDE        2      21  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\NG.CSV
+     5       74 INCLUDE        2      37  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\BUS_DATA.CSV
+     6       96 INCLUDE        2      42  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\LINE_DATA.CSV
+     7      120 INCLUDE        2      47  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\minuto0003\GEN_DATA.txt
+     8      141 INCLUDE        2      52  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\minuto0003\LOAD_H_DATA.txt
+     9      157 INCLUDE        2      57  ..C:\Users\Usuario\UNIVERSIDAD DE SEVI
+                                            LLA\MANUEL BARRAGAN VILLAREJO - OPFv
+                                            sDL\OPF\minuto0003\LOAD_I_DATA.txt
+
+
+COMPILATION TIME     =        0.016 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         04/08/24 11:03:31 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----    184 SET KL  lineas presentes
+
+                     1           2           3           4           5
+
+Line_01.0          YES
+Line_1 .1                      YES
+Line_2 .2                                  YES
+Line_3 .3                                              YES
+Line_4 .4                                                          YES
+Line_12.8                                  YES
+
+         +           6           8           9          10          11
+
+Line_5 .5          YES
+Line_7 .7                      YES
+Line_8 .8                                  YES
+Line_9 .9                                              YES
+Line_10.10                                                         YES
+
+         +          12          13          14         F15          F8
+
+Line_02.0          YES
+Line_14.12                     YES
+Line_15.13                                 YES
+TC1    .8                                                          YES
+TC3    .15                                             YES
+
+         +         F14
+
+TC2    .14         YES
+
+
+----    184 SET NDGR  localización de generadores en nudos
+
+                  0           3           4           5           6           7
+
+GP3                         YES
+GP4                                     YES
+GP5                                                 YES
+GB5                                                 YES
+GFC5                                                YES
+GP6                                                             YES
+GWT7                                                                        YES
+GF0             YES
+
+      +           8           9          10          11         F15          F8
+
+GP8             YES
+GP9                         YES
+GCHPD9                      YES
+GCHPFC9                     YES
+GP10                                    YES
+GB10                                    YES
+GFC10                                   YES
+GP11                                                YES
+GF15                                                            YES
+GF8                                                                         YES
+
+      +         F14
+
+GF14            YES
+
+
+----    184 SET NG  nombre de los generadores
+
+GP3    ,    GP4    ,    GP5    ,    GB5    ,    GFC5   ,    GP6    ,    GWT7   
+GP8    ,    GP9    ,    GCHPD9 ,    GCHPFC9,    GP10   ,    GB10   ,    GFC10  
+GP11   ,    GF0    ,    GF15   ,    GF8    ,    GF14   
+
+
+----    263 PARAMETER DATNUD  datos de los nudos
+
+          Vnom           P
+
+0       20.000
+1       20.000 5.523500E-5
+2       20.000
+3       20.000 1.512090E-6
+4       20.000 1.108400E-6
+5       20.000 1.860200E-6
+6       20.000 1.411200E-6
+7       20.000 2.579300E-7
+8       20.000 1.508700E-6
+9       20.000 1.922700E-6
+10      20.000 1.451680E-6
+11      20.000 8.492800E-7
+12      20.000 5.523500E-5
+13      20.000 1.071900E-7
+14      20.000 1.636520E-6
+15       1.100
+
+
+----    263 PARAMETER DATGEN  datos de los generadores
+
+               Pmax        Pmin          p0
+
+GP3     2.000000E-7             5.012600E-9
+GP4     2.000000E-7             5.012600E-9
+GP5     3.000000E-7             7.518900E-9
+GB5     5.000000E-6 -5.00000E-6 5.131600E-6
+GFC5    3.300000E-7 -3.30000E-7 1.084000E-7
+GP6     3.000000E-7             7.518900E-9
+GWT7    1.500000E-5             9.655200E-6
+GP8     3.000000E-7             7.518900E-9
+GP9     3.000000E-7             7.518900E-9
+GCHPD9  3.100000E-6             3.606600E-7
+GCHPFC9 2.120000E-6             1.631600E-6
+GP10    4.000000E-7             7.518900E-9
+GB10    2.000000E-6 -2.00000E-6 5.131600E-6
+GFC10   1.400000E-7 -1.40000E-7 1.084000E-7
+GP11    1.000000E-7             2.506300E-9
+
+
+----    263 PARAMETER DATLIN  datos de las líneas - caso base
+
+INDEX 1 = Line_01
+
+              R           X      STATUS         Bsh       flmax
+
+0.1       0.003 1.000000E-9       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_02
+
+               R           X      STATUS         Bsh       flmax
+
+0.12       0.003 1.000000E-9       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_1
+
+              R           X      STATUS         Bsh       flmax
+
+1.2       0.150       0.098       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_2
+
+              R           X      STATUS         Bsh       flmax
+
+2.3       0.075       0.039       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_3
+
+              R           X      STATUS         Bsh       flmax
+
+3.4       0.013       0.008       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_4
+
+              R           X      STATUS         Bsh       flmax
+
+4.5       0.019       0.008       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_5
+
+              R           X      STATUS         Bsh       flmax
+
+5.6       0.063       0.020       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_7
+
+              R           X      STATUS         Bsh       flmax
+
+7.8       0.063       0.020       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_8
+
+              R           X      STATUS         Bsh       flmax
+
+8.9       0.013       0.004       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_9
+
+               R           X      STATUS         Bsh       flmax
+
+9.10       0.025       0.008       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_10
+
+                R           X      STATUS         Bsh       flmax
+
+10.11       0.013       0.004       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_12
+
+              R           X      STATUS         Bsh       flmax
+
+8.3       0.025       0.016       1.000 5.02655E-10     100.000
+
+INDEX 1 = Line_14
+
+                R           X      STATUS         Bsh       flmax
+
+12.13       0.150       0.157       1.000 5.02655E-10     361.000
+
+INDEX 1 = Line_15
+
+                R           X      STATUS         Bsh       flmax
+
+13.14       0.063       0.039       1.000 5.02655E-10     100.000
+
+INDEX 1 = TC1
+
+               R           X      STATUS
+
+8.F8 1.000000E-6 1.000000E-9       1.000
+
+INDEX 1 = TC2
+
+                 R           X      STATUS
+
+14.F14 1.000000E-6 1.000000E-9       1.000
+
+INDEX 1 = TC3
+
+                 R           X      STATUS
+
+15.F15 1.000000E-6 1.000000E-9       1.000
+
+
+----    263 PARAMETER Gij  
+
+             1           2           3           4           5           6
+
+0      400.000
+1                    4.665
+2                               10.467
+3                                           57.787
+4                                                       45.551
+5                                                                   14.547
+8                               28.635
+
+ +           8           9          10          11          12          13
+
+0                                                      400.000
+7       14.547
+8                   72.569
+9                               36.493
+10                                          72.569
+12                                                                   3.181
+
+ +          14         F15          F8         F14
+
+8                           999999.000
+13      11.475
+14                                      999999.000
+15              999999.000
+
+
+----    263 PARAMETER Bij  
+
+             1           2           3           4           5           6
+
+0  -1.60000E-4
+1                   -3.056
+2                               -5.478
+3                                          -35.828
+4                                                      -18.828
+5                                                                   -4.597
+8                              -18.040
+
+ +           8           9          10          11          12          13
+
+0                                                  -1.60000E-4
+7       -4.597
+8                  -23.222
+9                              -11.313
+10                                         -23.222
+12                                                                  -3.330
+
+ +          14         F15          F8         F14
+
+8                             -999.999
+13      -7.206
+14                                        -999.999
+15                -999.999
+
+
+----    263 PARAMETER Bsh  
+
+             1           2           3           4           5           6
+
+0  5.02655E-10
+1              5.02655E-10
+2                          5.02655E-10
+3                                      5.02655E-10
+4                                                  5.02655E-10
+5                                                              5.02655E-10
+8                          5.02655E-10
+
+ +           8           9          10          11          12          13
+
+0                                                  5.02655E-10
+7  5.02655E-10
+8              5.02655E-10
+9                          5.02655E-10
+10                                     5.02655E-10
+12                                                             5.02655E-10
+
+ +          14
+
+13 5.02655E-10
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - O
+           PFvsDL\OPF\conv_data.gms
+Output     C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - O
+           PFvsDL\OPF\conv_data.lst
+Save       C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - O
+           PFvsDL\OPF\minuto0003.g0?
+
+**** WARNING - COMPILER OPTIONS ARE NON DEFAULT     EOLCOM ! 

@@ -1,0 +1,28 @@
+
+--- Job conv_data.gms Start 04/08/24 11:03:31
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- conv_data.gms(5) 2 Mb
+--- .read_data.gms(15) 3 Mb
+--- ..NL.CSV(17) 3 Mb
+--- .read_data.gms(21) 3 Mb
+--- ..NG.CSV(15) 3 Mb
+--- .read_data.gms(37) 3 Mb
+--- ..BUS_DATA.CSV(17) 3 Mb
+--- .read_data.gms(42) 3 Mb
+--- ..LINE_DATA.CSV(19) 3 Mb
+--- .read_data.gms(47) 3 Mb
+--- ..GEN_DATA.txt(16) 3 Mb
+--- .read_data.gms(52) 3 Mb
+--- ..LOAD_H_DATA.txt(11) 3 Mb
+--- .read_data.gms(57) 3 Mb
+--- ..LOAD_I_DATA.txt(9) 3 Mb
+--- .read_data.gms(77) 3 Mb
+--- conv_data.gms(90) 3 Mb
+--- Starting execution
+--- conv_data.gms(263) 4 Mb
+*** Status: Normal completion
+--- Job conv_data.gms Stop 04/08/24 11:03:31 elapsed 0:00:00.027

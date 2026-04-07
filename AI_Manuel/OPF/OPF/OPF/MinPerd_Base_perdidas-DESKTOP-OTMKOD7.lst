@@ -1,0 +1,474 @@
+GAMS Rev 147  x86_64/MS Windows                                                                    03/20/24 09:54:48 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                                                                    03/20/24 09:54:48 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 479
+
+
+---- eqobj  =E=  ecuacion objetivo
+
+eqobj..  obj - Pgen(GF0) =E= 0 ; (LHS = 0)
+     
+
+---- eqp  =E=  balance activa
+
+eqp(0)..  Pgen(GF0) + (0)*vv(0) - (1)*va1(0) - (1)*va2(0) + (0)*LambdaG(GF0) + (1)*Pgen2(GF0) =E= 0 ; (LHS = 0)
+     
+eqp(1)..  (0)*vv(1) - (1)*va1(1) - (1)*va2(1) =E= 0 ; (LHS = 0)
+     
+eqp(2)..  (0)*vv(2) - (1)*va1(2) - (1)*va2(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqq  =E=  balance reactiva
+
+eqq(0)..  Qgen(GF0) + (0)*vv(0) - (1)*va3(0) - (1)*va4(0) + Qgen2(GF0) =E= 0 ; (LHS = 0)
+     
+eqq(1)..  (0)*vv(1) - (1)*va3(1) - (1)*va4(1) =E= 0 ; (LHS = 0)
+     
+eqq(2)..  (0)*vv(2) - (1)*va3(2) - (1)*va4(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa1  =E=  ecuacion auxiliar 1
+
+eqa1(0)..  - 799.999999999872*vv(0) + (399.999999999936)*vv(1) + (399.999999999936)*vv(12) + (0)*d(0) + (0)*d(1)
+     
+      + (0)*d(12) + va1(0) =E= 0 ; (LHS = 0)
+     
+eqa1(1)..  (399.999999999936)*vv(0) - 404.665185470216*vv(1) + (4.66518547027985)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2)
+     
+      + va1(1) =E= 0 ; (LHS = 0)
+     
+eqa1(2)..  (4.66518547027985)*vv(1) - 15.1319143558349*vv(2) + (10.466728885555)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3)
+     
+      + va1(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa2  =E=  ecuacion auxiliar 2
+
+eqa2(0)..  (0)*vv(1) + (0)*vv(12) - (0.000319999999999949)*d(0) + (0.000159999999999974)*d(1)
+     
+      + (0.000159999999999974)*d(12) + va2(0) =E= 0 ; (LHS = 0)
+     
+eqa2(1)..  (0)*vv(0) + (0)*vv(2) + (0.000159999999999974)*d(0) - (3.0558564830333)*d(1) + (3.0556964830333)*d(2) + va2(1)
+      =E= 0 ; (LHS = 0)
+     
+eqa2(2)..  (0)*vv(1) + (0)*vv(3) + (3.0556964830333)*d(1) - (8.53328459980711)*d(2) + (5.4775881167738)*d(3) + va2(2) =E= 0
+      ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa3  =E=  ecuacion auxiliar 3
+
+eqa3(0)..  (0)*vv(1) + (0)*vv(12) + (799.999999999872)*d(0) - (399.999999999936)*d(1) - (399.999999999936)*d(12) + va3(0)
+      =E= 0 ; (LHS = 0)
+     
+eqa3(1)..  (0)*vv(0) + (0)*vv(2) - (399.999999999936)*d(0) + (404.665185470216)*d(1) - (4.66518547027985)*d(2) + va3(1)
+      =E= 0 ; (LHS = 0)
+     
+eqa3(2)..  (0)*vv(1) + (0)*vv(3) - (4.66518547027985)*d(1) + (15.1319143558349)*d(2) - (10.466728885555)*d(3) + va3(2) =E= 
+     0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 479
+
+
+---- eqa4  =E=  ecuacion auxiliar 4
+
+eqa4(0)..  - 0.000319999999999949*vv(0) + (0.000159999999999974)*vv(1) + (0.000159999999999974)*vv(12) + (0)*d(0)
+     
+      + (0)*d(1) + (0)*d(12) + va4(0) =E= 0 ; (LHS = 0)
+     
+eqa4(1)..  (0.000159999999999974)*vv(0) - 3.0558564830333*vv(1) + (3.0556964830333)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2)
+     
+      + va4(1) =E= 0 ; (LHS = 0)
+     
+eqa4(2)..  (3.0556964830333)*vv(1) - 8.53328459980711*vv(2) + (5.4775881167738)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3)
+     
+      + va4(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb1  =E=  ecuacion auxiliar b1
+
+eqb1(0)..  - (2)*vv(0) + vb1(0) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(1)..  - (2)*vv(1) + vb1(1) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(2)..  - (2)*vv(2) + vb1(2) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb2  =E=  ecuacion auxiliar b2
+
+eqb2(Line_01,0,1)..  - (2)*vv(0) - (2)*vv(1) + vb2(0,1) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_02,0,12)..  - (2)*vv(0) - (2)*vv(12) + vb2(0,12) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_1,1,2)..  - (2)*vv(1) - (2)*vv(2) + vb2(1,2) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eqb3  =E=  ecuacion auxiliar b3
+
+eqb3(Line_01,0,1)..  (0)*d(0) + (0)*d(1) + vb3(0,1) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_02,0,12)..  (0)*d(0) + (0)*d(12) + vb3(0,12) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_1,1,2)..  (0)*d(1) + (0)*d(2) + vb3(1,2) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eq_i2  =E=  intensidad i2
+
+eq_i2..  (0)*Pgen(GF14) + (0)*Qgen(GF14) + (0)*vv(F14) + i2 =E= 0 ; (LHS = 0)
+     
+
+---- eq_i1  =E=  intensidad i1
+
+eq_i1(0)..  i1(0) =E= 0 ; (LHS = 0)
+     
+eq_i1(1)..  i1(1) =E= 0 ; (LHS = 0)
+     
+eq_i1(2)..  i1(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 479
+
+
+---- obj  objetivo
+
+obj
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eqobj
+
+
+---- Pgen  activa generada
+
+Pgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(3)
+
+Pgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(5)
+
+Pgen(GB5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(5)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- Qgen  reactiva generada
+
+Qgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(3)
+
+Qgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+Qgen(GB5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- vv  tension nodal
+
+vv(0)
+                (.LO, .L, .UP = 0.1, 1, 1.5)
+       (0)      eqp(0)
+       (0)      eqq(0)
+     -800       eqa1(0)
+     (400)      eqa1(1)
+     (400)      eqa1(12)
+       (0)      eqa2(1)
+       (0)      eqa2(12)
+       (0)      eqa3(1)
+       (0)      eqa3(12)
+       -0.0003  eqa4(0)
+       (0.0002) eqa4(1)
+       (0.0002) eqa4(12)
+      (-2)      eqb1(0)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_02,0,12)
+
+vv(1)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0)      eqp(1)
+       (0)      eqq(1)
+     (400)      eqa1(0)
+     -404.6652  eqa1(1)
+       (4.6652) eqa1(2)
+       (0)      eqa2(0)
+       (0)      eqa2(2)
+       (0)      eqa3(0)
+       (0)      eqa3(2)
+       (0.0002) eqa4(0)
+       -3.0559  eqa4(1)
+       (3.0557) eqa4(2)
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 479
+
+
+     vv  tension nodal
+
+      (-2)      eqb1(1)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_1,1,2)
+
+vv(2)
+                (.LO, .L, .UP = 0.1, 1, 1.5)
+       (0)      eqp(2)
+       (0)      eqq(2)
+       (4.6652) eqa1(1)
+      -15.1319  eqa1(2)
+      (10.4667) eqa1(3)
+       (0)      eqa2(1)
+       (0)      eqa2(3)
+       (0)      eqa3(1)
+       (0)      eqa3(3)
+       (3.0557) eqa4(1)
+       -8.5333  eqa4(2)
+       (5.4776) eqa4(3)
+      (-2)      eqb1(2)
+      (-2)      eqb2(Line_1,1,2)
+      (-2)      eqb2(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- d  angulo de la tension nodal
+
+d(0)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(12)
+      (-0.0003) eqa2(0)
+       (0.0002) eqa2(1)
+       (0.0002) eqa2(12)
+     (800)      eqa3(0)
+    (-400)      eqa3(1)
+    (-400)      eqa3(12)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(12)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_02,0,12)
+
+d(1)
+                (.LO, .L, .UP = 0, 0, 0)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+       (0.0002) eqa2(0)
+      (-3.0559) eqa2(1)
+       (3.0557) eqa2(2)
+    (-400)      eqa3(0)
+     (404.6652) eqa3(1)
+      (-4.6652) eqa3(2)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_1,1,2)
+
+d(2)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+       (0)      eqa1(3)
+       (3.0557) eqa2(1)
+      (-8.5333) eqa2(2)
+       (5.4776) eqa2(3)
+      (-4.6652) eqa3(1)
+      (15.1319) eqa3(2)
+     (-10.4667) eqa3(3)
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 479
+
+
+     d  angulo de la tension nodal
+
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqa4(3)
+       (0)      eqb3(Line_1,1,2)
+       (0)      eqb3(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va1  variable auxiliar 1
+
+va1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa1(0)
+
+va1(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa1(1)
+
+va1(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va2  variable auxiliar 2
+
+va2(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa2(0)
+
+va2(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa2(1)
+
+va2(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa2(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va3  variable auxiliar 3
+
+va3(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+        1       eqa3(0)
+
+va3(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa3(1)
+
+va3(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa3(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va4  variable auxiliar 4
+
+va4(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+        1       eqa4(0)
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 479
+
+
+     va4  variable auxiliar 4
+
+
+va4(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa4(1)
+
+va4(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa4(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb1  variable auxiliar b1
+
+vb1(0)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(0)
+
+vb1(1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(1)
+
+vb1(2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb2  variable auxiliar b2
+
+vb2(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_01,0,1)
+
+vb2(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_02,0,12)
+
+vb2(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- vb3  variable auxiliar b3
+
+vb3(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_01,0,1)
+
+vb3(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_02,0,12)
+
+vb3(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- i2  intensidad nudo 2
+
+i2
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i2
+
+GAMS Rev 147  x86_64/MS Windows                                                                   03/20/24 09:54:48 Page 15
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 479
+
+
+---- i1  intensidad nudo 1
+
+i1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(0)
+

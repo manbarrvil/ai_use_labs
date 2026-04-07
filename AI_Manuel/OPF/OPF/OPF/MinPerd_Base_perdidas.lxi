@@ -1,0 +1,74 @@
+B 2 C o m p i l a t i o n
+B 10 Equation Listing    SOLVE OPF Using NLP From line 479
+D 11 eqobj
+D 17 eqp
+D 30 eqq
+D 43 eqa1
+D 63 eqa2
+D 85 eqa3
+D 108 eqa4
+D 128 eqb1
+D 139 eqb2
+D 156 eqb3
+D 173 eq_i2
+D 178 eq_i1
+B 191 Column Listing      SOLVE OPF Using NLP From line 479
+E 192 obj
+E 200 Pgen
+E 216 Qgen
+E 232 vv
+E 290 d
+E 345 va1
+E 364 va2
+E 383 va3
+E 402 va4
+E 421 vb1
+E 437 vb2
+E 453 vb3
+E 469 i2
+E 476 i1
+E 492 Lambda
+E 514 LambdaG
+E 530 Pgen2
+E 546 Qgen2
+B 564 Model Statistics    SOLVE OPF Using NLP From line 479
+B 582 Solution Report     SOLVE OPF Using NLP From line 479
+F 636 eqobj
+F 644 eqp
+F 668 eqq
+F 692 eqa1
+F 716 eqa2
+F 740 eqa3
+F 764 eqa4
+F 788 eqb1
+F 812 eqb2
+F 834 eqb3
+F 854 eq_i2
+F 862 eq_i1
+G 881 obj
+G 887 Pgen
+G 908 Qgen
+G 929 vv
+G 953 d
+G 977 va1
+G 1001 va2
+G 1025 va3
+G 1049 va4
+G 1073 vb1
+G 1097 vb2
+G 1119 vb3
+G 1141 i2
+G 1147 i1
+G 1171 Lambda
+G 1175 LambdaG
+G 1196 Pgen2
+G 1217 Qgen2
+B 1393 E x e c u t i o n
+I 1396 PERD
+I 1397 V
+I 1406 PCONV
+I 1411 QCONV
+I 1416 dLAMBDAG
+I 1425 G_INI
+I 1432 G_FIN
+I 1440 G_DIF

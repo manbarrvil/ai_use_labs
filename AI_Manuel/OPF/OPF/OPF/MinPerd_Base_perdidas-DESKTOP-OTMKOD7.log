@@ -1,0 +1,11 @@
+
+--- Job MinPerd_Base_perdidas.gms Start 03/20/24 09:56:51
+--- Reading parameter(s) from "225b\gmsprm95.scr"
+--- Reading parameter(s) from "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\$gms1.par"
+*** *** Error line 20: Unknown option "NUM"
+*** *** Error line 20: Unknown option "min0003"
+--- Finished reading from "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\$gms1.par"
+--- Finished reading from "225b\gmsprm95.scr"
+*** Status: Terminated due to parameter errors
+--- Job MinPerd_Base_perdidas.gms Stop 03/20/24 09:56:51 elapsed 0:00:00.008
+Exit code = 6

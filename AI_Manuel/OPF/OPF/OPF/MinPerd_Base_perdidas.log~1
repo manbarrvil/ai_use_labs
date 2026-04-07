@@ -1,0 +1,62 @@
+--- Job MinPerd_Base_perdidas.gms Start 03/18/24 16:10:09 45.7.0 64fbf3ce WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\45\gmsprmNT.txt
+--- GAMS Parameters defined
+    Restart "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\minuto0003.g0?"
+    Input "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms"
+    PageSize 0
+    ScrDir "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\225a\"
+    SysDir C:\GAMS\45\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+          https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+          C:\GAMS\45\gamslice.txt
+          Demo license for demonstration and instructional purposes only
+Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
+GAMS 45.7.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
+--- Starting continued compilation
+--- Workfile was generated under GAMS version WEX224-147
+--- MinPerd_Base_perdidas.gms(233) 3 Mb 1 Error
+*** Error 233 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Empty model list
+      no legal data between / / or 'all' without any equations
+--- MinPerd_Base_perdidas.gms(237) 3 Mb 3 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+*** Error 257 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Solve statement not checked because of previous errors
+--- MinPerd_Base_perdidas.gms(257) 3 Mb 4 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+--- MinPerd_Base_perdidas.gms(258) 3 Mb 5 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+--- MinPerd_Base_perdidas.gms(259) 3 Mb 8 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+--- MinPerd_Base_perdidas.gms(260) 3 Mb 9 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+--- MinPerd_Base_perdidas.gms(262) 3 Mb 10 Errors
+*** Error 140 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unknown symbol
+--- MinPerd_Base_perdidas.gms(280) 3 Mb 11 Errors
+*** Error  96 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Blank needed between identifier and text
+      (-or- illegal character in identifier)
+      (-or- check for missing ';' on previous line)
+--- MinPerd_Base_perdidas.gms(281) 3 Mb 12 Errors
+*** Error 409 in C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\OPF\MinPerd_Base_perdidas.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- MinPerd_Base_perdidas.gms(310) 3 Mb 12 Errors
+*** Status: Compilation error(s)
+--- Job MinPerd_Base_perdidas.gms Stop 03/18/24 16:10:09 elapsed 0:00:00.011

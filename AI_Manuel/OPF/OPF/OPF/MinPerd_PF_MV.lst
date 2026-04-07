@@ -1,0 +1,1916 @@
+GAMS Rev 147  x86_64/MS Windows                         11/18/25 12:44:57 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         11/18/25 12:44:57 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 537
+
+
+---- eqobj  =E=  ecuacion objetivo
+
+eqobj..  obj - Pgen(GF0) =E= 0 ; (LHS = 0)
+     
+
+---- eqp  =E=  balance activa
+
+eqp(0)..  Pgen(GF0) + (0)*vv(0) - (1)*va1(0) - (1)*va2(0) + (0)*LambdaG(GF0)
+     
+      + (1)*Pgen2(GF0) =E= 0 ; (LHS = 0)
+     
+eqp(1)..  (0)*vv(1) - (1)*va1(1) - (1)*va2(1) =E= 0 ; (LHS = 0)
+     
+eqp(2)..  (0)*vv(2) - (1)*va1(2) - (1)*va2(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqq  =E=  balance reactiva
+
+eqq(0)..  Qgen(GF0) + (0)*vv(0) - (1)*va3(0) - (1)*va4(0) + Qgen2(GF0) =E= 0 ;
+     
+      (LHS = 0)
+     
+eqq(1)..  (0)*vv(1) - (1)*va3(1) - (1)*va4(1) =E= 0 ; (LHS = 0)
+     
+eqq(2)..  (0)*vv(2) - (1)*va3(2) - (1)*va4(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa1  =E=  ecuacion auxiliar 1
+
+eqa1(0)..  - 799.999999999872*vv(0) + (399.999999999936)*vv(1)
+     
+      + (399.999999999936)*vv(12) + (0)*d(0) + (0)*d(1) + (0)*d(12) + va1(0)
+      =E= 0 ; (LHS = 0)
+     
+eqa1(1)..  (399.999999999936)*vv(0) - 404.665185470216*vv(1)
+     
+      + (4.66518547027985)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2) + va1(1) =E= 0
+      ; (LHS = 0)
+     
+eqa1(2)..  (4.66518547027985)*vv(1) - 15.1319143558349*vv(2)
+     
+      + (10.466728885555)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3) + va1(2) =E= 0
+      ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa2  =E=  ecuacion auxiliar 2
+
+eqa2(0)..  (0)*vv(1) + (0)*vv(12) - (0.000319999999999949)*d(0)
+     
+      + (0.000159999999999974)*d(1) + (0.000159999999999974)*d(12) + va2(0) =E= 
+     0 ; (LHS = 0)
+     
+eqa2(1)..  (0)*vv(0) + (0)*vv(2) + (0.000159999999999974)*d(0)
+     
+      - (3.0558564830333)*d(1) + (3.0556964830333)*d(2) + va2(1) =E= 0 ;
+     
+      (LHS = 0)
+     
+eqa2(2)..  (0)*vv(1) + (0)*vv(3) + (3.0556964830333)*d(1)
+     
+      - (8.53328459980711)*d(2) + (5.4775881167738)*d(3) + va2(2) =E= 0 ;
+     
+      (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa3  =E=  ecuacion auxiliar 3
+
+eqa3(0)..  (0)*vv(1) + (0)*vv(12) + (799.999999999872)*d(0)
+     
+      - (399.999999999936)*d(1) - (399.999999999936)*d(12) + va3(0) =E= 0 ;
+     
+      (LHS = 0)
+     
+eqa3(1)..  (0)*vv(0) + (0)*vv(2) - (399.999999999936)*d(0)
+     
+      + (404.665185470216)*d(1) - (4.66518547027985)*d(2) + va3(1) =E= 0 ;
+     
+      (LHS = 0)
+     
+eqa3(2)..  (0)*vv(1) + (0)*vv(3) - (4.66518547027985)*d(1)
+     
+      + (15.1319143558349)*d(2) - (10.466728885555)*d(3) + va3(2) =E= 0 ;
+     
+      (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa4  =E=  ecuacion auxiliar 4
+
+eqa4(0)..  - 0.000319999999999949*vv(0) + (0.000159999999999974)*vv(1)
+     
+      + (0.000159999999999974)*vv(12) + (0)*d(0) + (0)*d(1) + (0)*d(12) + va4(0)
+      =E= 0 ; (LHS = 0)
+     
+eqa4(1)..  (0.000159999999999974)*vv(0) - 3.0558564830333*vv(1)
+     
+      + (3.0556964830333)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2) + va4(1) =E= 0
+      ; (LHS = 0)
+     
+eqa4(2)..  (3.0556964830333)*vv(1) - 8.53328459980711*vv(2)
+     
+      + (5.4775881167738)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3) + va4(2) =E= 0
+      ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb1  =E=  ecuacion auxiliar b1
+
+eqb1(0)..  - (2)*vv(0) + vb1(0) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(1)..  - (2)*vv(1) + vb1(1) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(2)..  - (2)*vv(2) + vb1(2) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb2  =E=  ecuacion auxiliar b2
+
+eqb2(Line_01,0,1)..  - (2)*vv(0) - (2)*vv(1) + vb2(0,1) =E= 0 ;
+     
+      (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_02,0,12)..  - (2)*vv(0) - (2)*vv(12) + vb2(0,12) =E= 0 ;
+     
+      (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_1,1,2)..  - (2)*vv(1) - (2)*vv(2) + vb2(1,2) =E= 0 ;
+     
+      (LHS = -2, INFES = 2 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eqb3  =E=  ecuacion auxiliar b3
+
+eqb3(Line_01,0,1)..  (0)*d(0) + (0)*d(1) + vb3(0,1) =E= 0 ;
+     
+      (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_02,0,12)..  (0)*d(0) + (0)*d(12) + vb3(0,12) =E= 0 ;
+     
+      (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_1,1,2)..  (0)*d(1) + (0)*d(2) + vb3(1,2) =E= 0 ;
+     
+      (LHS = -1, INFES = 1 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eq_i2  =E=  intensidad i2
+
+eq_i2..  (0)*Pgen(GF14) + (0)*Qgen(GF14) + (0)*vv(F14) + i2 =E= 0 ; (LHS = 0)
+     
+
+---- eq_i1  =E=  intensidad i1
+
+eq_i1(0)..  i1(0) =E= 0 ; (LHS = 0)
+     
+eq_i1(1)..  i1(1) =E= 0 ; (LHS = 0)
+     
+eq_i1(2)..  i1(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- e_ir_max  =L=  
+
+e_ir_max(Line_01,0,1)..  ir2(0,1) =L= 0.692820323027551 ; (LHS = 0)
+     
+e_ir_max(Line_02,0,12)..  ir2(0,12) =L= 0.692820323027551 ; (LHS = 0)
+     
+e_ir_max(Line_1,1,2)..  ir2(1,2) =L= 0.692820323027551 ; (LHS = 0)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eir2  =E=  intensidad de rama al cuadrado
+
+eir2(Line_01,0,1)..  (0)*vv(0) + (0)*vv(1) + (0)*d(0) + (0)*d(1) + ir2(0,1) =E= 
+     0 ; (LHS = 0)
+     
+eir2(Line_02,0,12)..  (0)*vv(0) + (0)*vv(12) + (0)*d(0) + (0)*d(12) + ir2(0,12)
+      =E= 0 ; (LHS = 0)
+     
+eir2(Line_1,1,2)..  (0)*vv(1) + (0)*vv(2) + (0)*d(1) + (0)*d(2) + ir2(1,2) =E= 0
+      ; (LHS = 0)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- sgmax_n  =L=  máxima potencia aparente inyectada por generador
+
+sgmax_n(GP3)..  (9.5478E-6)*Pgen2(GP3) + (0)*Qgen2(GP3) =L= 6.4E-7 ;
+     
+      (LHS = 2.27901212099702E-11)
+     
+sgmax_n(GP4)..  (0)*Pgen2(GP4) + (0)*Qgen2(GP4) =L= 0 ; (LHS = 0)
+     
+sgmax_n(GP5)..  (1.432172E-5)*Pgen2(GP5) + (0)*Qgen2(GP5) =L= 1.44E-6 ;
+     
+      (LHS = 5.12779159396902E-11)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                        11/18/25 12:44:57 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 537
+
+
+---- obj  objetivo
+
+obj
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eqobj
+
+
+---- Pgen  activa generada
+
+Pgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(3)
+
+Pgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(5)
+
+Pgen(GB5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(5)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- Qgen  reactiva generada
+
+Qgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(3)
+
+Qgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+Qgen(GB5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- vv  tension nodal
+
+vv(0)
+                (.LO, .L, .UP = 0.1, 1, 1.5)
+       (0)      eqp(0)
+       (0)      eqq(0)
+     -800       eqa1(0)
+     (400)      eqa1(1)
+     (400)      eqa1(12)
+       (0)      eqa2(1)
+       (0)      eqa2(12)
+       (0)      eqa3(1)
+       (0)      eqa3(12)
+       -0.0003  eqa4(0)
+       (0.0002) eqa4(1)
+       (0.0002) eqa4(12)
+      (-2)      eqb1(0)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_02,0,12)
+       (0)      eir2(Line_01,0,1)
+       (0)      eir2(Line_02,0,12)
+
+vv(1)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0)      eqp(1)
+       (0)      eqq(1)
+     (400)      eqa1(0)
+     -404.6652  eqa1(1)
+       (4.6652) eqa1(2)
+       (0)      eqa2(0)
+       (0)      eqa2(2)
+       (0)      eqa3(0)
+       (0)      eqa3(2)
+       (0.0002) eqa4(0)
+       -3.0559  eqa4(1)
+       (3.0557) eqa4(2)
+      (-2)      eqb1(1)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_1,1,2)
+       (0)      eir2(Line_01,0,1)
+       (0)      eir2(Line_1,1,2)
+
+vv(2)
+                (.LO, .L, .UP = 0.1, 1, 1.5)
+       (0)      eqp(2)
+       (0)      eqq(2)
+       (4.6652) eqa1(1)
+      -15.1319  eqa1(2)
+      (10.4667) eqa1(3)
+       (0)      eqa2(1)
+       (0)      eqa2(3)
+       (0)      eqa3(1)
+       (0)      eqa3(3)
+       (3.0557) eqa4(1)
+       -8.5333  eqa4(2)
+       (5.4776) eqa4(3)
+      (-2)      eqb1(2)
+      (-2)      eqb2(Line_1,1,2)
+      (-2)      eqb2(Line_2,2,3)
+       (0)      eir2(Line_1,1,2)
+       (0)      eir2(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- d  angulo de la tension nodal
+
+d(0)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(12)
+      (-0.0003) eqa2(0)
+       (0.0002) eqa2(1)
+       (0.0002) eqa2(12)
+     (800)      eqa3(0)
+    (-400)      eqa3(1)
+    (-400)      eqa3(12)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(12)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_02,0,12)
+       (0)      eir2(Line_01,0,1)
+       (0)      eir2(Line_02,0,12)
+
+d(1)
+                (.LO, .L, .UP = 0, 0, 0)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+       (0.0002) eqa2(0)
+      (-3.0559) eqa2(1)
+       (3.0557) eqa2(2)
+    (-400)      eqa3(0)
+     (404.6652) eqa3(1)
+      (-4.6652) eqa3(2)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_1,1,2)
+       (0)      eir2(Line_01,0,1)
+       (0)      eir2(Line_1,1,2)
+
+d(2)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+       (0)      eqa1(3)
+       (3.0557) eqa2(1)
+      (-8.5333) eqa2(2)
+       (5.4776) eqa2(3)
+      (-4.6652) eqa3(1)
+      (15.1319) eqa3(2)
+     (-10.4667) eqa3(3)
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqa4(3)
+       (0)      eqb3(Line_1,1,2)
+       (0)      eqb3(Line_2,2,3)
+       (0)      eir2(Line_1,1,2)
+       (0)      eir2(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va1  variable auxiliar 1
+
+va1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa1(0)
+
+va1(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa1(1)
+
+va1(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va2  variable auxiliar 2
+
+va2(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa2(0)
+
+va2(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa2(1)
+
+va2(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa2(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va3  variable auxiliar 3
+
+va3(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+        1       eqa3(0)
+
+va3(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa3(1)
+
+va3(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa3(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va4  variable auxiliar 4
+
+va4(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+        1       eqa4(0)
+
+va4(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa4(1)
+
+va4(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa4(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb1  variable auxiliar b1
+
+vb1(0)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(0)
+
+vb1(1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(1)
+
+vb1(2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb2  variable auxiliar b2
+
+vb2(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_01,0,1)
+
+vb2(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_02,0,12)
+
+vb2(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- vb3  variable auxiliar b3
+
+vb3(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_01,0,1)
+
+vb3(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_02,0,12)
+
+vb3(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- ir2  intensidad de rama al cuadrado
+
+ir2(0,1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       e_ir_max(Line_01,0,1)
+        1       eir2(Line_01,0,1)
+
+ir2(0,12)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       e_ir_max(Line_02,0,12)
+        1       eir2(Line_02,0,12)
+
+ir2(1,2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       e_ir_max(Line_1,1,2)
+        1       eir2(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- i2  intensidad nudo 2
+
+i2
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i2
+
+
+---- i1  intensidad nudo 1
+
+i1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(0)
+
+i1(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(1)
+
+i1(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Lambda  
+
+Lambda
+                (.LO, .L, .UP = 1, 1, 1)
+       -0.043   eqp(3)
+       -0.0451  eqp(5)
+       -0.0342  eqp(6)
+       -0.0083  eqp(7)
+       -0.0366  eqp(8)
+       -0.0617  eqp(9)
+       -0.037   eqp(10)
+       -0.0206  eqp(11)
+       -0.0159  eqq(3)
+       -0.0279  eqq(5)
+       -0.0212  eqq(6)
+       -0.0017  eqq(7)
+       -0.0227  eqq(8)
+       -0.0125  eqq(9)
+       -0.0199  eqq(10)
+       -0.0128  eqq(11)
+
+
+---- LambdaG  
+
+LambdaG(GP3)
+                (.LO, .L, .UP = 1, 1, 1)
+ (4.7739000E-6) eqp(3)
+
+LambdaG(GP5)
+                (.LO, .L, .UP = 1, 1, 1)
+ (7.1608600E-6) eqp(5)
+
+LambdaG(GB5)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0.0034) eqp(5)
+
+REMAINING 13 ENTRIES SKIPPED
+
+---- Pgen2  
+
+Pgen2(GP3)
+                (.LO, .L, .UP = 4.7739E-6, 4.7739E-6, 4.7739E-6)
+       (1)      eqp(3)
+ (9.5478000E-6) sgmax_n(GP3)
+
+Pgen2(GP4)
+                (.LO, .L, .UP = 0, 0, 0)
+       (0)      sgmax_n(GP4)
+
+Pgen2(GP5)
+                (.LO, .L, .UP = 7.16086E-6, 7.16086E-6, 7.16086E-6)
+       (1)      eqp(5)
+ (1.4321720E-5) sgmax_n(GP5)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Qgen2  
+
+Qgen2(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(3)
+       (0)      sgmax_n(GP3)
+
+Qgen2(GP4)
+                (.LO, .L, .UP = 0, 0, 0)
+       (0)      sgmax_n(GP4)
+
+Qgen2(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+       (0)      sgmax_n(GP5)
+
+REMAINING 16 ENTRIES SKIPPED
+GAMS Rev 147  x86_64/MS Windows                        11/18/25 12:44:57 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE OPF Using NLP From line 537
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          15     SINGLE EQUATIONS          241
+BLOCKS OF VARIABLES          19     SINGLE VARIABLES          292
+NON ZERO ELEMENTS           985     NON LINEAR N-Z            698
+DERIVATIVE POOL              17     CONSTANT POOL              60
+CODE LENGTH               5,763
+
+
+GENERATION TIME      =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                        11/18/25 12:44:57 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 537
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   OPF                 OBJECTIVE  obj
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  CONOPT              FROM LINE  537
+
+**** SOLVER STATUS     1 NORMAL COMPLETION         
+**** MODEL STATUS      2 LOCALLY OPTIMAL           
+**** OBJECTIVE VALUE                0.2935
+
+ RESOURCE USAGE, LIMIT          0.016      1000.000
+ ITERATION COUNT, LIMIT        25         10000
+ EVALUATION ERRORS              0             0
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ 
+ ** Warning **  The number of nonlinear derivatives equal to zero
+                in the initial point is large (= 35 percent).
+                A better initial point will probably help the
+                optimization.
+ 
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 4.3 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+ 
+ CONOPT time Total                            0.035 seconds
+   of which: Function evaluations             0.001 =  2.9%
+             1st Derivative evaluations       0.003 =  8.6%
+ 
+ Workspace           =     0.92 Mbytes
+    Estimate         =     0.92 Mbytes
+    Max used         =     0.38 Mbytes
+
+**** ERRORS/WARNINGS IN EQUATION eq_i2
+     8 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_01,0,1)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_02,0,12)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_1,1,2)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_2,2,3)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_3,3,4)
+     6 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_4,4,5)
+     12 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_5,5,6)
+     12 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_7,7,8)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_8,8,9)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_9,9,10)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_10,10,11)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_12,8,3)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_14,12,13)
+     5 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(Line_15,13,14)
+     6 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(TC1,8,F8)
+     28 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(TC2,14,F14)
+     25 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+**** ERRORS/WARNINGS IN EQUATION eir2(TC3,15,F15)
+     31 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU eqobj           .         .         .        1.000      
+
+  eqobj  ecuacion objetivo
+
+---- EQU eqp  balance activa
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .        1.000      
+1        .         .         .        1.001      
+2        .         .         .        1.106      
+3        .         .         .        1.163      
+4        .         .         .        1.165      
+5        .         .         .        1.169      
+6        .         .         .        1.176      
+7        .         .         .        1.173      
+8        .         .         .        1.174      
+9        .         .         .        1.178      
+10       .         .         .        1.182      
+11       .         .         .        1.182      
+12       .         .         .        1.000      
+13       .         .         .        1.000      
+14       .         .         .        1.000      
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .        1.174      
+F14      .         .         .        1.000      
+
+---- EQU eqq  balance reactiva
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .         EPS       
+1        .         .         .    7.5124E-4      
+2        .         .         .        0.055      
+3        .         .         .        0.083      
+4        .         .         .        0.085      
+5        .         .         .        0.088      
+6        .         .         .        0.092      
+7        .         .         .        0.089      
+8        .         .         .        0.089      
+9        .         .         .        0.090      
+10       .         .         .        0.093      
+11       .         .         .        0.093      
+12       .         .         .         EPS       
+13       .         .         .         EPS       
+14       .         .         .         EPS       
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .        0.089      
+F14      .         .         .         EPS       
+
+---- EQU eqa1  ecuacion auxiliar 1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .        1.001      
+1        .         .         .        1.001      
+2        .         .         .        1.041      
+3        .         .         .        1.062      
+4        .         .         .        1.063      
+5        .         .         .        1.064      
+6        .         .         .        1.067      
+7        .         .         .        1.066      
+8        .         .         .        1.066      
+9        .         .         .        1.067      
+10       .         .         .        1.069      
+11       .         .         .        1.069      
+12       .         .         .        1.001      
+13       .         .         .        1.001      
+14       .         .         .        1.001      
+15       .         .         .         EPS       
+F15      .         .         .         .         
+F8       .         .         .        1.066      
+F14      .         .         .        1.001      
+
+---- EQU eqa2  ecuacion auxiliar 2
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .        1.001      
+1        .         .         .        1.001      
+2        .         .         .        1.041      
+3        .         .         .        1.062      
+4        .         .         .        1.063      
+5        .         .         .        1.064      
+6        .         .         .        1.067      
+7        .         .         .        1.066      
+8        .         .         .        1.066      
+9        .         .         .        1.067      
+10       .         .         .        1.069      
+11       .         .         .        1.069      
+12       .         .         .        1.001      
+13       .         .         .        1.001      
+14       .         .         .        1.001      
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .        1.066      
+F14      .         .         .        1.001      
+
+---- EQU eqa3  ecuacion auxiliar 3
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .         EPS       
+1        .         .         .    7.5124E-4      
+2        .         .         .        0.052      
+3        .         .         .        0.076      
+4        .         .         .        0.078      
+5        .         .         .        0.080      
+6        .         .         .        0.083      
+7        .         .         .        0.081      
+8        .         .         .        0.080      
+9        .         .         .        0.082      
+10       .         .         .        0.084      
+11       .         .         .        0.084      
+12       .         .         .         EPS       
+13       .         .         .         EPS       
+14       .         .         .    6.956E-10      
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .        0.080      
+F14      .         .         .    6.956E-10      
+
+---- EQU eqa4  ecuacion auxiliar 4
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .         EPS       
+1        .         .         .    7.5124E-4      
+2        .         .         .        0.052      
+3        .         .         .        0.076      
+4        .         .         .        0.078      
+5        .         .         .        0.080      
+6        .         .         .        0.083      
+7        .         .         .        0.081      
+8        .         .         .        0.080      
+9        .         .         .        0.082      
+10       .         .         .        0.084      
+11       .         .         .        0.084      
+12       .         .         .         EPS       
+13       .         .         .         EPS       
+14       .         .         .    6.956E-10      
+15       .         .         .         .         
+F15      .         .         .         EPS       
+F8       .         .         .        0.080      
+F14      .         .         .    6.956E-10      
+
+---- EQU eqb1  ecuacion auxiliar b1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .         EPS       
+1        .         .         .         EPS       
+2        .         .         .         EPS       
+3        .         .         .         EPS       
+4        .         .         .         EPS       
+5        .         .         .         EPS       
+6        .         .         .         EPS       
+7        .         .         .         EPS       
+8        .         .         .         EPS       
+9        .         .         .         EPS       
+10       .         .         .         EPS       
+11       .         .         .         EPS       
+12       .         .         .         EPS       
+13       .         .         .         EPS       
+14       .         .         .         EPS       
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .         EPS       
+F14      .         .         .         EPS       
+
+---- EQU eqb2  ecuacion auxiliar b2
+
+                  LOWER     LEVEL     UPPER    MARGINAL
+
+Line_01.0 .1        .         .         .         EPS       
+Line_02.0 .12       .         .         .         EPS       
+Line_1 .1 .2        .         .         .         EPS       
+Line_2 .2 .3        .         .         .         EPS       
+Line_3 .3 .4        .         .         .         EPS       
+Line_4 .4 .5        .         .         .         EPS       
+Line_5 .5 .6        .         .         .         EPS       
+Line_7 .7 .8        .         .         .         EPS       
+Line_8 .8 .9        .         .         .         EPS       
+Line_9 .9 .10       .         .         .         EPS       
+Line_10.10.11       .         .         .         EPS       
+Line_12.8 .3        .         .         .         EPS       
+Line_14.12.13       .         .         .         EPS       
+Line_15.13.14       .         .         .         EPS       
+TC1    .8 .F8       .         .         .         EPS       
+TC2    .14.F14      .         .         .         EPS       
+TC3    .15.F15      .         .         .         EPS       
+
+---- EQU eqb3  ecuacion auxiliar b3
+
+                  LOWER     LEVEL     UPPER    MARGINAL
+
+Line_01.0 .1        .         .         .         EPS       
+Line_02.0 .12       .         .         .         EPS       
+Line_1 .1 .2        .         .         .         EPS       
+Line_2 .2 .3        .         .         .         EPS       
+Line_3 .3 .4        .         .         .         EPS       
+Line_4 .4 .5        .         .         .         EPS       
+Line_5 .5 .6        .         .         .         EPS       
+Line_7 .7 .8        .         .         .         EPS       
+Line_8 .8 .9        .         .         .         EPS       
+Line_9 .9 .10       .         .         .         EPS       
+Line_10.10.11       .         .         .         EPS       
+Line_12.8 .3        .         .         .         EPS       
+Line_14.12.13       .         .         .         .         
+Line_15.13.14       .         .         .         .         
+TC1    .8 .F8       .         .         .         .         
+TC2    .14.F14      .         .         .         .         
+TC3    .15.F15      .         .         .         .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU eq_i2           .         .         .         EPS       
+
+  eq_i2  intensidad i2
+
+---- EQU eq_i1  intensidad i1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .         .         .         EPS       
+1        .         .         .         EPS       
+2        .         .         .         EPS       
+3        .         .         .         EPS       
+4        .         .         .         EPS       
+5        .         .         .         EPS       
+6        .         .         .         EPS       
+7        .         .         .         EPS       
+8        .         .         .         EPS       
+9        .         .         .         EPS       
+10       .         .         .         EPS       
+11       .         .         .         EPS       
+12       .         .         .         EPS       
+13       .         .         .         EPS       
+14       .         .         .         EPS       
+15       .         .         .         EPS       
+F15      .         .         .         EPS       
+F8       .         .         .         EPS       
+F14      .         .         .         EPS       
+
+---- EQU e_ir_max  
+
+                  LOWER     LEVEL     UPPER    MARGINAL
+
+Line_01.0 .1       -INF      0.329     0.693      .         
+Line_02.0 .12      -INF       .        0.693      .         
+Line_1 .1 .2       -INF      0.329     0.693      .         
+Line_2 .2 .3       -INF      0.329     0.693      .         
+Line_3 .3 .4       -INF      0.099     0.693      .         
+Line_4 .4 .5       -INF      0.099     0.693      .         
+Line_5 .5 .6       -INF      0.044     0.693      .         
+Line_7 .7 .8       -INF      0.002     0.693      .         
+Line_8 .8 .9       -INF      0.134     0.693      .         
+Line_9 .9 .10      -INF      0.070     0.693      .         
+Line_10.10.11      -INF      0.027     0.693      .         
+Line_12.8 .3       -INF      0.181     0.693      .         
+Line_14.12.13      -INF       .        0.693      .         
+Line_15.13.14      -INF       .        0.693      .         
+TC1    .8 .F8      -INF       .        0.693      .         
+TC2    .14.F14     -INF       .        0.693      .         
+TC3    .15.F15     -INF       .        0.693      .         
+
+---- EQU eir2  intensidad de rama al cuadrado
+
+                  LOWER     LEVEL     UPPER    MARGINAL
+
+Line_01.0 .1        .         .         .         EPS       
+Line_02.0 .12       .         .         .         EPS       
+Line_1 .1 .2        .         .         .         EPS       
+Line_2 .2 .3        .         .         .         EPS       
+Line_3 .3 .4        .         .         .         EPS       
+Line_4 .4 .5        .         .         .         EPS       
+Line_5 .5 .6        .         .         .         EPS       
+Line_7 .7 .8        .         .         .         EPS       
+Line_8 .8 .9        .         .         .         EPS       
+Line_9 .9 .10       .         .         .         EPS       
+Line_10.10.11       .         .         .         EPS       
+Line_12.8 .3        .         .         .         EPS       
+Line_14.12.13       .         .         .         EPS       
+Line_15.13.14       .         .         .         EPS       
+TC1    .8 .F8       .         .         .         EPS       
+TC2    .14.F14      .         .         .         EPS       
+TC3    .15.F15      .         .         .         EPS       
+
+---- EQU sgmax_n  máxima potencia aparente inyectada por generador
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3         -INF       .    6.4000E-7      .         
+GP4         -INF       .         .         .         
+GP5         -INF       .    1.4400E-6      .         
+GB5         -INF  1.1569E-5     0.002      .         
+GFC5        -INF       .         .         .         
+GP6         -INF       .    1.4400E-6      .         
+GWT7        -INF  8.0380E-5     0.004      .         
+GP8         -INF       .    1.4400E-6      .         
+GP9         -INF       .    1.4400E-6      .         
+GCHPD9      -INF  1.7487E-6 1.5376E-4      .         
+GCHPFC9     -INF  4.3218E-6 7.1910E-5      .         
+GP10        -INF       .    2.5600E-6      .         
+GB10        -INF  1.1569E-5     0.002      .         
+GFC10       -INF       .         .         .         
+GP11        -INF       .    1.6000E-7      .         
+GF0         -INF       .         .         .         
+GF15        -INF       .         .         .         
+GF8         -INF       .         .         .         
+GF14        -INF       .         .         .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR obj            -INF      0.293     +INF       .         
+
+  obj  objetivo
+
+---- VAR Pgen  activa generada
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3          .         .         .       -1.163      
+GP5          .         .         .       -1.169      
+GB5          .         .         .       -1.169      
+GP6          .         .         .       -1.176      
+GWT7         .         .         .       -1.173      
+GP8          .         .         .       -1.174      
+GP9          .         .         .       -1.178      
+GCHPD9       .         .         .       -1.178      
+GCHPFC9      .         .         .       -1.178      
+GP10         .         .         .       -1.182      
+GB10         .         .         .       -1.182      
+GP11         .         .         .       -1.182      
+GF0      -100.000     0.293   100.000      .         
+GF15         .         .         .         EPS       
+GF8          .         .         .       -1.174      
+GF14         .         .         .       -1.000      
+
+---- VAR Qgen  reactiva generada
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3          .         .         .       -0.083      
+GP5          .         .         .       -0.088      
+GB5          .         .         .       -0.088      
+GP6          .         .         .       -0.092      
+GWT7         .         .         .       -0.089      
+GP8          .         .         .       -0.089      
+GP9          .         .         .       -0.090      
+GCHPD9       .         .         .       -0.090      
+GCHPFC9      .         .         .       -0.090      
+GP10         .         .         .       -0.093      
+GB10         .         .         .       -0.093      
+GP11         .         .         .       -0.093      
+GF0      -100.000     0.150   100.000      .         
+GF15         .         .         .         EPS       
+GF8          .         .         .       -0.089      
+GF14         .         .         .         EPS       
+
+---- VAR vv  tension nodal
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       0.100     1.001     1.500      .         
+1       1.000     1.000     1.000    -0.064      
+2       0.100     0.941     1.500      .         
+3       0.100     0.913     1.500      .         
+4       0.100     0.912     1.500      .         
+5       0.100     0.910     1.500      .         
+6       0.100     0.907     1.500      .         
+7       0.100     0.908     1.500      .         
+8       0.100     0.908     1.500      .         
+9       0.100     0.906     1.500      .         
+10      0.100     0.905     1.500      .         
+11      0.100     0.904     1.500      .         
+12      0.100     1.001     1.500      .         
+13      0.100     1.001     1.500      .         
+14      0.100     1.001     1.500      .         
+15      0.100     1.000     1.500      EPS       
+F15     0.100     1.000     1.500      .         
+F8      0.100     0.908     1.500      .         
+F14     0.100     1.001     1.500      .         
+
+---- VAR d  angulo de la tension nodal
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0      -3.142 -3.753E-4     3.142      .         
+1        .         .         .         EPS       
+2      -3.142    -0.007     3.142      .         
+3      -3.142    -0.007     3.142      .         
+4      -3.142    -0.007     3.142      .         
+5      -3.142    -0.007     3.142      .         
+6      -3.142    -0.006     3.142      .         
+7      -3.142    -0.008     3.142      .         
+8      -3.142    -0.008     3.142      .         
+9      -3.142    -0.008     3.142      .         
+10     -3.142    -0.007     3.142      .         
+11     -3.142    -0.007     3.142      .         
+12     -3.142 -3.753E-4     3.142      .         
+13     -3.142 -3.753E-4     3.142      .         
+14     -3.142 -3.753E-4     3.142      .         
+15     -3.142      .        3.142      EPS       
+F15    -3.142      .        3.142      .         
+F8     -3.142    -0.008     3.142      .         
+F14    -3.142 -3.753E-4     3.142      .         
+
+---- VAR va1  variable auxiliar 1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       -INF      0.293     +INF       .         
+1       -INF     -0.019     +INF       .         
+2       -INF      0.018     +INF       .         
+3       -INF     -0.056     +INF       .         
+4       -INF      0.006     +INF       .         
+5       -INF     -0.049     +INF       .         
+6       -INF     -0.041     +INF       .         
+7       -INF  1.5124E-4     +INF       .         
+8       -INF     -0.025     +INF       .         
+9       -INF     -0.062     +INF       .         
+10      -INF     -0.040     +INF       .         
+11      -INF     -0.025     +INF       .         
+12      -INF  1.8498E-9     +INF       .         
+13      -INF  -8.49E-10     +INF       .         
+14      -INF  -1.001E-9     +INF       .         
+15      -INF       .        +INF       .         
+F15     -INF       .        +INF       .         
+F8      -INF       .        +INF       .         
+F14     -INF       .        +INF       .         
+
+---- VAR va2  variable auxiliar 2
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       -INF  -6.005E-8     +INF       .         
+1       -INF      0.019     +INF       .         
+2       -INF     -0.018     +INF       .         
+3       -INF      0.008     +INF       .         
+4       -INF     -0.006     +INF       .         
+5       -INF      0.004     +INF       .         
+6       -INF      0.003     +INF       .         
+7       -INF  6.0049E-4     +INF       .         
+8       -INF     -0.015     +INF       .         
+9       -INF     -0.002     +INF       .         
+10      -INF      0.003     +INF       .         
+11      -INF      0.002     +INF       .         
+12      -INF  -1.850E-9     +INF       .         
+13      -INF  8.490E-10     +INF       .         
+14      -INF  1.0007E-9     +INF       .         
+15      -INF       .        +INF       .         
+F15     -INF       .        +INF       .         
+F8      -INF       .        +INF       .         
+F14     -INF       .        +INF       .         
+
+---- VAR va3  variable auxiliar 3
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       -INF      0.150     +INF       .         
+1       -INF     -0.180     +INF       .         
+2       -INF      0.027     +INF       .         
+3       -INF     -0.013     +INF       .         
+4       -INF      0.015     +INF       .         
+5       -INF     -0.006     +INF       .         
+6       -INF     -0.010     +INF       .         
+7       -INF     -0.002     +INF       .         
+8       -INF      0.030     +INF       .         
+9       -INF      0.007     +INF       .         
+10      -INF     -0.010     +INF       .         
+11      -INF     -0.006     +INF       .         
+12      -INF  1.7673E-9     +INF       .         
+13      -INF  -1.74E-10     +INF       .         
+14      -INF  -1.594E-9     +INF       .         
+15      -INF       .        +INF       .         
+F15     -INF       .        +INF       .         
+F8      -INF  2.380E-18     +INF       .         
+F14     -INF  -9.85E-19     +INF       .         
+
+---- VAR va4  variable auxiliar 4
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       -INF  1.1731E-7     +INF       .         
+1       -INF      0.180     +INF       .         
+2       -INF     -0.027     +INF       .         
+3       -INF     -0.005     +INF       .         
+4       -INF     -0.015     +INF       .         
+5       -INF     -0.024     +INF       .         
+6       -INF     -0.013     +INF       .         
+7       -INF  4.7792E-5     +INF       .         
+8       -INF     -0.055     +INF       .         
+9       -INF     -0.021     +INF       .         
+10      -INF     -0.012     +INF       .         
+11      -INF     -0.008     +INF       .         
+12      -INF  -1.767E-9     +INF       .         
+13      -INF  1.738E-10     +INF       .         
+14      -INF  1.5935E-9     +INF       .         
+15      -INF       .        +INF       .         
+F15     -INF       .        +INF       .         
+F8      -INF  -2.38E-18     +INF       .         
+F14     -INF  9.848E-19     +INF       .         
+
+---- VAR vb1  variable auxiliar b1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0        .        1.001     +INF       .         
+1        .        1.000     +INF       .         
+2        .        0.886     +INF       .         
+3        .        0.834     +INF       .         
+4        .        0.832     +INF       .         
+5        .        0.828     +INF       .         
+6        .        0.823     +INF       .         
+7        .        0.825     +INF       .         
+8        .        0.825     +INF       .         
+9        .        0.821     +INF       .         
+10       .        0.818     +INF       .         
+11       .        0.818     +INF       .         
+12       .        1.001     +INF       .         
+13       .        1.001     +INF       .         
+14       .        1.001     +INF       .         
+15       .        1.000     +INF       .         
+F15      .        1.000     +INF       .         
+F8       .        0.825     +INF       .         
+F14      .        1.001     +INF       .         
+
+---- VAR vb2  variable auxiliar b2
+
+          LOWER     LEVEL     UPPER    MARGINAL
+
+0 .1        .        2.001     +INF       .         
+0 .12       .        2.003     +INF       .         
+1 .2        .        1.883     +INF       .         
+2 .3        .        1.720     +INF       .         
+3 .4        .        1.666     +INF       .         
+4 .5        .        1.660     +INF       .         
+5 .6        .        1.651     +INF       .         
+7 .8        .        1.649     +INF       .         
+8 .3        .        1.659     +INF       .         
+8 .9        .        1.646     +INF       .         
+8 .F8       .        1.649     +INF       .         
+9 .10       .        1.640     +INF       .         
+10.11       .        1.636     +INF       .         
+12.13       .        2.003     +INF       .         
+13.14       .        2.003     +INF       .         
+14.F14      .        2.003     +INF       .         
+15.F15      .        2.000     +INF       .         
+
+---- VAR vb3  variable auxiliar b3
+
+          LOWER     LEVEL     UPPER    MARGINAL
+
+0 .1        .        1.000     +INF       .         
+0 .12       .        1.000     +INF       .         
+1 .2        .        1.000     +INF       .         
+2 .3        .        1.000     +INF       .         
+3 .4        .        1.000     +INF       .         
+4 .5        .        1.000     +INF       .         
+5 .6        .        1.000     +INF       .         
+7 .8        .        1.000     +INF       .         
+8 .3        .        1.000     +INF       .         
+8 .9        .        1.000     +INF       .         
+8 .F8       .        1.000     +INF       EPS       
+9 .10       .        1.000     +INF       .         
+10.11       .        1.000     +INF       .         
+12.13       .        1.000     +INF       EPS       
+13.14       .        1.000     +INF       EPS       
+14.F14      .        1.000     +INF       EPS       
+15.F15      .        1.000     +INF       EPS       
+
+---- VAR ir2  intensidad de rama al cuadrado
+
+          LOWER     LEVEL     UPPER    MARGINAL
+
+0 .1       -INF      0.329     +INF       .         
+0 .12      -INF  3.5383E-9     +INF       .         
+1 .2       -INF      0.329     +INF       .         
+2 .3       -INF      0.329     +INF       .         
+3 .4       -INF      0.099     +INF       .         
+4 .5       -INF      0.099     +INF       .         
+5 .6       -INF      0.044     +INF       .         
+7 .8       -INF      0.002     +INF       .         
+8 .3       -INF      0.181     +INF       .         
+8 .9       -INF      0.134     +INF       .         
+8 .F8      -INF       .        +INF       .         
+9 .10      -INF      0.070     +INF       .         
+10.11      -INF      0.027     +INF       .         
+12.13      -INF  3.5383E-9     +INF       .         
+13.14      -INF  3.5383E-9     +INF       .         
+14.F14     -INF       .        +INF       .         
+15.F15     -INF       .        +INF       .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR i2             -INF       .        +INF       .         
+
+  i2  intensidad nudo 2
+
+---- VAR i1  intensidad nudo 1
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+0       -INF       .        +INF       .         
+1       -INF       .        +INF       .         
+2       -INF       .        +INF       .         
+3       -INF      0.050     +INF       .         
+4       -INF       .        +INF       .         
+5       -INF      0.058     +INF       .         
+6       -INF      0.044     +INF       .         
+7       -INF      0.009     +INF       .         
+8       -INF      0.047     +INF       .         
+9       -INF      0.070     +INF       .         
+10      -INF      0.046     +INF       .         
+11      -INF      0.027     +INF       .         
+12      -INF       .        +INF       .         
+13      -INF       .        +INF       .         
+14      -INF       .        +INF       .         
+15      -INF       .        +INF       .         
+F15     -INF       .        +INF       .         
+F8      -INF       .        +INF       .         
+F14     -INF       .        +INF       .         
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR Lambda         1.000     1.000     1.000     0.348      
+
+---- VAR LambdaG  
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3         1.000     1.000     1.000 -5.550E-6      
+GP5         1.000     1.000     1.000 -8.375E-6      
+GB5         1.000     1.000     1.000    -0.004      
+GP6         1.000     1.000     1.000 -8.419E-6      
+GWT7        1.000     1.000     1.000    -0.011      
+GP8         1.000     1.000     1.000 -8.404E-6      
+GP9         1.000     1.000     1.000 -8.433E-6      
+GCHPD9      1.000     1.000     1.000    -0.002      
+GCHPFC9     1.000     1.000     1.000    -0.002      
+GP10        1.000     1.000     1.000 -1.128E-5      
+GB10        1.000     1.000     1.000    -0.004      
+GP11        1.000     1.000     1.000 -2.823E-6      
+GF0         1.000     1.000     1.000      EPS       
+GF15        1.000     1.000     1.000      EPS       
+GF8         1.000     1.000     1.000      EPS       
+GF14        1.000     1.000     1.000      EPS       
+
+---- VAR Pgen2  
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3     4.7739E-6 4.7739E-6 4.7739E-6    -1.163      
+GP4          .         .         .         EPS       
+GP5     7.1609E-6 7.1609E-6 7.1609E-6    -1.169      
+GB5         0.003     0.003     0.003    -1.169      
+GFC5         .         .         .         EPS       
+GP6     7.1609E-6 7.1609E-6 7.1609E-6    -1.176      
+GWT7        0.009     0.009     0.009    -1.173      
+GP8     7.1609E-6 7.1609E-6 7.1609E-6    -1.174      
+GP9     7.1609E-6 7.1609E-6 7.1609E-6    -1.178      
+GCHPD9      0.001     0.001     0.001    -1.178      
+GCHPFC9     0.002     0.002     0.002    -1.178      
+GP10    9.5478E-6 9.5478E-6 9.5478E-6    -1.182      
+GB10        0.003     0.003     0.003    -1.182      
+GFC10        .         .         .         EPS       
+GP11    2.3869E-6 2.3869E-6 2.3869E-6    -1.182      
+GF0          .         .         .       -1.000      
+GF15         .         .         .         EPS       
+GF8          .         .         .       -1.174      
+GF14         .         .         .       -1.000      
+
+---- VAR Qgen2  
+
+           LOWER     LEVEL     UPPER    MARGINAL
+
+GP3          .         .         .       -0.083      
+GP4          .         .         .         EPS       
+GP5          .         .         .       -0.088      
+GB5          .         .         .       -0.088      
+GFC5         .         .         .         EPS       
+GP6          .         .         .       -0.092      
+GWT7         .         .         .       -0.089      
+GP8          .         .         .       -0.089      
+GP9          .         .         .       -0.090      
+GCHPD9       .         .         .       -0.090      
+GCHPFC9      .         .         .       -0.090      
+GP10         .         .         .       -0.093      
+GB10         .         .         .       -0.093      
+GFC10        .         .         .         EPS       
+GP11         .         .         .       -0.093      
+GF0          .         .         .         EPS       
+GF15         .         .         .         EPS       
+GF8          .         .         .       -0.089      
+GF14         .         .         .         EPS       
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS Rev 147  x86_64/MS Windows                        11/18/25 12:44:57 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 537
+
+
+**** SOLVER STATUS FILE LISTED BELOW
+=0 C O N O P T 3 Feb 14, 2007 WEX.CO.NA 22.4 017.059.041.WEI Library 314Q
+=0 C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+=1
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+=2
+=1
+ Using default options.
+ 
+=2
+    1  INPUT                                                                  (D
+                                                                         EFAULT)
+    2  BRANCH * MAJERR MINERR JACERR                                          (D
+                                                                         EFAULT)
+    3  OPTIMIZE                                                               (D
+                                                                         EFAULT)
+    4  BRANCH * * * * * * MAJERR                                              (D
+                                                                         EFAULT)
+    5  OUTPUT                                                                 (D
+                                                                         EFAULT)
+    6  EXIT                                                                   (D
+                                                                         EFAULT)
+    7  MAJERR MESSAGE MAJOR ERROR - TERMINATE                                 (D
+                                                                         EFAULT)
+    8  EXIT                                                                   (D
+                                                                         EFAULT)
+    9  MINERR MESSAGE MINOR ERROR - TERMINATE                                 (D
+                                                                         EFAULT)
+   10  EXIT                                                                   (D
+                                                                         EFAULT)
+   11  JACERR MESSAGE FUNCTION OR DERIVATIVE ERROR                            (D
+                                                                         EFAULT)
+   12  OUTPUT                                                                 (D
+                                                                         EFAULT)
+   13  EXIT                                                                   (D
+                                                                         EFAULT)
+ 
+  ***  Line    1  INPUT
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     206 !sqrt: GRAD SINGULAR: x = 0
+=5     207 !sqrt: GRAD SINGULAR: x = 0
+=5     208 !sqrt: GRAD SINGULAR: x = 0
+=5     209 !sqrt: GRAD SINGULAR: x = 0
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     213 !sqrt: GRAD SINGULAR: x = 0
+=5     214 !sqrt: GRAD SINGULAR: x = 0
+=5     215 !sqrt: GRAD SINGULAR: x = 0
+=5     216 !sqrt: GRAD SINGULAR: x = 0
+=5     217 !sqrt: GRAD SINGULAR: x = 0
+=5     218 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     206 !sqrt: GRAD SINGULAR: x = 0
+=5     207 !sqrt: GRAD SINGULAR: x = 0
+=5     208 !sqrt: GRAD SINGULAR: x = 0
+=5     209 !sqrt: GRAD SINGULAR: x = 0
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     213 !sqrt: GRAD SINGULAR: x = 0
+=5     214 !sqrt: GRAD SINGULAR: x = 0
+=5     215 !sqrt: GRAD SINGULAR: x = 0
+=5     216 !sqrt: GRAD SINGULAR: x = 0
+=5     217 !sqrt: GRAD SINGULAR: x = 0
+=5     218 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+ 
+  ***  Line    2  BRANCH with Lbranch =  1
+ 
+  ***  Line    3  OPTIMIZE
+ 
+Search for a first feasible solution
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.0722781000E+01 (Input point)
+=1
+ 
+ ** Warning **  The number of nonlinear derivatives equal to zero
+                in the initial point is large (= 35 percent).
+                A better initial point will probably help the
+                optimization.
+ 
+=2
+=1
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 4.3 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+=2
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     206 !sqrt: GRAD SINGULAR: x = 0
+=5     207 !sqrt: GRAD SINGULAR: x = 0
+=5     208 !sqrt: GRAD SINGULAR: x = 0
+=5     209 !sqrt: GRAD SINGULAR: x = 0
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     213 !sqrt: GRAD SINGULAR: x = 0
+=5     214 !sqrt: GRAD SINGULAR: x = 0
+=5     215 !sqrt: GRAD SINGULAR: x = 0
+=5     216 !sqrt: GRAD SINGULAR: x = 0
+=5     217 !sqrt: GRAD SINGULAR: x = 0
+=5     218 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     206 !sqrt: GRAD SINGULAR: x = 0
+=5     207 !sqrt: GRAD SINGULAR: x = 0
+=5     208 !sqrt: GRAD SINGULAR: x = 0
+=5     209 !sqrt: GRAD SINGULAR: x = 0
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     213 !sqrt: GRAD SINGULAR: x = 0
+=5     214 !sqrt: GRAD SINGULAR: x = 0
+=5     215 !sqrt: GRAD SINGULAR: x = 0
+=5     216 !sqrt: GRAD SINGULAR: x = 0
+=5     217 !sqrt: GRAD SINGULAR: x = 0
+=5     218 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+                                Pre-triangular equations:       31
+                                Post-triangular equations:      45
+      1   0        1.7403048226E+01 (After pre-processing)
+      2   0        1.7403048226E+01 (After scaling)
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      3   0    17  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      4   0    18  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      5   0    19  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      6   0    20  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      7   0    21  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      8   0    22  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+      9   0    23  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     10   0    24  1.7403048226E+01               0.0E+00      F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     11   0    25  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     12   0    26  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     13   0    27  1.7403048226E+01               0.0E+00      F  F
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     14   0    28  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     15   0    29  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     16   0    30  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     17   0    31  1.7403048226E+01               0.0E+00      F  F
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     18   0    32  1.7403048226E+01               0.0E+00      F  F
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     206 !sqrt: GRAD SINGULAR: x = 0
+=5     207 !sqrt: GRAD SINGULAR: x = 0
+=5     208 !sqrt: GRAD SINGULAR: x = 0
+=5     209 !sqrt: GRAD SINGULAR: x = 0
+=5     210 !sqrt: GRAD SINGULAR: x = 0
+=5     211 !sqrt: GRAD SINGULAR: x = 0
+=5     212 !sqrt: GRAD SINGULAR: x = 0
+=5     213 !sqrt: GRAD SINGULAR: x = 0
+=5     217 !sqrt: GRAD SINGULAR: x = 0
+=5     214 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     215 !sqrt: GRAD SINGULAR: x = 0
+=5     216 !sqrt: GRAD SINGULAR: x = 0
+=5     218 !sqrt: GRAD SINGULAR: x = 0
+=5     219 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     19   1    30  1.6745178219E+01 1.0E+00    30 1.0E+00    3 T  T
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     20   1    22  1.5849396651E+01 1.0E+00    30 1.0E+00    8 T  T
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     21   1    21  3.5879197717E-04 1.0E+00    22 1.0E+00    6 T  T
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     22   1    15  4.2179081559E-06 1.0E+00    21 1.0E+00    6 T  T
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     23   1     6  6.2076827967E-08 1.0E+00    15 1.0E+00    5 T  T
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+     24   1     6  6.2076827967E-08 0.0E+00     6 0.0E+00    1 F  F
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+ ** Feasible solution. Value of objective =   0.293478727295
+ 
+Search for an optimal solution.
+ 
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+=5     220 !sqrt: GRAD SINGULAR: x = 0
+=5     221 !sqrt: GRAD SINGULAR: x = 0
+=5     222 !sqrt: GRAD SINGULAR: x = 0
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     25   3        2.9347872729E-01 0.0E+00     6
+=1
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+=2
+ 
+  ***  Line    4  BRANCH with Lbranch =  1
+ 
+  ***  Line    5  OUTPUT
+ 
+  ***  Line    6  EXIT
+=1
+ 
+ CONOPT time Total                            0.035 seconds
+   of which: Function evaluations             0.001 =  2.9%
+             1st Derivative evaluations       0.003 =  8.6%
+ 
+=2
+ 
+ Work length =   118745 double words  =   0.91 Mbytes
+    Estimate =   118745 double words  =   0.91 Mbytes
+    Max used =    47669 double words  =   0.36 Mbytes
+ 
+ Timing for Function Evaluations:
+ 
+ Statistics for FDEval-Fnc Calls:    10280 Time:      0.001 T/C:    9.7276E-08
+ Statistics for FDEval-Drv Calls:     1548 Time:      0.003 T/C:    1.9380E-06
+ Statistics for 2DDir      Calls:        0 Time:      0.000 T/C:    0.0000E+00
+ Statistics for 2DLagr     Calls:        0 Time:      0.000 T/C:    0.0000E+00
+ 
+ Statistics for Read_Instr Calls:        1 Time:     0.000 T/C:    0.0000E+00
+ Statistics for Compr_Inst Calls:        1 Time:     0.000 T/C:    0.0000E+00
+=1
+ Workspace           =     0.92 Mbytes
+    Estimate         =     0.92 Mbytes
+    Max used         =     0.38 Mbytes
+=2
+**** SOLVER STATUS FILE LISTED ABOVE
+GAMS Rev 147  x86_64/MS Windows                        11/18/25 12:44:57 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----    581 PARAMETER PERD                 =         2630  perdidas en W
+
+----    581 PARAMETER V  Tensión de nudos PV
+
+0   1.0007,    1   1.0000,    2   0.9413,    3   0.9134,    4   0.9119
+5   0.9099,    6   0.9071,    7   0.9081,    8   0.9081,    9   0.9063
+10  0.9046,    11  0.9042,    12  1.0007,    13  1.0007,    14  1.0007
+15  1.0000,    F15 1.0000,    F8  0.9081,    F14 1.0007
+
+
+----    581 PARAMETER Irama  intensidad por cada rama
+
+             1           2           3           4           5           6
+
+0       47.554
+1                   47.554
+2                               47.554
+3                                           14.356
+4                                                       14.356
+5                                                                    6.400
+8                               26.097
+
+ +           8           9          10          11          12          13
+
+0                                                  5.107054E-7
+7        0.289
+8                   19.324
+9                               10.087
+10                                           3.865
+12                                                             5.107108E-7
+
+ +          14
+
+13 5.107106E-7
+
+
+----    581 PARAMETER PCONV  potencia activa inyectada por convertidores en kW
+
+                      ( ALL          0. )
+
+
+----    581 PARAMETER QCONV  potencia reactiva inyectada por convertidores en kv
+                             ar
+
+                      ( ALL          0. )
+
+
+----    581 PARAMETER dLAMBDAG  incremento de generación distribuida
+
+GP3     1.000,    GP4     1.000,    GP5     1.000,    GB5     1.000
+GFC5    1.000,    GP6     1.000,    GWT7    1.000,    GP8     1.000
+GP9     1.000,    GCHPD9  1.000,    GCHPFC9 1.000,    GP10    1.000
+GB10    1.000,    GFC10   1.000,    GP11    1.000,    GF0     1.000
+GF15    1.000,    GF8     1.000,    GF14    1.000
+
+
+----    581 PARAMETER G_INI  generacion inicial
+
+GP3       0.477,    GP5       0.716,    GB5     340.130,    GP6       0.716
+GWT7    896.550,    GP8       0.716,    GP9       0.716,    GCHPD9  132.240
+GCHPFC9 207.890,    GP10      0.955,    GB10    340.130,    GP11      0.239
+
+
+----    581 PARAMETER G_FIN  generacion final tras optimizacion
+
+GP3       0.477,    GP5       0.716,    GB5     340.130,    GP6       0.716
+GWT7    896.550,    GP8       0.716,    GP9       0.716,    GCHPD9  132.240
+GCHPFC9 207.890,    GP10      0.955,    GB10    340.130,    GP11      0.239
+
+
+----    581 PARAMETER G_DIF  diferencia generacion final - inicial
+
+                      ( ALL       0.000 )
+
+
+----    581 PARAMETER QGEN_2  reactiva geneda por los generadores
+
+                      ( ALL       0.000 )
+
+
+----    581 PARAMETER PGEN_2  activa generada por los generadores
+
+GP3       0.477,    GP5       0.716,    GB5     340.130,    GP6       0.716
+GWT7    896.550,    GP8       0.716,    GP9       0.716,    GCHPD9  132.240
+GCHPFC9 207.890,    GP10      0.955,    GB10    340.130,    GP11      0.239
+
+
+----    581 PARAMETER PLOAD  activa consumida por las cargas
+
+3  4297.754,    5  4507.835,    6  3419.737,    7   828.285,    8  3656.010
+9  6174.490,    10 3697.317,    11 2058.060
+
+
+----    581 PARAMETER QLOAD  reactiva consumida por las cargas
+
+3  1587.795,    5  2793.505,    6  2119.211,    7   168.225,    8  2265.629
+9  1254.039,    10 1986.496,    11 1275.380
+
+
+**** REPORT FILE SUMMARY
+
+RESULT_Base_min0443 C:\workspace\OPF\OPF\RESULT_Base_min0443.put
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Restart    C:\workspace\OPF\OPF\minuto0443.g0?
+Input      C:\workspace\OPF\OPF\MinPerd_PF_MV.gms
+Output     C:\workspace\OPF\OPF\MinPerd_PF_MV.lst

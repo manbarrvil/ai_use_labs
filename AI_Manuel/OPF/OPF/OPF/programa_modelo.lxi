@@ -1,0 +1,25 @@
+B 2 C o m p i l a t i o n
+B 103 Equation Listing    SOLVE opt_coste Using NLP From line 95
+D 104 eq_costes
+D 120 eq_balance
+D 134 eq_pdem
+D 145 eq_soc
+B 164 Column Listing      SOLVE opt_coste Using NLP From line 95
+E 165 coste
+E 173 pg
+E 191 pdem
+E 209 pc
+E 228 pd
+E 247 soc
+B 267 Model Statistics    SOLVE opt_coste Using NLP From line 95
+B 285 Solution Report     SOLVE opt_coste Using NLP From line 95
+F 307 eq_costes
+F 315 eq_balance
+F 324 eq_pdem
+F 334 eq_soc
+G 338 coste
+G 344 pg
+G 364 pdem
+G 374 pc
+G 383 pd
+G 392 soc

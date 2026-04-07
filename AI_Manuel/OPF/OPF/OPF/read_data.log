@@ -1,0 +1,31 @@
+
+--- Job read_data.gms Start 10/18/22 19:32:38
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- read_data.gms(15) 3 Mb
+--- .NL.CSV(17) 3 Mb
+--- read_data.gms(21) 3 Mb
+--- .NG.CSV(15) 3 Mb
+--- read_data.gms(37) 3 Mb
+--- .BUS_DATA.CSV(17) 3 Mb
+--- read_data.gms(42) 3 Mb
+--- .LINE_DATA.CSV(19) 3 Mb
+--- read_data.gms(47) 3 Mb 1 Error
+*** Error 282 in C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi-Platform Lab for Teaching and Research in Active Distribution Networks\IEEE PS Education\EJECUTABLES_red_escala_dinamicos\read_data.gms
+    Unable to open include file
+--- read_data.gms(52) 3 Mb 2 Errors
+*** Error 282 in C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi-Platform Lab for Teaching and Research in Active Distribution Networks\IEEE PS Education\EJECUTABLES_red_escala_dinamicos\read_data.gms
+    Unable to open include file
+--- read_data.gms(57) 3 Mb 3 Errors
+*** Error 282 in C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi-Platform Lab for Teaching and Research in Active Distribution Networks\IEEE PS Education\EJECUTABLES_red_escala_dinamicos\read_data.gms
+    Unable to open include file
+--- read_data.gms(71) 3 Mb 4 Errors
+*** Error 116 in C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Investigacion\Trabajos Acabados\A Multi-Platform Lab for Teaching and Research in Active Distribution Networks\IEEE PS Education\EJECUTABLES_red_escala_dinamicos\read_data.gms
+    Label is unknown
+--- read_data.gms(77) 3 Mb 4 Errors
+*** Status: Compilation error(s)
+--- Job read_data.gms Stop 10/18/22 19:32:38 elapsed 0:00:00.045
+Exit code = 2

@@ -1,0 +1,79 @@
+
+--- Job opt_MBV.gms Start 11/28/22 17:36:12
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- opt_MBV.gms(68) 3 Mb
+--- Starting execution
+--- opt_MBV.gms(42) 4 Mb
+--- Generating NLP model Modelo_costes_gen_bate
+--- opt_MBV.gms(66) 6 Mb
+---   44 rows  37 columns  93 non-zeroes
+---   105 nl-code  8 nl-non-zeroes
+--- opt_MBV.gms(66) 4 Mb
+--- Executing KNITRO
+
+KNITRO        Feb 14, 2007 WIN.KN.NA 22.4 010.036.041.VIS KNITRO 5.1.0
+
+
+======================================
+          Commercial License
+             KNITRO 5.1.0
+       Ziena Optimization, Inc.
+       website:  www.ziena.com
+       email:   info@ziena.com
+======================================
+
+KNITRO changing algorithm from AUTO to 1.
+KNITRO changing bar_murule from AUTO to 1.
+KNITRO changing bar_initpt from AUTO to 2.
+KNITRO shifted start point to honor bounds (11 variables).
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Number of variables:                    37
+    bounded below:                       0
+    bounded above:                       0
+    bounded below and above:            11
+    fixed:                               1
+    free:                               25
+Number of constraints:                  44
+    linear equalities:                   0
+    nonlinear equalities:               20
+    linear inequalities:                 0
+    nonlinear inequalities:             24
+    range:                               0
+Number of nonzeros in Jacobian:         93
+Number of nonzeros in Hessian:           8
+
+  Iter      Objective      Feas err    Opt err     ||Step||    CG its
+--------  --------------  ----------  ----------  ----------  -------
+       0   0.000000e+000  8.801e+000
+      10   8.004211e+000  1.057e-004  9.250e-004  3.488e-002        0
+      20   8.000006e+000  2.268e-009  9.276e-007  4.770e-004        0
+
+EXIT: LOCALLY OPTIMAL SOLUTION FOUND.
+
+Final Statistics
+----------------
+Final objective value               =  8.00000625089096e+000
+Final feasibility error (abs / rel) =   2.27e-009 / 2.58e-010
+Final optimality error  (abs / rel) =   9.28e-007 / 9.28e-007
+# of iterations (major / minor)     =         20 /       20
+# of function evaluations           =         30
+# of gradient evaluations           =         21
+# of Hessian evaluations            =         20
+Total program time (secs)           =       0.102 (     0.000 CPU time)
+Time spent in evaluations (secs)    =       0.000
+
+=========================================================================
+
+
+--- Restarting execution
+--- opt_MBV.gms(66) 0 Mb
+--- Reading solution for model Modelo_costes_gen_bate
+*** Status: Normal completion
+--- Job opt_MBV.gms Stop 11/28/22 17:36:12 elapsed 0:00:00.184

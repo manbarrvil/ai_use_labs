@@ -1,0 +1,473 @@
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:36:12 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1   
+   2  set
+   3   
+   4  n generadores /n1,n2,n3/
+   5  l cargas /l1,l2/
+   6  t tiempo /t1,t2,t3,t4/;
+   7   
+   8  scalar
+   9  *Contantes que no dependen de conjuntos
+  10   
+  11  SOC_max SOC maximo kwh /10/
+  12  P_max_bat Pot. maximo kw /5/
+  13  eta_c Rendimiento de carga /0.9/
+  14  eta_d Rendimiento de descarga  /0.9/
+  15  Pmax_load Potencia maxima carga /4/
+  16  delta_t incremento en tiempo /1/;
+  17   
+  18  parameters
+  19   
+  20  a(n)  termino cuadratico coste gen /n1 0, n2 1, n3 1/
+  21  b(n)  termino lineal coste gen /n1 0.1, n2 0.15, n3 0.65/
+  22  c(n)  termino independiente coste gen /n1 0, n2 0.9, n3 0.8/
+  23  Pmax(n) potencia maxima cada gen /n1 5, n2 2, n3 0/
+  24  Pmin(n) potencia minima cada gen /n1 1,n2 0.2,n3 0/
+  25  lambda(t) porcentaje de carga en cada instante de tiempo /t1 1,t2 0.5,t3 1
+      ,t4 0.5/ ;
+  26   
+  27  variables
+  28   
+  29  Pgen(n,t) Define potencia cada generador en cada inst de tiempo
+  30  Pd(t) potencia de descarga de la bateria
+  31  Pc(t) potencia de carga de la bateria
+  32  SOC(t) estado de carga de la bateria
+  33  coste(n,t) coste de cada generador en cada instante de tiempo
+  34  coste_total coste total de todos los generadores en todos los instantes de
+       tiempo;
+  35   
+  36  Pc.up(t) = P_max_bat;
+  37  Pd.up(t) = P_max_bat;
+  38  Pc.lo(t) = 0;
+  39  Pd.lo(t) = 0;
+  40  SOC.up(t)= SOC_max;
+  41  SOC.lo(t)= 0;
+  42  SOC.fx("t1")= SOC_max;
+  43   
+  44  equations
+  45  eq_bal(t) ecuacion de balance
+  46  eq_SOC(t) ecuacion del estado de carga
+  47  eq_coste(n,t)  ecuacion de coste de cada generador
+  48  eq_coste_total ecuacion total de costes
+  49  eq_Pmax(n,t) ecuacion potencia maxima generadores
+  50  eq_Pmin(n,t) ecuacion potencia minima generadores;
+  51   
+  52   
+  53  eq_bal(t).. sum(n,Pgen(n,t)) + Pd(t) =e=  lambda(t)*Pmax_load*2 + Pc(t);
+  54   
+  55  eq_SOC(t)$(not sameas(t,"t1")).. SOC(t) =e= SOC(t-1) + Pc(t)*eta_c*delta_t
+       - Pd(t)/eta_d*delta_t;
+  56   
+  57  eq_Pmax(n,t)..   Pgen(n,t) =l= Pmax(n);
+  58   
+  59  eq_Pmin(n,t)..   Pgen(n,t) =g= Pmin(n);
+  60   
+  61  eq_coste(n,t)..   coste(n,t) =e= a(n)*power(Pgen(n,t),2) + b(n)*Pgen(n,t) 
+      + c(n);
+  62   
+  63  eq_coste_total..  coste_total =e= sum(n,sum(t,coste(n,t)));
+  64   
+  65  model Modelo_costes_gen_bate /all/    ;
+  66  solve Modelo_costes_gen_bate minimizing coste_total using nlp;
+  67   
+  68   
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:36:12 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE Modelo_costes_gen_bate Using NLP From line 66
+
+
+---- eq_bal  =E=  ecuacion de balance
+
+eq_bal(t1)..  Pgen(n1,t1) + Pgen(n2,t1) + Pgen(n3,t1) + Pd(t1) - Pc(t1) =E= 8 ;
+     
+      (LHS = 0, INFES = 8 ***)
+     
+eq_bal(t2)..  Pgen(n1,t2) + Pgen(n2,t2) + Pgen(n3,t2) + Pd(t2) - Pc(t2) =E= 4 ;
+     
+      (LHS = 0, INFES = 4 ***)
+     
+eq_bal(t3)..  Pgen(n1,t3) + Pgen(n2,t3) + Pgen(n3,t3) + Pd(t3) - Pc(t3) =E= 8 ;
+     
+      (LHS = 0, INFES = 8 ***)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- eq_SOC  =E=  ecuacion del estado de carga
+
+eq_SOC(t2)..  1.11111111111111*Pd(t2) - 0.9*Pc(t2) - SOC(t1) + SOC(t2) =E= 0 ;
+     
+      (LHS = -10, INFES = 10 ***)
+     
+eq_SOC(t3)..  1.11111111111111*Pd(t3) - 0.9*Pc(t3) - SOC(t2) + SOC(t3) =E= 0 ;
+     
+      (LHS = 0)
+     
+eq_SOC(t4)..  1.11111111111111*Pd(t4) - 0.9*Pc(t4) - SOC(t3) + SOC(t4) =E= 0 ;
+     
+      (LHS = 0)
+     
+
+---- eq_coste  =E=  ecuacion de coste de cada generador
+
+eq_coste(n1,t1)..  - 0.1*Pgen(n1,t1) + coste(n1,t1) =E= 0 ; (LHS = 0)
+     
+eq_coste(n1,t2)..  - 0.1*Pgen(n1,t2) + coste(n1,t2) =E= 0 ; (LHS = 0)
+     
+eq_coste(n1,t3)..  - 0.1*Pgen(n1,t3) + coste(n1,t3) =E= 0 ; (LHS = 0)
+     
+REMAINING 9 ENTRIES SKIPPED
+
+
+---- eq_coste_total  =E=  ecuacion total de costes
+
+eq_coste_total..  - coste(n1,t1) - coste(n1,t2) - coste(n1,t3) - coste(n1,t4)
+     
+      - coste(n2,t1) - coste(n2,t2) - coste(n2,t3) - coste(n2,t4) - coste(n3,t1)
+     
+      - coste(n3,t2) - coste(n3,t3) - coste(n3,t4) + coste_total =E= 0 ;
+     
+      (LHS = 0)
+     
+
+---- eq_Pmax  =L=  ecuacion potencia maxima generadores
+
+eq_Pmax(n1,t1)..  Pgen(n1,t1) =L= 5 ; (LHS = 0)
+     
+eq_Pmax(n1,t2)..  Pgen(n1,t2) =L= 5 ; (LHS = 0)
+     
+eq_Pmax(n1,t3)..  Pgen(n1,t3) =L= 5 ; (LHS = 0)
+     
+REMAINING 9 ENTRIES SKIPPED
+
+
+---- eq_Pmin  =G=  ecuacion potencia minima generadores
+
+eq_Pmin(n1,t1)..  Pgen(n1,t1) =G= 1 ; (LHS = 0, INFES = 1 ***)
+     
+eq_Pmin(n1,t2)..  Pgen(n1,t2) =G= 1 ; (LHS = 0, INFES = 1 ***)
+     
+eq_Pmin(n1,t3)..  Pgen(n1,t3) =G= 1 ; (LHS = 0, INFES = 1 ***)
+     
+REMAINING 9 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:36:12 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE Modelo_costes_gen_bate Using NLP From line 66
+
+
+---- Pgen  Define potencia cada generador en cada inst de tiempo
+
+Pgen(n1,t1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_bal(t1)
+       -0.1     eq_coste(n1,t1)
+        1       eq_Pmax(n1,t1)
+        1       eq_Pmin(n1,t1)
+
+Pgen(n1,t2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_bal(t2)
+       -0.1     eq_coste(n1,t2)
+        1       eq_Pmax(n1,t2)
+        1       eq_Pmin(n1,t2)
+
+Pgen(n1,t3)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_bal(t3)
+       -0.1     eq_coste(n1,t3)
+        1       eq_Pmax(n1,t3)
+        1       eq_Pmin(n1,t3)
+
+REMAINING 9 ENTRIES SKIPPED
+
+---- Pd  potencia de descarga de la bateria
+
+Pd(t1)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_bal(t1)
+
+Pd(t2)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_bal(t2)
+        1.1111  eq_SOC(t2)
+
+Pd(t3)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_bal(t3)
+        1.1111  eq_SOC(t3)
+
+REMAINING ENTRY SKIPPED
+
+---- Pc  potencia de carga de la bateria
+
+Pc(t1)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_bal(t1)
+
+Pc(t2)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_bal(t2)
+       -0.9     eq_SOC(t2)
+
+Pc(t3)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_bal(t3)
+       -0.9     eq_SOC(t3)
+
+REMAINING ENTRY SKIPPED
+
+---- SOC  estado de carga de la bateria
+
+SOC(t1)
+                (.LO, .L, .UP = 10, 10, 10)
+       -1       eq_SOC(t2)
+
+SOC(t2)
+                (.LO, .L, .UP = 0, 0, 10)
+        1       eq_SOC(t2)
+       -1       eq_SOC(t3)
+
+SOC(t3)
+                (.LO, .L, .UP = 0, 0, 10)
+        1       eq_SOC(t3)
+       -1       eq_SOC(t4)
+
+REMAINING ENTRY SKIPPED
+
+---- coste  coste de cada generador en cada instante de tiempo
+
+coste(n1,t1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_coste(n1,t1)
+       -1       eq_coste_total
+
+coste(n1,t2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_coste(n1,t2)
+       -1       eq_coste_total
+
+coste(n1,t3)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_coste(n1,t3)
+       -1       eq_coste_total
+
+REMAINING 9 ENTRIES SKIPPED
+
+---- coste_total  coste total de todos los generadores en todos los instantes de
+                  tiempo
+
+coste_total
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_coste_total
+
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:36:12 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE Modelo_costes_gen_bate Using NLP From line 66
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           44
+BLOCKS OF VARIABLES           6     SINGLE VARIABLES           37
+NON ZERO ELEMENTS            93     NON LINEAR N-Z              8
+DERIVATIVE POOL               7     CONSTANT POOL              16
+CODE LENGTH                 105
+
+
+GENERATION TIME      =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:36:12 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE Modelo_costes_gen_bate Using NLP From line 66
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   Modelo_costes_gen_bate   OBJECTIVE  coste_total
+     TYPE    NLP                      DIRECTION  MINIMIZE
+     SOLVER  KNITRO                   FROM LINE  66
+
+**** SOLVER STATUS     1 NORMAL COMPLETION         
+**** MODEL STATUS      2 LOCALLY OPTIMAL           
+**** OBJECTIVE VALUE                8.0000
+
+ RESOURCE USAGE, LIMIT          0.107      1000.000
+ ITERATION COUNT, LIMIT         0         10000
+ EVALUATION ERRORS              0             0
+
+KNITRO        Feb 14, 2007 WIN.KN.NA 22.4 010.036.041.VIS KNITRO 5.1.0
+
+
+---- EQU eq_bal  ecuacion de balance
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1     8.000     8.000     8.000     0.100      
+t2     4.000     4.000     4.000     0.100      
+t3     8.000     8.000     8.000     0.100      
+t4     4.000     4.000     4.000     0.100      
+
+---- EQU eq_SOC  ecuacion del estado de carga
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t2      .         .         .       -0.090      
+t3      .         .         .       -0.090      
+t4      .         .         .       -0.090      
+
+---- EQU eq_coste  ecuacion de coste de cada generador
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t1      .         .         .        1.000      
+n1.t2      .         .         .        1.000      
+n1.t3      .         .         .        1.000      
+n1.t4      .         .         .        1.000      
+n2.t1     0.900     0.900     0.900     1.000      
+n2.t2     0.900     0.900     0.900     1.000      
+n2.t3     0.900     0.900     0.900     1.000      
+n2.t4     0.900     0.900     0.900     1.000      
+n3.t1     0.800     0.800     0.800     1.000      
+n3.t2     0.800     0.800     0.800     1.000      
+n3.t3     0.800     0.800     0.800     1.000      
+n3.t4     0.800     0.800     0.800     1.000      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU eq_coste_~      .         .         .        1.000      
+
+  eq_coste_total  ecuacion total de costes
+
+---- EQU eq_Pmax  ecuacion potencia maxima generadores
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t1     -INF      2.800     5.000 -1.759E-7      
+n1.t2     -INF      1.512     5.000 -1.150E-7      
+n1.t3     -INF      3.377     5.000 -2.240E-7      
+n1.t4     -INF      1.511     5.000 -1.149E-7      
+n2.t1     -INF      0.200     2.000 -2.211E-7      
+n2.t2     -INF      0.200     2.000 -2.211E-7      
+n2.t3     -INF      0.200     2.000 -2.211E-7      
+n2.t4     -INF      0.200     2.000 -2.211E-7      
+n3.t1     -INF       .         .    -4585.440      
+n3.t2     -INF       .         .    -4585.777      
+n3.t3     -INF       .         .    -4585.313      
+n3.t4     -INF       .         .    -4585.399      
+
+---- EQU eq_Pmin  ecuacion potencia minima generadores
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t1     1.000     2.800     +INF  2.3110E-7      
+n1.t2     1.000     1.512     +INF  7.6871E-7      
+n1.t3     1.000     3.377     +INF  1.7907E-7      
+n1.t4     1.000     1.511     +INF  7.7167E-7      
+n2.t1     0.200     0.200     +INF      0.450      
+n2.t2     0.200     0.200     +INF      0.450      
+n2.t3     0.200     0.200     +INF      0.450      
+n2.t4     0.200     0.200     +INF      0.450      
+n3.t1      .         .        +INF   4585.990      
+n3.t2      .         .        +INF   4586.327      
+n3.t3      .         .        +INF   4585.863      
+n3.t4      .         .        +INF   4585.949      
+
+---- VAR Pgen  Define potencia cada generador en cada inst de tiempo
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t1     -INF      2.800     +INF       EPS       
+n1.t2     -INF      1.512     +INF       EPS       
+n1.t3     -INF      3.377     +INF       EPS       
+n1.t4     -INF      1.511     +INF       EPS       
+n2.t1     -INF      0.200     +INF       EPS       
+n2.t2     -INF      0.200     +INF       EPS       
+n2.t3     -INF      0.200     +INF       EPS       
+n2.t4     -INF      0.200     +INF       EPS       
+n3.t1     -INF  7.945E-14     +INF       EPS       
+n3.t2     -INF  -8.26E-15     +INF       EPS       
+n3.t3     -INF  1.752E-13     +INF       EPS       
+n3.t4     -INF  4.937E-14     +INF       EPS       
+
+---- VAR Pd  potencia de descarga de la bateria
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .        5.000     5.000    -0.100      
+t2      .        2.288     5.000 5.4773E-8      
+t3      .        4.423     5.000 -5.253E-7      
+t4      .        2.289     5.000 5.4562E-8      
+
+---- VAR Pc  potencia de carga de la bateria
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .    6.2269E-6     5.000     0.100      
+t2      .    3.2557E-5     5.000     0.019      
+t3      .    3.4297E-5     5.000     0.019      
+t4      .    3.2580E-5     5.000     0.019      
+
+---- VAR SOC  estado de carga de la bateria
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1    10.000    10.000    10.000    -0.090      
+t2      .        7.458    10.000 -1.067E-7      
+t3      .        2.543    10.000 1.0964E-7      
+t4      .    6.8537E-6    10.000     0.090      
+
+---- VAR coste  coste de cada generador en cada instante de tiempo
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t1     -INF      0.280     +INF       EPS       
+n1.t2     -INF      0.151     +INF       EPS       
+n1.t3     -INF      0.338     +INF       EPS       
+n1.t4     -INF      0.151     +INF       EPS       
+n2.t1     -INF      0.970     +INF       EPS       
+n2.t2     -INF      0.970     +INF       EPS       
+n2.t3     -INF      0.970     +INF       EPS       
+n2.t4     -INF      0.970     +INF       EPS       
+n3.t1     -INF      0.800     +INF       EPS       
+n3.t2     -INF      0.800     +INF       EPS       
+n3.t3     -INF      0.800     +INF       EPS       
+n3.t4     -INF      0.800     +INF       EPS       
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR coste_tot~     -INF      8.000     +INF       EPS       
+
+  coste_total  coste total de todos los generadores en todos los instantes de ti
+               empo
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.000 SECONDS      2 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\TFG\Ma
+           ria del Mar Vargas Domínguez\Ejemplo\opt_MBV.gms
+Output     C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\opt_MBV.lst

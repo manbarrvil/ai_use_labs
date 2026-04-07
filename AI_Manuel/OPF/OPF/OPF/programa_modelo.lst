@@ -1,0 +1,423 @@
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:34:25 Page 1
+"Prueba SAE"
+C o m p i l a t i o n
+
+
+   3   
+   4  set
+   5      n generadores / n1, n2, n3 /
+   6  *    t períodos / t0*t24 /
+   7      t períodos / t0*t4 /
+   8      l cargas / l1*l2 / ;
+   9   
+  10  *set subt(t) ;
+  11  *    subt(t) = yes ;
+  12  *    subt("t0") = no ;
+  13   
+  14  scalar
+  15      E capacidad SAE (kWh) / 10 /
+  16      P potencia SAE (kW) / 5 /
+  17      nc rendimiento de carga / 0.9 /
+  18      nd rendimiento de descarga / 0.9 / ;
+  19   
+  20  *table
+  21  *datgen(n,*) datos generadores
+  22  *$ondelim
+  23  *$include datos.csv
+  24  *$offdelim  ;
+  25   
+  26  *table
+  27  *datprecios(t,*)
+  28  *$ondelim
+  29  *$include precios.csv
+  30  *$offdelim  ;
+  31   
+  32  *display datgen ;
+  33   
+  34   
+  35  parameter
+  36      a(n) coste cuadrático  /n1 0, n2 1, n3 1  /
+  37      b(n) coste lineal      /n1 0.1, n2 0.15, n3 0.65  /
+  38      c(n) coste fijo        /n1 0, n2 0.9, n3 0.8  /
+  39      cd   coste deslastre   / 1 /
+  40      Pgmax(n) potencia generada máxima  / n1 5, n2 2, n3 3  /
+  41      Pgmin(n) potencia generada mínima  / n1 1, n2 0.2, n3 0  /
+  42      Pl(l)    demanda carga l  / l1 2, l2 2 /
+  43      lambda(t) nivel de carga / t0 0, t1 2, t2 1, t3 2, t4 1 / ;
+  44   
+  45  *Leido desde el csv
+  46  *    a(n) = datgen(n,'a') ;
+  47  *    b(n) = datgen(n,'b') ;
+  48  *    c(n) = datgen(n,'c') ;
+  49   
+  50  variables
+  51      coste coste total
+  52      pg(n,t) potencia generada periodo t
+  53      pdem(t) potencia demandada periodo t
+  54      pc(t) carga SAE periodo t
+  55      pd(t) descarga SAE periodo t
+  56      soc(t) estado de carga periodo t ;
+  57   
+  58  equations
+  59      eq_costes costes
+  60      eq_balance balance de potencia
+  61      eq_pdem  demanda horaria
+  62      eq_soc estado de carga ;
+  63   
+  64  eq_costes.. coste =e= sum(t, sum(n, a(n)*pg(n,t)**2 +
+  65                  b(n)*pg(n,t) + c(n) )) ;
+  66   
+  67  eq_balance(t)$(not sameas(t,"t0")).. sum(n, pg(n,t) ) +
+  68                          pd(t) - pc(t) =e= pdem(t) ;
+  69   
+  70  eq_pdem(t)..    pdem(t) =e= lambda(t)*sum(l, Pl(l)) ;
+  71  *eq_pdem(t)..    pdem(t) =e= lambda(t)*sum(l, datloads(t,l)) ;
+  72   
+  73  *eq_soc(subt(t)).. soc(t) =e= soc(t-1) +
+  74  *                                pc(t)*nc - pd(t)/nd ;
+  75   
+  76  eq_soc(t)$(not sameas(t,"t0")).. soc(t) =e= soc(t-1) +
+  77                                  pc(t)*nc - pd(t)/nd ;
+  78   
+  79  * límites en variables
+  80  *Leido desde el csv
+  81  *pg.lo(n,t) = datgen(n, 'Pmin') ;     # potencia mínima
+  82  *pg.up(n,t) = datgen(n, 'Pmax') ;
+  83  pg.lo(n,t) =  Pgmin(n);
+  84  pg.up(n,t) =  Pgmax(n);
+  85  soc.lo(t) = 0 ;
+  86  soc.up(t) = E ;
+  87  soc.fx("t0") = 0.1*E ;
+  88  soc.fx("t4") = 0.1*E ;
+  89  pc.lo(t) = 0 ;
+  90  pc.up(t) = P ;
+  91  pd.lo(t) = 0 ;
+  92  pd.up(t) = P ;
+  93   
+  94  model opt_coste / all / ;
+  95  solve opt_coste minimizing coste using nlp ;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:34:25 Page 2
+"Prueba SAE"
+Equation Listing    SOLVE opt_coste Using NLP From line 95
+
+
+---- eq_costes  =E=  costes
+
+eq_costes..  coste - 0.1*pg(n1,t0) - 0.1*pg(n1,t1) - 0.1*pg(n1,t2)
+     
+      - 0.1*pg(n1,t3) - 0.1*pg(n1,t4) - (0.55)*pg(n2,t0) - (0.55)*pg(n2,t1)
+     
+      - (0.55)*pg(n2,t2) - (0.55)*pg(n2,t3) - (0.55)*pg(n2,t4)
+     
+      - (0.65)*pg(n3,t0) - (0.65)*pg(n3,t1) - (0.65)*pg(n3,t2)
+     
+      - (0.65)*pg(n3,t3) - (0.65)*pg(n3,t4) =E= 8.5 ;
+     
+      (LHS = -0.850000000000001, INFES = 9.35 ***)
+     
+
+---- eq_balance  =E=  balance de potencia
+
+eq_balance(t1)..  pg(n1,t1) + pg(n2,t1) + pg(n3,t1) - pdem(t1) - pc(t1) + pd(t1)
+      =E= 0 ; (LHS = 1.2, INFES = 1.2 ***)
+     
+eq_balance(t2)..  pg(n1,t2) + pg(n2,t2) + pg(n3,t2) - pdem(t2) - pc(t2) + pd(t2)
+      =E= 0 ; (LHS = 1.2, INFES = 1.2 ***)
+     
+eq_balance(t3)..  pg(n1,t3) + pg(n2,t3) + pg(n3,t3) - pdem(t3) - pc(t3) + pd(t3)
+      =E= 0 ; (LHS = 1.2, INFES = 1.2 ***)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- eq_pdem  =E=  demanda horaria
+
+eq_pdem(t0)..  pdem(t0) =E= 0 ; (LHS = 0)
+     
+eq_pdem(t1)..  pdem(t1) =E= 8 ; (LHS = 0, INFES = 8 ***)
+     
+eq_pdem(t2)..  pdem(t2) =E= 4 ; (LHS = 0, INFES = 4 ***)
+     
+REMAINING 2 ENTRIES SKIPPED
+
+
+---- eq_soc  =E=  estado de carga
+
+eq_soc(t1)..  - 0.9*pc(t1) + 1.11111111111111*pd(t1) - soc(t0) + soc(t1) =E= 0 ;
+     
+      (LHS = -1, INFES = 1 ***)
+     
+eq_soc(t2)..  - 0.9*pc(t2) + 1.11111111111111*pd(t2) - soc(t1) + soc(t2) =E= 0 ;
+     
+      (LHS = 0)
+     
+eq_soc(t3)..  - 0.9*pc(t3) + 1.11111111111111*pd(t3) - soc(t2) + soc(t3) =E= 0 ;
+     
+      (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:34:25 Page 3
+"Prueba SAE"
+Column Listing      SOLVE opt_coste Using NLP From line 95
+
+
+---- coste  coste total
+
+coste
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_costes
+
+
+---- pg  potencia generada periodo t
+
+pg(n1,t0)
+                (.LO, .L, .UP = 1, 1, 5)
+       -0.1     eq_costes
+
+pg(n1,t1)
+                (.LO, .L, .UP = 1, 1, 5)
+       -0.1     eq_costes
+        1       eq_balance(t1)
+
+pg(n1,t2)
+                (.LO, .L, .UP = 1, 1, 5)
+       -0.1     eq_costes
+        1       eq_balance(t2)
+
+REMAINING 12 ENTRIES SKIPPED
+
+---- pdem  potencia demandada periodo t
+
+pdem(t0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_pdem(t0)
+
+pdem(t1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+       -1       eq_balance(t1)
+        1       eq_pdem(t1)
+
+pdem(t2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+       -1       eq_balance(t2)
+        1       eq_pdem(t2)
+
+REMAINING 2 ENTRIES SKIPPED
+
+---- pc  carga SAE periodo t
+
+pc(t1)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_balance(t1)
+       -0.9     eq_soc(t1)
+
+pc(t2)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_balance(t2)
+       -0.9     eq_soc(t2)
+
+pc(t3)
+                (.LO, .L, .UP = 0, 0, 5)
+       -1       eq_balance(t3)
+       -0.9     eq_soc(t3)
+
+REMAINING ENTRY SKIPPED
+
+---- pd  descarga SAE periodo t
+
+pd(t1)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_balance(t1)
+        1.1111  eq_soc(t1)
+
+pd(t2)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_balance(t2)
+        1.1111  eq_soc(t2)
+
+pd(t3)
+                (.LO, .L, .UP = 0, 0, 5)
+        1       eq_balance(t3)
+        1.1111  eq_soc(t3)
+
+REMAINING ENTRY SKIPPED
+
+---- soc  estado de carga periodo t
+
+soc(t0)
+                (.LO, .L, .UP = 1, 1, 1)
+       -1       eq_soc(t1)
+
+soc(t1)
+                (.LO, .L, .UP = 0, 0, 10)
+        1       eq_soc(t1)
+       -1       eq_soc(t2)
+
+soc(t2)
+                (.LO, .L, .UP = 0, 0, 10)
+        1       eq_soc(t2)
+       -1       eq_soc(t3)
+
+REMAINING 2 ENTRIES SKIPPED
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:34:25 Page 4
+"Prueba SAE"
+Model Statistics    SOLVE opt_coste Using NLP From line 95
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           4     SINGLE EQUATIONS           14
+BLOCKS OF VARIABLES           6     SINGLE VARIABLES           34
+NON ZERO ELEMENTS            61     NON LINEAR N-Z             10
+DERIVATIVE POOL              16     CONSTANT POOL              16
+CODE LENGTH                 123
+
+
+GENERATION TIME      =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                         11/28/22 17:34:25 Page 5
+"Prueba SAE"
+Solution Report     SOLVE opt_coste Using NLP From line 95
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   opt_coste           OBJECTIVE  coste
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  KNITRO              FROM LINE  95
+
+**** SOLVER STATUS     1 NORMAL COMPLETION         
+**** MODEL STATUS      2 LOCALLY OPTIMAL           
+**** OBJECTIVE VALUE               16.0860
+
+ RESOURCE USAGE, LIMIT          0.044      1000.000
+ ITERATION COUNT, LIMIT         0         10000
+ EVALUATION ERRORS              0             0
+
+KNITRO        Feb 14, 2007 WIN.KN.NA 22.4 010.036.041.VIS KNITRO 5.1.0
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU eq_costes      8.500     8.500     8.500     1.000      
+
+  eq_costes  costes
+
+---- EQU eq_balance  balance de potencia
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .         .         .        2.500      
+t2      .         .         .        1.425      
+t3      .         .         .        1.760      
+t4      .         .         .        0.100      
+
+---- EQU eq_pdem  demanda horaria
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t0      .         .         .         EPS       
+t1     8.000     8.000     8.000     2.500      
+t2     4.000     4.000     4.000     1.425      
+t3     8.000     8.000     8.000     1.760      
+t4     4.000     4.000     4.000     0.100      
+
+---- EQU eq_soc  estado de carga
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .         .         .       -2.250      
+t2      .         .         .       -1.584      
+t3      .         .         .       -1.584      
+t4      .         .         .       -0.111      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR coste          -INF     16.086     +INF       EPS       
+
+  coste  coste total
+
+---- VAR pg  potencia generada periodo t
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+n1.t0     1.000     1.000     5.000     0.100      
+n1.t1     1.000     5.000     5.000    -2.400      
+n1.t2     1.000     5.000     5.000    -1.325      
+n1.t3     1.000     5.000     5.000    -1.660      
+n1.t4     1.000     4.911     5.000 -3.293E-6      
+n2.t0     0.200     0.200     2.000     0.550      
+n2.t1     0.200     1.175     2.000 -7.108E-8      
+n2.t2     0.200     0.638     2.000 6.2737E-7      
+n2.t3     0.200     0.805     2.000 3.2622E-7      
+n2.t4     0.200     0.200     2.000     0.450      
+n3.t0      .    6.2811E-7     3.000     0.650      
+n3.t1      .        0.925     3.000 2.4248E-7      
+n3.t2      .        0.388     3.000 8.9048E-7      
+n3.t3      .        0.555     3.000 5.5846E-7      
+n3.t4      .    6.9258E-7     3.000     0.550      
+
+---- VAR pdem  potencia demandada periodo t
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t0     -INF       .        +INF       EPS       
+t1     -INF      8.000     +INF       EPS       
+t2     -INF      4.000     +INF       EPS       
+t3     -INF      8.000     +INF       EPS       
+t4     -INF      4.000     +INF       EPS       
+
+---- VAR pc  carga SAE periodo t
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .    8.4120E-7     5.000     0.475      
+t2      .        2.025     5.000 6.5335E-8      
+t3      .    1.1930E-6     5.000     0.334      
+t4      .        1.111     5.000 3.3338E-7      
+
+---- VAR pd  descarga SAE periodo t
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t1      .        0.900     5.000 3.4760E-7      
+t2      .    1.1965E-6     5.000     0.334      
+t3      .        1.640     5.000 1.2730E-7      
+t4      .    2.2679E-5     5.000     0.023      
+
+---- VAR soc  estado de carga periodo t
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+t0     1.000     1.000     1.000    -2.250      
+t1      .    6.1031E-7    10.000     0.666      
+t2      .        1.823    10.000 1.7146E-7      
+t3      .    2.6326E-7    10.000     1.472      
+t4     1.000     1.000     1.000     0.111      
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.000 SECONDS      2 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Manuel Barragan\Downloads\programa_modelo.gms
+Output     C:\Users\Manuel Barragan\OneDrive - UNIVERSIDAD DE SEVILLA (1)\Proyec
+           tos\FlexOnGrid\simulaciones\OPFvsDL\OPF\programa_modelo.lst

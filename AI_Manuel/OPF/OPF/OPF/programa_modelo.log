@@ -1,0 +1,79 @@
+
+--- Job programa_modelo.gms Start 11/28/22 17:34:25
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- programa_modelo.gms(95) 3 Mb
+--- Starting execution
+--- programa_modelo.gms(92) 4 Mb
+--- Generating NLP model opt_coste
+--- programa_modelo.gms(95) 6 Mb
+---   14 rows  34 columns  61 non-zeroes
+---   123 nl-code  10 nl-non-zeroes
+--- programa_modelo.gms(95) 4 Mb
+--- Executing KNITRO
+
+KNITRO        Feb 14, 2007 WIN.KN.NA 22.4 010.036.041.VIS KNITRO 5.1.0
+
+
+======================================
+          Commercial License
+             KNITRO 5.1.0
+       Ziena Optimization, Inc.
+       website:  www.ziena.com
+       email:   info@ziena.com
+======================================
+
+KNITRO changing algorithm from AUTO to 1.
+KNITRO changing bar_murule from AUTO to 1.
+KNITRO changing bar_initpt from AUTO to 2.
+KNITRO shifted start point to honor bounds (26 variables).
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Number of variables:                    34
+    bounded below:                       0
+    bounded above:                       0
+    bounded below and above:            26
+    fixed:                               2
+    free:                                6
+Number of constraints:                  14
+    linear equalities:                   0
+    nonlinear equalities:               14
+    linear inequalities:                 0
+    nonlinear inequalities:              0
+    range:                               0
+Number of nonzeros in Jacobian:         61
+Number of nonzeros in Hessian:          10
+
+  Iter      Objective      Feas err    Opt err     ||Step||    CG its
+--------  --------------  ----------  ----------  ----------  -------
+       0   0.000000e+000  2.347e+001
+      10   1.608882e+001  4.696e-010  2.047e-004  2.789e-002        0
+      12   1.608604e+001  2.834e-008  5.320e-007  2.898e-003        0
+
+EXIT: LOCALLY OPTIMAL SOLUTION FOUND.
+
+Final Statistics
+----------------
+Final objective value               =  1.60860392774542e+001
+Final feasibility error (abs / rel) =   2.83e-008 / 1.21e-009
+Final optimality error  (abs / rel) =   5.32e-007 / 5.32e-007
+# of iterations (major / minor)     =         12 /       12
+# of function evaluations           =         13
+# of gradient evaluations           =         13
+# of Hessian evaluations            =         12
+Total program time (secs)           =       0.038 (     0.000 CPU time)
+Time spent in evaluations (secs)    =       0.000
+
+=========================================================================
+
+
+--- Restarting execution
+--- programa_modelo.gms(95) 0 Mb
+--- Reading solution for model opt_coste
+*** Status: Normal completion
+--- Job programa_modelo.gms Stop 11/28/22 17:34:25 elapsed 0:00:00.139

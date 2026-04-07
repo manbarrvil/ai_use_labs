@@ -1,0 +1,51 @@
+
+--- Job MinPerd_Base_perdidas.gms Start 11/18/25 13:36:48
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- MinPerd_Base_perdidas.gms(310) 3 Mb
+--- Starting execution
+--- MinPerd_Base_perdidas.gms(478) 4 Mb
+--- Generating NLP model OPF
+--- MinPerd_Base_perdidas.gms(479) 6 Mb
+---   188 rows  269 columns  845 non-zeroes
+---   4,341 nl-code  592 nl-non-zeroes
+--- MinPerd_Base_perdidas.gms(479) 4 Mb
+--- Executing CONOPT
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ Reading Data
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.0871845379E+01 (Input point)
+                                Pre-triangular equations:       12
+                                Post-triangular equations:      45
+      1   0        1.7505215014E+01 (After pre-processing)
+      2   0        1.7505215014E+01 (After scaling)
+     10   0    17  1.6999985697E+01               1.0E+00      F  T
+ 
+ ** Feasible solution. Value of objective =   0.268878777866
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     14   3        2.6887882258E-01 0.0E+00    15
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- MinPerd_Base_perdidas.gms(479) 0 Mb
+--- Reading solution for model OPF
+--- Executing after solve
+--- MinPerd_Base_perdidas.gms(552) 3 Mb
+--- Putfile RESULT_Base_min0003 C:\workspace\OPF\OPF\RESULT_Base_min0003.put
+*** Status: Normal completion
+--- Job MinPerd_Base_perdidas.gms Stop 11/18/25 13:36:48 elapsed 0:00:00.227
