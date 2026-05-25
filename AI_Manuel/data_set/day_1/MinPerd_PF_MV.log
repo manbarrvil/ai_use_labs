@@ -1,0 +1,50 @@
+
+--- Job MinPerd_PF_MV.gms Start 11/26/25 13:34:48
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- MinPerd_PF_MV.gms(395) 3 Mb
+--- Starting execution
+--- MinPerd_PF_MV.gms(536) 4 Mb
+--- Generating NLP model OPF
+--- MinPerd_PF_MV.gms(537) 6 Mb
+---   241 rows  301 columns  1,015 non-zeroes
+---   5,834 nl-code  709 nl-non-zeroes
+--- MinPerd_PF_MV.gms(537) 4 Mb
+--- Executing CONOPT
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ Reading Data
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.0000334801E+01 (Input point)
+                                Pre-triangular equations:       27
+                                Post-triangular equations:      49
+      1   0        1.7000196340E+01 (After pre-processing)
+      2   0        1.7000196340E+01 (After scaling)
+ 
+ ** Feasible solution. Value of objective =   1.019156947623E-04
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      5   3        1.0191569476E-04 0.0E+00    18
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- MinPerd_PF_MV.gms(537) 0 Mb
+--- Reading solution for model OPF
+--- Executing after solve
+--- MinPerd_PF_MV.gms(637) 3 Mb
+--- Putfile RESULT_Base_min0003 C:\workspace\AI\data_set\day_1\RESULT_Base_min0003.put
+*** Status: Normal completion
+--- Job MinPerd_PF_MV.gms Stop 11/26/25 13:34:48 elapsed 0:00:00.155

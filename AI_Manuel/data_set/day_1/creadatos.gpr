@@ -1,0 +1,77 @@
+[PROJECT]
+
+[RP:MINPERD_BASE_PERDIDAS_QOPT_V1]
+1=r=C:\workspace\AI\data_set\day_3\minuto0913 Pdir=C:\workspace\AI\data_set\day_3 --Num= min0913
+2=
+
+[RP:MINPERD_BASE_PERDIDAS_QOPT_V2]
+1=r=C:\workspace\AI\data_set\day_313\minuto0523 Pdir=C:\workspace\AI\data_set\day_3 --Num= min0913
+2=r=C:\workspace\AI\data_set\day_3\minuto0913 Pdir=C:\workspace\AI\data_set\day_3 --Num= min0913
+3=
+
+[SOLVERS]
+CNS=CONOPT
+DNLP=CONOPT
+LP=CONOPT
+NLP=CONOPT
+QCP=CONOPT
+RMINLP=CONOPT
+RMIP=CONOPT
+RMIQCP=CONOPT
+
+[RP:READ_DATA]
+1=
+
+[RP:MINPERD_PF_MV]
+1=r=minuto0003 --NUM= min0003
+2=
+
+[RP:CONV_DATA]
+1=s=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_6\minuto0003 Idir=minuto0003
+2=s=C:\workspace\AI\data_set\day_3\minuto0003 Idir=C:\workspace\AI\data_set\day_3\minuto0003
+3=s=C:\workspace\AI\data_set\day_1\minuto0003 Idir=minuto0003
+4=s=C:\workspace\AI\data_set\day_2\minuto0003 Idir=minuto0003
+5=s=C:\workspace\AI\data_set\day_6\minuto0003 Idir=minuto0003
+6=C:\workspace\AI\data_set\day_6\minuto0003 Idir=minuto0003
+7=C:\workspace\AI\data_set\day_2\minuto0003 Idir=minuto0003
+8=C:\workspace\AI\data_set\day_2\s=minuto0003 Idir=minuto0003
+9=s=minuto0003 Idir=minuto0003
+10=s=C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_2\minuto0003 Idir=minuto0003
+11=
+
+[RP:MINPERD_BASE_PERDIDAS]
+1=r=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_2\minuto0713 Pdir=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_2 --Num= min0713
+2=r=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_2\minuto0913 Pdir=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_2 --Num= min0913
+3=r=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_3\minuto0913 Pdir=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_3 --Num= min0913
+4=r=C:\workspace\AI\data_set\day_3\minuto0913 Pdir=C:\workspace\AI\data_set\day_3 --Num= min0913
+5=r=C:\workspace\AI\data_set\day_2\minuto0913 Pdir=C:\workspace\AI\data_set\day_2 --Num= min0913
+6=r=C:\workspace\AI\data_set\day_1\minuto0913 Pdir=C:\workspace\AI\data_set\day_1 --Num= min0913
+7=r=C:\workspace\AI\data_set\day_3\minuto0913 Idir=C:\workspace\AI\data_set\day_3\minuto0913 --Num= min0913
+8=r=C:\workspace\AI\data_set\day_3\minuto0913 Idir=C:\workspace\AI\data_set\day_3 --Num= min0913
+9=r=C:\workspace\AI\data_set\day_3\minuto0913 Idir=C:\workspace\AI\data_set\minuto0913 --Num= min0913
+10=r=C:\workspace\AI\data_set\day_3\minuto0913 Idir=C:\workspace\AI\data_set\minuto0913--Num= min0913
+11=r=C:\workspace\AI\data_set\day_3\minuto0913 Idir= --Num= min0913
+12=r=C:\workspace\AI\data_set\day_3\minuto0913 --Num= min0913
+13=r=minuto0003 --NUM= min0003
+14=r=minuto0003 -NUM= min0003
+
+[MRUFILES]
+1=C:\Users\manba\AppData\Local\Temp\cb28849c-9f7d-4dba-9168-76c6993546e0_OPF.zip.6e0\OPF\OPF\conv_data.gms
+2=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\MinPerd_Base_perdidas.lst
+3=D:\workspace\OPF\OPF\MinPerd_PF_MV.gms
+4=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\read_data.gms
+5=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.lst
+6=C:\workspace\AI\data_set\day_1\read_data.gms
+7=C:\workspace\AI\data_set\day_1\MinPerd_Base_perdidas_Qopt_v1.gms
+8=C:\workspace\AI\data_set\day_1\MinPerd_Base_perdidas_Qopt_v1.lst
+9=C:\workspace\AI\data_set\day_1\conv_data.lst
+
+[OPENWINDOW_1]
+FILE0=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.gms
+FILE1=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\MinPerd_Base_perdidas.gms
+FILE2=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.gms
+MAXIM=1
+TOP=50
+LEFT=50
+HEIGHT=400
+WIDTH=400

@@ -1,0 +1,1655 @@
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 9
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 475
+
+
+---- eqobj  =E=  ecuacion objetivo
+
+eqobj..  obj - Pgen(GF0) =E= 0 ; (LHS = 0)
+     
+
+---- eqp  =E=  balance activa
+
+eqp(0)..  Pgen(GF0) + (0)*vv(0) - (1)*va1(0) - (1)*va2(0) + (0)*LambdaG(GF0) + (1)*Pgen2(GF0) =E= 0 ; (LHS = 0)
+     
+eqp(1)..  (0)*vv(1) - (1)*va1(1) - (1)*va2(1) - 0.15895*Lambda =E= 0 ; (LHS = -0.15895, INFES = 0.15895 ***)
+     
+eqp(2)..  (0)*vv(2) - (1)*va1(2) - (1)*va2(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqq  =E=  balance reactiva
+
+eqq(0)..  Qgen(GF0) + (0)*vv(0) - (1)*va3(0) - (1)*va4(0) + Qgen2(GF0) =E= 0 ; (LHS = 0)
+     
+eqq(1)..  (0)*vv(1) - (1)*va3(1) - (1)*va4(1) - 0.032282745*Lambda =E= 0 ; (LHS = -0.032282745, INFES = 0.032282745 ***)
+     
+eqq(2)..  (0)*vv(2) - (1)*va3(2) - (1)*va4(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa1  =E=  ecuacion auxiliar 1
+
+eqa1(0)..  - 0.0449999746875143*vv(0) + (0.0224999873437571)*vv(1) + (0.0224999873437571)*vv(12) + (0)*d(0) + (0)*d(1)
+     
+      + (0)*d(12) + va1(0) =E= 0 ; (LHS = 0)
+     
+eqa1(1)..  (0.0224999873437571)*vv(0) - 466.541047015329*vv(1) + (466.518547027985)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2)
+     
+      + va1(1) =E= 0 ; (LHS = 0)
+     
+eqa1(2)..  (466.518547027985)*vv(1) - 1513.19143558349*vv(2) + (1046.6728885555)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3)
+     
+      + va1(2) =E= 0 ; (LHS = -2.27373675443232E-13, INFES = 2.27373675443232E-13 ***)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa2  =E=  ecuacion auxiliar 2
+
+eqa2(0)..  (0)*vv(1) + (0)*vv(12) - (59.999966250019)*d(0) + (29.9999831250095)*d(1) + (29.9999831250095)*d(12) + va2(0)
+      =E= 0 ; (LHS = 0)
+     
+eqa2(1)..  (0)*vv(0) + (0)*vv(2) + (29.9999831250095)*d(0) - (335.56963142834)*d(1) + (305.56964830333)*d(2) + va2(1) =E= 0
+      ; (LHS = 0)
+     
+eqa2(2)..  (0)*vv(1) + (0)*vv(3) + (305.56964830333)*d(1) - (853.32845998071)*d(2) + (547.75881167738)*d(3) + va2(2) =E= 0
+      ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqa3  =E=  ecuacion auxiliar 3
+
+eqa3(0)..  (0)*vv(1) + (0)*vv(12) + (0.0449999746875143)*d(0) - (0.0224999873437571)*d(1) - (0.0224999873437571)*d(12)
+     
+      + va3(0) =E= 0 ; (LHS = 0)
+     
+eqa3(1)..  (0)*vv(0) + (0)*vv(2) - (0.0224999873437571)*d(0) + (466.541047015329)*d(1) - (466.518547027985)*d(2) + va3(1)
+      =E= 0 ; (LHS = 0)
+     
+eqa3(2)..  (0)*vv(1) + (0)*vv(3) - (466.518547027985)*d(1) + (1513.19143558349)*d(2) - (1046.6728885555)*d(3) + va3(2) =E= 
+     0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 10
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 475
+
+
+---- eqa4  =E=  ecuacion auxiliar 4
+
+eqa4(0)..  - 59.999966250019*vv(0) + (29.9999831250095)*vv(1) + (29.9999831250095)*vv(12) + (0)*d(0) + (0)*d(1) + (0)*d(12)
+     
+      + va4(0) =E= 0 ; (LHS = 0)
+     
+eqa4(1)..  (29.9999831250095)*vv(0) - 335.56963142834*vv(1) + (305.56964830333)*vv(2) + (0)*d(0) + (0)*d(1) + (0)*d(2)
+     
+      + va4(1) =E= 0 ; (LHS = 0)
+     
+eqa4(2)..  (305.56964830333)*vv(1) - 853.32845998071*vv(2) + (547.75881167738)*vv(3) + (0)*d(1) + (0)*d(2) + (0)*d(3)
+     
+      + va4(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb1  =E=  ecuacion auxiliar b1
+
+eqb1(0)..  - (2)*vv(0) + vb1(0) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(1)..  - (2)*vv(1) + vb1(1) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb1(2)..  - (2)*vv(2) + vb1(2) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eqb2  =E=  ecuacion auxiliar b2
+
+eqb2(Line_01,0,1)..  - (2)*vv(0) - (2)*vv(1) + vb2(0,1) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_02,0,12)..  - (2)*vv(0) - (2)*vv(12) + vb2(0,12) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+eqb2(Line_1,1,2)..  - (2)*vv(1) - (2)*vv(2) + vb2(1,2) =E= 0 ; (LHS = -2, INFES = 2 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eqb3  =E=  ecuacion auxiliar b3
+
+eqb3(Line_01,0,1)..  (0)*d(0) + (0)*d(1) + vb3(0,1) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_02,0,12)..  (0)*d(0) + (0)*d(12) + vb3(0,12) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+eqb3(Line_1,1,2)..  (0)*d(1) + (0)*d(2) + vb3(1,2) =E= 0 ; (LHS = -1, INFES = 1 ***)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+
+---- eq_i2  =E=  intensidad i2
+
+eq_i2..  (0)*Pgen(GF14) + (0)*Qgen(GF14) + (0)*vv(F14) + i2 =E= 0 ; (LHS = 0)
+     
+
+---- eq_i1  =E=  intensidad i1
+
+eq_i1(0)..  i1(0) =E= 0 ; (LHS = 0)
+     
+eq_i1(1)..  (0.162195185269893)*vv(1) + i1(1) =E= 0 ; (LHS = -0.162195185269893, INFES = 0.162195185269893 ***)
+     
+eq_i1(2)..  i1(2) =E= 0 ; (LHS = 0)
+     
+REMAINING 16 ENTRIES SKIPPED
+
+
+---- eir2  =E=  intensidad de rama al cuadrado
+
+eir2(Line_01,0,1)..  - 899.999493750285*vb1(0) - 899.999493750285*vb1(1) + (0)*vb2(0,1) + (0)*vb3(0,1) + ir2(0,1) =E= 0 ;
+     
+      (LHS = 0)
+     
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 11
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE OPF Using NLP From line 475
+
+
+     eir2  =E=  intensidad de rama al cuadrado
+
+eir2(Line_02,0,12)..  - 899.999493750285*vb1(0) - 899.999493750285*vb1(12) + (0)*vb2(0,12) + (0)*vb3(0,12) + ir2(0,12) =E= 
+     0 ; (LHS = 0)
+     
+eir2(Line_1,1,2)..  - 311012.364685323*vb1(1) - 311012.364685323*vb1(2) + (0)*vb2(1,2) + (0)*vb3(1,2) + ir2(1,2) =E= 0 ;
+     
+      (LHS = 0)
+     
+REMAINING 14 ENTRIES SKIPPED
+
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 12
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+---- obj  objetivo
+
+obj
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eqobj
+
+
+---- Pgen  activa generada
+
+Pgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(3)
+
+Pgen(GP4)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(4)
+
+Pgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqp(5)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Qgen  reactiva generada
+
+Qgen(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(3)
+
+Qgen(GP4)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(4)
+
+Qgen(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vv  tension nodal
+
+vv(0)
+                (.LO, .L, .UP = 0.5, 1, 1.5)
+       (0)      eqp(0)
+       (0)      eqq(0)
+       -0.045   eqa1(0)
+       (0.0225) eqa1(1)
+       (0.0225) eqa1(12)
+       (0)      eqa2(1)
+       (0)      eqa2(12)
+       (0)      eqa3(1)
+       (0)      eqa3(12)
+      -60       eqa4(0)
+      (30)      eqa4(1)
+      (30)      eqa4(12)
+      (-2)      eqb1(0)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_02,0,12)
+
+vv(1)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0)      eqp(1)
+       (0)      eqq(1)
+       (0.0225) eqa1(0)
+     -466.541   eqa1(1)
+     (466.5185) eqa1(2)
+       (0)      eqa2(0)
+       (0)      eqa2(2)
+       (0)      eqa3(0)
+       (0)      eqa3(2)
+      (30)      eqa4(0)
+     -335.5696  eqa4(1)
+     (305.5696) eqa4(2)
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 13
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+     vv  tension nodal
+
+      (-2)      eqb1(1)
+      (-2)      eqb2(Line_01,0,1)
+      (-2)      eqb2(Line_1,1,2)
+       (0.1622) eq_i1(1)
+
+vv(2)
+                (.LO, .L, .UP = 0.5, 1, 1.5)
+       (0)      eqp(2)
+       (0)      eqq(2)
+     (466.5185) eqa1(1)
+    -1513.1914  eqa1(2)
+    (1046.6729) eqa1(3)
+       (0)      eqa2(1)
+       (0)      eqa2(3)
+       (0)      eqa3(1)
+       (0)      eqa3(3)
+     (305.5696) eqa4(1)
+     -853.3285  eqa4(2)
+     (547.7588) eqa4(3)
+      (-2)      eqb1(2)
+      (-2)      eqb2(Line_1,1,2)
+      (-2)      eqb2(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- d  angulo de la tension nodal
+
+d(0)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(12)
+     (-60)      eqa2(0)
+      (30)      eqa2(1)
+      (30)      eqa2(12)
+       (0.045)  eqa3(0)
+      (-0.0225) eqa3(1)
+      (-0.0225) eqa3(12)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(12)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_02,0,12)
+
+d(1)
+                (.LO, .L, .UP = 0, 0, 0)
+       (0)      eqa1(0)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+      (30)      eqa2(0)
+    (-335.5696) eqa2(1)
+     (305.5696) eqa2(2)
+      (-0.0225) eqa3(0)
+     (466.541)  eqa3(1)
+    (-466.5185) eqa3(2)
+       (0)      eqa4(0)
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqb3(Line_01,0,1)
+       (0)      eqb3(Line_1,1,2)
+
+d(2)
+                (.LO, .L, .UP = -3.14159265358979, 0, 3.14159265358979)
+       (0)      eqa1(1)
+       (0)      eqa1(2)
+       (0)      eqa1(3)
+     (305.5696) eqa2(1)
+    (-853.3285) eqa2(2)
+     (547.7588) eqa2(3)
+    (-466.5185) eqa3(1)
+    (1513.1914) eqa3(2)
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 14
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+     d  angulo de la tension nodal
+
+   (-1046.6729) eqa3(3)
+       (0)      eqa4(1)
+       (0)      eqa4(2)
+       (0)      eqa4(3)
+       (0)      eqb3(Line_1,1,2)
+       (0)      eqb3(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va1  variable auxiliar 1
+
+va1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa1(0)
+
+va1(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa1(1)
+
+va1(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va2  variable auxiliar 2
+
+va2(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(0)
+        1       eqa2(0)
+
+va2(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(1)
+        1       eqa2(1)
+
+va2(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqp(2)
+        1       eqa2(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va3  variable auxiliar 3
+
+va3(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+        1       eqa3(0)
+
+va3(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa3(1)
+
+va3(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa3(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- va4  variable auxiliar 4
+
+va4(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(0)
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 15
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+     va4  variable auxiliar 4
+
+        1       eqa4(0)
+
+va4(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(1)
+        1       eqa4(1)
+
+va4(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+      (-1)      eqq(2)
+        1       eqa4(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb1  variable auxiliar b1
+
+vb1(0)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(0)
+     -899.9995  eir2(Line_01,0,1)
+     -899.9995  eir2(Line_02,0,12)
+
+vb1(1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(1)
+     -899.9995  eir2(Line_01,0,1)
+  -311012.3647  eir2(Line_1,1,2)
+
+vb1(2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb1(2)
+  -311012.3647  eir2(Line_1,1,2)
+  -1.395564E+6  eir2(Line_2,2,3)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- vb2  variable auxiliar b2
+
+vb2(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_01,0,1)
+       (0)      eir2(Line_01,0,1)
+
+vb2(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_02,0,12)
+       (0)      eir2(Line_02,0,12)
+
+vb2(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb2(Line_1,1,2)
+       (0)      eir2(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- vb3  variable auxiliar b3
+
+vb3(0,1)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_01,0,1)
+       (0)      eir2(Line_01,0,1)
+
+vb3(0,12)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_02,0,12)
+       (0)      eir2(Line_02,0,12)
+
+vb3(1,2)
+                (.LO, .L, .UP = 0, 0, +INF)
+        1       eqb3(Line_1,1,2)
+       (0)      eir2(Line_1,1,2)
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 16
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+     vb3  variable auxiliar b3
+
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- ir2  intensidad de rama al cuadrado
+
+ir2(0,1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eir2(Line_01,0,1)
+
+ir2(0,12)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eir2(Line_02,0,12)
+
+ir2(1,2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eir2(Line_1,1,2)
+
+REMAINING 14 ENTRIES SKIPPED
+
+---- i2  intensidad nudo 2
+
+i2
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i2
+
+
+---- i1  intensidad nudo 1
+
+i1(0)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(0)
+
+i1(1)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(1)
+
+i1(2)
+                (.LO, .L, .UP = -INF, 0, +INF)
+        1       eq_i1(2)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Lambda  
+
+Lambda
+                (.LO, .L, .UP = 1, 1, 1)
+       -0.159   eqp(1)
+       -0.0221  eqp(3)
+       -0.0862  eqp(4)
+       -0.0114  eqp(5)
+       -0.0151  eqp(7)
+       -0.0357  eqp(8)
+       -0.0575  eqp(10)
+       -0.048   eqp(11)
+       -1.8334  eqp(12)
+       -0.0049  eqp(13)
+       -0.0162  eqp(14)
+       -0.0323  eqq(1)
+       -0.0137  eqq(3)
+       -0.0534  eqq(4)
+       -0.0071  eqq(5)
+       -0.0031  eqq(7)
+       -0.0221  eqq(8)
+       -0.0327  eqq(10)
+       -0.0297  eqq(11)
+       -1.1362  eqq(12)
+       -0.001   eqq(13)
+       -0.0033  eqq(14)
+
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 17
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE OPF Using NLP From line 475
+
+
+---- LambdaG  
+
+LambdaG(GP3)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0.0032) eqp(3)
+
+LambdaG(GP4)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0.0009) eqp(4)
+
+LambdaG(GP5)
+                (.LO, .L, .UP = 1, 1, 1)
+       (0.0027) eqp(5)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Pgen2  
+
+Pgen2(GP3)
+                (.LO, .L, .UP = 0.003235063, 0.003235063, 0.003235063)
+       (1)      eqp(3)
+
+Pgen2(GP4)
+                (.LO, .L, .UP = 0.000895063, 0.000895063, 0.000895063)
+       (1)      eqp(4)
+
+Pgen2(GP5)
+                (.LO, .L, .UP = 0.002727594, 0.002727594, 0.002727594)
+       (1)      eqp(5)
+
+REMAINING 16 ENTRIES SKIPPED
+
+---- Qgen2  
+
+Qgen2(GP3)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(3)
+
+Qgen2(GP4)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(4)
+
+Qgen2(GP5)
+                (.LO, .L, .UP = 0, 0, 0)
+        1       eqq(5)
+
+REMAINING 16 ENTRIES SKIPPED
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 18
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE OPF Using NLP From line 475
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          13     SINGLE EQUATIONS          205
+BLOCKS OF VARIABLES          19     SINGLE VARIABLES          301
+NON ZERO ELEMENTS           954     NON LINEAR N-Z            635
+DERIVATIVE POOL              17     CONSTANT POOL              63
+CODE LENGTH               4,683
+
+
+GENERATION TIME      =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 19
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   OPF                 OBJECTIVE  obj
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  CONOPT              FROM LINE  475
+
+**** SOLVER STATUS     1 NORMAL COMPLETION         
+**** MODEL STATUS      2 LOCALLY OPTIMAL           
+**** OBJECTIVE VALUE                1.6736
+
+ RESOURCE USAGE, LIMIT          0.000      1000.000
+ ITERATION COUNT, LIMIT        19         10000
+ EVALUATION ERRORS              0             0
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ 
+ ** Warning **  The number of nonlinear derivatives equal to zero
+                in the initial point is large (= 30 percent).
+                A better initial point will probably help the
+                optimization.
+ 
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 4.9 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+ 
+ CONOPT time Total                            0.016 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+ 
+ Workspace           =     0.86 Mbytes
+    Estimate         =     0.86 Mbytes
+    Max used         =     0.34 Mbytes
+
+**** ERRORS/WARNINGS IN EQUATION eq_i2
+     12 warning(s): sqrt: GRAD SINGULAR: x = 0
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU eqobj               .              .              .             1.0000      
+
+  eqobj  ecuacion objetivo
+
+---- EQU eqp  balance activa
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             1.0000      
+1            .              .              .             1.0000      
+2            .              .              .             0.9990      
+3            .              .              .             0.9985      
+4            .              .              .             0.9985      
+5            .              .              .             0.9984      
+6            .              .              .             0.9984      
+7            .              .              .             0.9978      
+8            .              .              .             0.9983      
+9            .              .              .             0.9983      
+10           .              .              .             0.9983      
+11           .              .              .             0.9983      
+12           .              .              .             1.0001      
+13           .              .              .             1.0002      
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 20
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     EQU eqp  balance activa
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+14           .              .              .             1.0002      
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             0.9983      
+F14          .              .              .             1.0002      
+
+---- EQU eqq  balance reactiva
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             EPS         
+1            .              .              .       4.2740718E-7      
+2            .              .              .             0.0005      
+3            .              .              .             0.0007      
+4            .              .              .             0.0007      
+5            .              .              .             0.0007      
+6            .              .              .             0.0007      
+7            .              .              .             0.0008      
+8            .              .              .             0.0008      
+9            .              .              .             0.0008      
+10           .              .              .             0.0008      
+11           .              .              .             0.0008      
+12           .              .              .       7.0841092E-5      
+13           .              .              .       8.4656832E-5      
+14           .              .              .       8.9077021E-5      
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             0.0008      
+F14          .              .              .       8.9077021E-5      
+
+---- EQU eqa1  ecuacion auxiliar 1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             1.0065      
+1            .              .              .             1.0000      
+2            .              .              .             0.9993      
+3            .              .              .             0.9990      
+4            .              .              .             0.9990      
+5            .              .              .             0.9990      
+6            .              .              .             0.9990      
+7            .              .              .             0.9987      
+8            .              .              .             0.9989      
+9            .              .              .             0.9989      
+10           .              .              .             0.9989      
+11           .              .              .             0.9989      
+12           .              .              .             0.9651      
+13           .              .              .             0.9651      
+14           .              .              .             0.9651      
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             0.9989      
+F14          .              .              .             0.9651      
+
+---- EQU eqa2  ecuacion auxiliar 2
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             1.0065      
+1            .              .              .             1.0000      
+2            .              .              .             0.9993      
+3            .              .              .             0.9990      
+4            .              .              .             0.9990      
+5            .              .              .             0.9990      
+6            .              .              .             0.9990      
+7            .              .              .             0.9987      
+8            .              .              .             0.9989      
+9            .              .              .             0.9989      
+10           .              .              .             0.9989      
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 21
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     EQU eqa2  ecuacion auxiliar 2
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+11           .              .              .             0.9989      
+12           .              .              .             0.9651      
+13           .              .              .             0.9651      
+14           .              .              .             0.9651      
+15           .              .              .              .          
+F15          .              .              .             EPS         
+F8           .              .              .             0.9989      
+F14          .              .              .             0.9651      
+
+---- EQU eqa3  ecuacion auxiliar 3
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             EPS         
+1            .              .              .       4.2740718E-7      
+2            .              .              .             0.0005      
+3            .              .              .             0.0007      
+4            .              .              .             0.0007      
+5            .              .              .             0.0007      
+6            .              .              .             0.0007      
+7            .              .              .             0.0008      
+8            .              .              .             0.0008      
+9            .              .              .             0.0008      
+10           .              .              .             0.0008      
+11           .              .              .             0.0008      
+12           .              .              .       6.8362575E-5      
+13           .              .              .       8.1691576E-5      
+14           .              .              .       8.5955885E-5      
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             0.0008      
+F14          .              .              .       8.5955885E-5      
+
+---- EQU eqa4  ecuacion auxiliar 4
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             EPS         
+1            .              .              .       4.2740718E-7      
+2            .              .              .             0.0005      
+3            .              .              .             0.0007      
+4            .              .              .             0.0007      
+5            .              .              .             0.0007      
+6            .              .              .             0.0007      
+7            .              .              .             0.0008      
+8            .              .              .             0.0008      
+9            .              .              .             0.0008      
+10           .              .              .             0.0008      
+11           .              .              .             0.0008      
+12           .              .              .       6.8362575E-5      
+13           .              .              .       8.1691576E-5      
+14           .              .              .       8.5955885E-5      
+15           .              .              .              .          
+F15          .              .              .             EPS         
+F8           .              .              .             0.0008      
+F14          .              .              .       8.5955885E-5      
+
+---- EQU eqb1  ecuacion auxiliar b1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             EPS         
+1            .              .              .             EPS         
+2            .              .              .             EPS         
+3            .              .              .             EPS         
+4            .              .              .             EPS         
+5            .              .              .             EPS         
+6            .              .              .             EPS         
+7            .              .              .             EPS         
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 22
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     EQU eqb1  ecuacion auxiliar b1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+8            .              .              .             EPS         
+9            .              .              .             EPS         
+10           .              .              .             EPS         
+11           .              .              .             EPS         
+12           .              .              .             EPS         
+13           .              .              .             EPS         
+14           .              .              .             EPS         
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             EPS         
+F14          .              .              .             EPS         
+
+---- EQU eqb2  ecuacion auxiliar b2
+
+                      LOWER          LEVEL          UPPER         MARGINAL
+
+Line_01.0 .1            .              .              .             EPS         
+Line_02.0 .12           .              .              .             EPS         
+Line_1 .1 .2            .              .              .             EPS         
+Line_2 .2 .3            .              .              .             EPS         
+Line_3 .3 .4            .              .              .             EPS         
+Line_4 .4 .5            .              .              .             EPS         
+Line_5 .5 .6            .              .              .             EPS         
+Line_7 .7 .8            .              .              .             EPS         
+Line_8 .8 .9            .              .              .             EPS         
+Line_9 .9 .10           .              .              .             EPS         
+Line_10.10.11           .              .              .             EPS         
+Line_12.8 .3            .              .              .             EPS         
+Line_14.12.13           .              .              .             EPS         
+Line_15.13.14           .              .              .             EPS         
+TC1    .8 .F8           .              .              .             EPS         
+TC2    .14.F14          .              .              .             EPS         
+TC3    .15.F15          .              .              .             EPS         
+
+---- EQU eqb3  ecuacion auxiliar b3
+
+                      LOWER          LEVEL          UPPER         MARGINAL
+
+Line_01.0 .1            .              .              .             EPS         
+Line_02.0 .12           .              .              .             EPS         
+Line_1 .1 .2            .              .              .             EPS         
+Line_2 .2 .3            .              .              .             EPS         
+Line_3 .3 .4            .              .              .              .          
+Line_4 .4 .5            .              .              .              .          
+Line_5 .5 .6            .              .              .             EPS         
+Line_7 .7 .8            .              .              .             EPS         
+Line_8 .8 .9            .              .              .              .          
+Line_9 .9 .10           .              .              .              .          
+Line_10.10.11           .              .              .             EPS         
+Line_12.8 .3            .              .              .             EPS         
+Line_14.12.13           .              .              .              .          
+Line_15.13.14           .              .              .             EPS         
+TC1    .8 .F8           .              .              .             EPS         
+TC2    .14.F14          .              .              .             EPS         
+TC3    .15.F15          .              .              .             EPS         
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU eq_i2               .              .              .             EPS         
+
+  eq_i2  intensidad i2
+
+---- EQU eq_i1  intensidad i1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .              .              .             EPS         
+1            .              .              .             EPS         
+2            .              .              .             EPS         
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 23
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     EQU eq_i1  intensidad i1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+3            .              .              .             EPS         
+4            .              .              .             EPS         
+5            .              .              .             EPS         
+6            .              .              .             EPS         
+7            .              .              .             EPS         
+8            .              .              .             EPS         
+9            .              .              .             EPS         
+10           .              .              .             EPS         
+11           .              .              .             EPS         
+12           .              .              .             EPS         
+13           .              .              .             EPS         
+14           .              .              .             EPS         
+15           .              .              .             EPS         
+F15          .              .              .             EPS         
+F8           .              .              .             EPS         
+F14          .              .              .             EPS         
+
+---- EQU eir2  intensidad de rama al cuadrado
+
+                      LOWER          LEVEL          UPPER         MARGINAL
+
+Line_01.0 .1            .              .              .             EPS         
+Line_02.0 .12           .              .              .             EPS         
+Line_1 .1 .2            .              .              .             EPS         
+Line_2 .2 .3            .              .              .             EPS         
+Line_3 .3 .4            .              .              .             EPS         
+Line_4 .4 .5            .              .              .             EPS         
+Line_5 .5 .6            .              .              .             EPS         
+Line_7 .7 .8            .              .              .             EPS         
+Line_8 .8 .9            .              .              .             EPS         
+Line_9 .9 .10           .              .              .             EPS         
+Line_10.10.11           .              .              .             EPS         
+Line_12.8 .3            .              .              .             EPS         
+Line_14.12.13           .              .              .             EPS         
+Line_15.13.14           .              .              .             EPS         
+TC1    .8 .F8           .              .              .             EPS         
+TC2    .14.F14          .              .              .             EPS         
+TC3    .15.F15          .              .              .             EPS         
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR obj               -INF            1.6736        +INF             .          
+
+  obj  objetivo
+
+---- VAR Pgen  activa generada
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GP3              .              .              .            -0.9985      
+GP4              .              .              .            -0.9985      
+GP5              .              .              .            -0.9984      
+GB5              .              .              .            -0.9984      
+GFC5             .              .              .            -0.9984      
+GP6              .              .              .            -0.9984      
+GWT7             .              .              .            -0.9978      
+GP8              .              .              .            -0.9983      
+GP9              .              .              .            -0.9983      
+GCHPD9           .              .              .            -0.9983      
+GCHPFC9          .              .              .            -0.9983      
+GP10             .              .              .            -0.9983      
+GB10             .              .              .            -0.9983      
+GFC10            .              .              .            -0.9983      
+GP11             .              .              .            -0.9983      
+GF0          -100.0000         1.6736       100.0000          .          
+GF15             .              .              .             EPS         
+GF8              .              .              .            -0.9983      
+GF14             .              .              .            -1.0002      
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 24
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+---- VAR Qgen  reactiva generada
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GP3              .              .              .            -0.0007      
+GP4              .              .              .            -0.0007      
+GP5              .              .              .            -0.0007      
+GB5              .              .              .            -0.0007      
+GFC5             .              .              .            -0.0007      
+GP6              .              .              .            -0.0007      
+GWT7             .              .              .            -0.0008      
+GP8              .              .              .            -0.0008      
+GP9              .              .              .            -0.0008      
+GCHPD9           .              .              .            -0.0008      
+GCHPFC9          .              .              .            -0.0008      
+GP10             .              .              .            -0.0008      
+GB10             .              .              .            -0.0008      
+GFC10            .              .              .            -0.0008      
+GP11             .              .              .            -0.0008      
+GF0          -100.0000         1.5068       100.0000          .          
+GF15             .              .              .             EPS         
+GF8              .              .              .            -0.0008      
+GF14             .              .              .       -8.907702E-5      
+
+---- VAR vv  tension nodal
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0           0.5000         1.0065         1.5000          .          
+1           1.0000         1.0000         1.0000        -0.0012      
+2           0.5000         1.0004         1.5000          .          
+3           0.5000         1.0005         1.5000          .          
+4           0.5000         1.0005         1.5000          .          
+5           0.5000         1.0006         1.5000          .          
+6           0.5000         1.0006         1.5000          .          
+7           0.5000         1.0008         1.5000          .          
+8           0.5000         1.0006         1.5000          .          
+9           0.5000         1.0006         1.5000          .          
+10          0.5000         1.0006         1.5000          .          
+11          0.5000         1.0006         1.5000          .          
+12          0.5000         0.9650         1.5000          .          
+13          0.5000         0.9650         1.5000          .          
+14          0.5000         0.9650         1.5000          .          
+15          0.5000         1.0000         1.5000         EPS         
+F15         0.5000         1.0000         1.5000          .          
+F8          0.5000         1.0006         1.5000          .          
+F14         0.5000         0.9650         1.5000          .          
+
+---- VAR d  angulo de la tension nodal
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -3.1416        -0.0060         3.1416          .          
+1            .              .              .             EPS         
+2          -3.1416         0.0006         3.1416          .          
+3          -3.1416         0.0008         3.1416          .          
+4          -3.1416         0.0008         3.1416          .          
+5          -3.1416         0.0008         3.1416          .          
+6          -3.1416         0.0008         3.1416          .          
+7          -3.1416         0.0010         3.1416          .          
+8          -3.1416         0.0009         3.1416          .          
+9          -3.1416         0.0009         3.1416          .          
+10         -3.1416         0.0009         3.1416          .          
+11         -3.1416         0.0009         3.1416          .          
+12         -3.1416        -0.0697         3.1416          .          
+13         -3.1416        -0.0697         3.1416          .          
+14         -3.1416        -0.0697         3.1416          .          
+15         -3.1416          .             3.1416         EPS         
+F15        -3.1416          .             3.1416          .          
+F8         -3.1416         0.0009         3.1416          .          
+F14        -3.1416        -0.0697         3.1416          .          
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 25
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+---- VAR va1  variable auxiliar 1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -INF            0.0011        +INF             .          
+1          -INF           -0.1638        +INF             .          
+2          -INF           -0.0367        +INF             .          
+3          -INF            0.0101        +INF             .          
+4          -INF           -0.0975        +INF             .          
+5          -INF            0.0639        +INF             .          
+6          -INF            0.0071        +INF             .          
+7          -INF            0.3249        +INF             .          
+8          -INF           -0.1176        +INF             .          
+9          -INF            0.0575        +INF             .          
+10         -INF            0.0032        +INF             .          
+11         -INF           -0.0510        +INF             .          
+12         -INF            0.0118        +INF             .          
+13         -INF            0.0009        +INF             .          
+14         -INF           -0.0136        +INF             .          
+15         -INF             .            +INF             .          
+F15        -INF             .            +INF             .          
+F8         -INF             .            +INF             .          
+F14        -INF             .            +INF             .          
+
+---- VAR va2  variable auxiliar 2
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -INF            1.6617        +INF             .          
+1          -INF            0.0048        +INF             .          
+2          -INF            0.0367        +INF             .          
+3          -INF           -0.0290        +INF             .          
+4          -INF            0.0122        +INF             .          
+5          -INF            0.0143        +INF             .          
+6          -INF            0.0007        +INF             .          
+7          -INF            0.0334        +INF             .          
+8          -INF            0.0869        +INF             .          
+9          -INF            0.0062        +INF             .          
+10         -INF            0.0105        +INF             .          
+11         -INF            0.0043        +INF             .          
+12         -INF           -1.9116        +INF             .          
+13         -INF           -0.0060        +INF             .          
+14         -INF           -0.0032        +INF             .          
+15         -INF             .            +INF             .          
+F15        -INF             .            +INF             .          
+F8         -INF             .            +INF             .          
+F14        -INF             .            +INF             .          
+
+---- VAR va3  variable auxiliar 3
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -INF           -0.0012        +INF             .          
+1          -INF            0.2691        +INF             .          
+2          -INF           -0.0024        +INF             .          
+3          -INF            0.0016        +INF             .          
+4          -INF           -0.0076        +INF             .          
+5          -INF           -0.0342        +INF             .          
+6          -INF           -0.0023        +INF             .          
+7          -INF           -0.1057        +INF             .          
+8          -INF           -0.0531        +INF             .          
+9          -INF           -0.0179        +INF             .          
+10         -INF           -0.0342        +INF             .          
+11         -INF           -0.0134        +INF             .          
+12         -INF           -0.0074        +INF             .          
+13         -INF            0.0037        +INF             .          
+14         -INF            0.0051        +INF             .          
+15         -INF             .            +INF             .          
+F15        -INF             .            +INF             .          
+F8         -INF             .            +INF             .          
+F14        -INF             .            +INF             .          
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 26
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+---- VAR va4  variable auxiliar 4
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -INF            1.4984        +INF             .          
+1          -INF           -0.3014        +INF             .          
+2          -INF            0.0024        +INF             .          
+3          -INF           -0.0153        +INF             .          
+4          -INF           -0.0458        +INF             .          
+5          -INF            0.0271        +INF             .          
+6          -INF            0.0023        +INF             .          
+7          -INF            0.1027        +INF             .          
+8          -INF            0.0309        +INF             .          
+9          -INF            0.0179        +INF             .          
+10         -INF            0.0015        +INF             .          
+11         -INF           -0.0163        +INF             .          
+12         -INF           -1.1700        +INF             .          
+13         -INF           -0.0047        +INF             .          
+14         -INF           -0.0085        +INF             .          
+15         -INF             .            +INF             .          
+F15        -INF             .            +INF             .          
+F8         -INF             .            +INF             .          
+F14        -INF             .            +INF             .          
+
+---- VAR vb1  variable auxiliar b1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0            .             1.0130        +INF             .          
+1            .             1.0000        +INF             .          
+2            .             1.0007        +INF             .          
+3            .             1.0011        +INF             .          
+4            .             1.0011        +INF             .          
+5            .             1.0011        +INF             .          
+6            .             1.0011        +INF             .          
+7            .             1.0017        +INF             .          
+8            .             1.0012        +INF             .          
+9            .             1.0012        +INF             .          
+10           .             1.0012        +INF             .          
+11           .             1.0012        +INF             .          
+12           .             0.9313        +INF             .          
+13           .             0.9312        +INF             .          
+14           .             0.9312        +INF             .          
+15           .             1.0000        +INF             .          
+F15          .             1.0000        +INF             .          
+F8           .             1.0012        +INF             .          
+F14          .             0.9312        +INF             .          
+
+---- VAR vb2  variable auxiliar b2
+
+              LOWER          LEVEL          UPPER         MARGINAL
+
+0 .1            .             2.0130        +INF             .          
+0 .12           .             1.9426        +INF             .          
+1 .2            .             2.0007        +INF             .          
+2 .3            .             2.0018        +INF             .          
+3 .4            .             2.0022        +INF             .          
+4 .5            .             2.0022        +INF             .          
+5 .6            .             2.0022        +INF             .          
+7 .8            .             2.0029        +INF             .          
+8 .3            .             2.0023        +INF             .          
+8 .9            .             2.0025        +INF             .          
+8 .F8           .             2.0025        +INF             .          
+9 .10           .             2.0025        +INF             .          
+10.11           .             2.0024        +INF             .          
+12.13           .             1.8624        +INF             .          
+13.14           .             1.8623        +INF             .          
+14.F14          .             1.8623        +INF             .          
+15.F15          .             2.0000        +INF             .          
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 27
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+---- VAR vb3  variable auxiliar b3
+
+              LOWER          LEVEL          UPPER         MARGINAL
+
+0 .1            .             1.0000        +INF             .          
+0 .12           .             0.9980        +INF             .          
+1 .2            .             1.0000        +INF             .          
+2 .3            .             1.0000        +INF             .          
+3 .4            .             1.0000        +INF            EPS         
+4 .5            .             1.0000        +INF            EPS         
+5 .6            .             1.0000        +INF             .          
+7 .8            .             1.0000        +INF             .          
+8 .3            .             1.0000        +INF             .          
+8 .9            .             1.0000        +INF            EPS         
+8 .F8           .             1.0000        +INF             .          
+9 .10           .             1.0000        +INF            EPS         
+10.11           .             1.0000        +INF             .          
+12.13           .             1.0000        +INF            EPS         
+13.14           .             1.0000        +INF             .          
+14.F14          .             1.0000        +INF             .          
+15.F15          .             1.0000        +INF             .          
+
+---- VAR ir2  intensidad de rama al cuadrado
+
+              LOWER          LEVEL          UPPER         MARGINAL
+
+0 .1          -INF            0.0706        +INF             .          
+0 .12         -INF            5.0898        +INF             .          
+1 .2          -INF            0.1419        +INF             .          
+2 .3          -INF            0.1419        +INF             .          
+3 .4          -INF            0.0390        +INF             .          
+4 .5          -INF            0.0259        +INF             .          
+5 .6          -INF      6.1359257E-5        +INF             .          
+7 .8          -INF            0.1284        +INF             .          
+8 .3          -INF            0.1360        +INF             .          
+8 .9          -INF            0.0479        +INF             .          
+8 .F8         -INF             .            +INF             .          
+9 .10         -INF            0.0145        +INF             .          
+10.11         -INF            0.0031        +INF             .          
+12.13         -INF            0.0005        +INF             .          
+13.14         -INF            0.0003        +INF             .          
+14.F14        -INF             .            +INF             .          
+15.F15        -INF             .            +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR i2                -INF             .            +INF             .          
+
+  i2  intensidad nudo 2
+
+---- VAR i1  intensidad nudo 1
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+0          -INF             .            +INF             .          
+1          -INF            0.1622        +INF             .          
+2          -INF             .            +INF             .          
+3          -INF            0.0260        +INF             .          
+4          -INF            0.1014        +INF             .          
+5          -INF            0.0134        +INF             .          
+6          -INF             .            +INF             .          
+7          -INF            0.0153        +INF             .          
+8          -INF            0.0420        +INF             .          
+9          -INF             .            +INF             .          
+10         -INF            0.0661        +INF             .          
+11         -INF            0.0564        +INF             .          
+12         -INF            2.2351        +INF             .          
+13         -INF            0.0052        +INF             .          
+14         -INF            0.0171        +INF             .          
+15         -INF             .            +INF             .          
+F15        -INF             .            +INF             .          
+F8         -INF             .            +INF             .          
+F14        -INF             .            +INF             .          
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 28
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR Lambda             1.0000         1.0000         1.0000         2.2894      
+
+---- VAR LambdaG  
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GP3             1.0000         1.0000         1.0000        -0.0032      
+GP4             1.0000         1.0000         1.0000        -0.0009      
+GP5             1.0000         1.0000         1.0000        -0.0027      
+GB5             1.0000         1.0000         1.0000        -0.0853      
+GFC5            1.0000         1.0000         1.0000        -0.0015      
+GP6             1.0000         1.0000         1.0000        -0.0078      
+GWT7            1.0000         1.0000         1.0000        -0.3728      
+GP8             1.0000         1.0000         1.0000        -0.0051      
+GP9             1.0000         1.0000         1.0000        -0.0028      
+GCHPD9          1.0000         1.0000         1.0000        -0.0245      
+GCHPFC9         1.0000         1.0000         1.0000        -0.0363      
+GP10            1.0000         1.0000         1.0000        -0.0125      
+GB10            1.0000         1.0000         1.0000        -0.0562      
+GFC10           1.0000         1.0000         1.0000        -0.0022      
+GP11            1.0000         1.0000         1.0000        -0.0012      
+GF0             1.0000         1.0000         1.0000         EPS         
+GF15            1.0000         1.0000         1.0000         EPS         
+GF8             1.0000         1.0000         1.0000         EPS         
+GF14            1.0000         1.0000         1.0000         EPS         
+
+---- VAR Pgen2  
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GP3             0.0032         0.0032         0.0032        -0.9985      
+GP4             0.0009         0.0009         0.0009        -0.9985      
+GP5             0.0027         0.0027         0.0027        -0.9984      
+GB5             0.0854         0.0854         0.0854        -0.9984      
+GFC5            0.0015         0.0015         0.0015        -0.9984      
+GP6             0.0078         0.0078         0.0078        -0.9984      
+GWT7            0.3737         0.3737         0.3737        -0.9978      
+GP8             0.0051         0.0051         0.0051        -0.9983      
+GP9             0.0028         0.0028         0.0028        -0.9983      
+GCHPD9          0.0245         0.0245         0.0245        -0.9983      
+GCHPFC9         0.0364         0.0364         0.0364        -0.9983      
+GP10            0.0126         0.0126         0.0126        -0.9983      
+GB10            0.0563         0.0563         0.0563        -0.9983      
+GFC10           0.0022         0.0022         0.0022        -0.9983      
+GP11            0.0012         0.0012         0.0012        -0.9983      
+GF0              .              .              .            -1.0000      
+GF15             .              .              .             EPS         
+GF8              .              .              .            -0.9983      
+GF14             .              .              .            -1.0002      
+
+---- VAR Qgen2  
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GP3              .              .              .            -0.0007      
+GP4              .              .              .            -0.0007      
+GP5              .              .              .            -0.0007      
+GB5              .              .              .            -0.0007      
+GFC5             .              .              .            -0.0007      
+GP6              .              .              .            -0.0007      
+GWT7             .              .              .            -0.0008      
+GP8              .              .              .            -0.0008      
+GP9              .              .              .            -0.0008      
+GCHPD9           .              .              .            -0.0008      
+GCHPFC9          .              .              .            -0.0008      
+GP10             .              .              .            -0.0008      
+GB10             .              .              .            -0.0008      
+GFC10            .              .              .            -0.0008      
+GP11             .              .              .            -0.0008      
+GF0              .              .              .             EPS         
+GF15             .              .              .             EPS         
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 29
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     VAR Qgen2  
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+GF8              .              .              .            -0.0008      
+GF14             .              .              .       -8.907702E-5      
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 30
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+**** SOLVER STATUS FILE LISTED BELOW
+=0 C O N O P T 3 Feb 14, 2007 WEX.CO.NA 22.4 017.059.041.WEI Library 314Q
+=0 C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+=1
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+=2
+=1
+ Using default options.
+ 
+=2
+    1  INPUT                                                                  (DEFAULT)
+    2  BRANCH * MAJERR MINERR JACERR                                          (DEFAULT)
+    3  OPTIMIZE                                                               (DEFAULT)
+    4  BRANCH * * * * * * MAJERR                                              (DEFAULT)
+    5  OUTPUT                                                                 (DEFAULT)
+    6  EXIT                                                                   (DEFAULT)
+    7  MAJERR MESSAGE MAJOR ERROR - TERMINATE                                 (DEFAULT)
+    8  EXIT                                                                   (DEFAULT)
+    9  MINERR MESSAGE MINOR ERROR - TERMINATE                                 (DEFAULT)
+   10  EXIT                                                                   (DEFAULT)
+   11  JACERR MESSAGE FUNCTION OR DERIVATIVE ERROR                            (DEFAULT)
+   12  OUTPUT                                                                 (DEFAULT)
+   13  EXIT                                                                   (DEFAULT)
+ 
+  ***  Line    1  INPUT
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+  ***  Line    2  BRANCH with Lbranch =  1
+ 
+  ***  Line    3  OPTIMIZE
+ 
+Search for a first feasible solution
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.6713299623E+01 (Input point)
+=1
+ 
+ ** Warning **  The number of nonlinear derivatives equal to zero
+                in the initial point is large (= 30 percent).
+                A better initial point will probably help the
+                optimization.
+ 
+=2
+=1
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 4.9 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+=2
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+                                Pre-triangular equations:       10
+                                Post-triangular equations:      64
+      1   0        2.1051790816E+01 (After pre-processing)
+      2   0        2.1051790816E+01 (After scaling)
+      3   0    17  2.1051790816E+01               0.0E+00      T  T
+      4   0    17  1.7188193321E+01               1.0E+00      F  T
+      5   0    17  1.7019611237E+01               1.0E+00      F  T
+      6   0    17  1.7000110938E+01               1.0E+00      F  T
+      7   0    17  1.6998202971E+01               1.0E+00      F  T
+      8   0    17  1.6997983090E+01               1.0E+00      F  T
+      9   0    17  1.6997959228E+01               1.0E+00      F  T
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 31
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+     10   0    17  1.6997956584E+01               1.0E+00      F  T
+     11   0    17  1.6997956293E+01               1.0E+00      F  T
+     12   0    17  1.6997956261E+01               1.0E+00      F  T
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+     13   1    16  3.2390384421E-02 1.0E+00    17 1.0E+00    1 T  T
+     14   1    15  2.6981117188E-04 1.0E+00    16 1.0E+00    1 T  T
+     15   1    14  2.2915470002E-06 1.0E+00    15 1.0E+00    1 T  T
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+ ** Feasible solution. Value of objective =    1.67361739751
+ 
+Search for an optimal solution.
+ 
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+ ** Loss of feasibility while tightening tolerances - Return to phase 0.
+ 
+Search for a first feasible solution
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     16   0        3.6683821059E-08
+     17   0     6  1.5146706793E-08               1.0E+00      F  T
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+     18   1     5  1.2589337572E-08 1.0E+00     6 4.3E-10      T  T
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+ ** Feasible solution. Value of objective =    1.67361739745
+ 
+Search for an optimal solution.
+ 
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+=5     169 !sqrt: GRAD SINGULAR: x = 0
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     19   3        1.6736173975E+00 0.0E+00     5
+=1
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+=2
+ 
+  ***  Line    4  BRANCH with Lbranch =  1
+ 
+  ***  Line    5  OUTPUT
+ 
+  ***  Line    6  EXIT
+=1
+ 
+ CONOPT time Total                            0.016 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+ 
+=2
+ 
+ Work length =   110526 double words  =   0.84 Mbytes
+    Estimate =   110526 double words  =   0.84 Mbytes
+    Max used =    42374 double words  =   0.32 Mbytes
+ 
+ Timing for Function Evaluations:
+ 
+ Statistics for FDEval-Fnc Calls:     3133 Time:      0.000 T/C:    0.0000E+00
+ Statistics for FDEval-Drv Calls:     1561 Time:      0.000 T/C:    0.0000E+00
+ Statistics for 2DDir      Calls:        0 Time:      0.000 T/C:    0.0000E+00
+ Statistics for 2DLagr     Calls:        0 Time:      0.000 T/C:    0.0000E+00
+ 
+ Statistics for Read_Instr Calls:        1 Time:     0.000 T/C:    0.0000E+00
+ Statistics for Compr_Inst Calls:        1 Time:     0.000 T/C:    0.0000E+00
+=1
+ Workspace           =     0.86 Mbytes
+    Estimate         =     0.86 Mbytes
+    Max used         =     0.34 Mbytes
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 32
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE OPF Using NLP From line 475
+
+
+=2
+**** SOLVER STATUS FILE LISTED ABOVE
+GAMS Rev 147  x86_64/MS Windows                                                                   04/08/26 04:40:40 Page 33
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----    512 PARAMETER PERD                 =        56749  perdidas en kW
+
+----    512 PARAMETER V  Tensiï¿½n de nudos PV
+
+0   1.0065,    1   1.0000,    2   1.0004,    3   1.0005,    4   1.0005,    5   1.0006,    6   1.0006,    7   1.0008
+8   1.0006,    9   1.0006,    10  1.0006,    11  1.0006,    12  0.9650,    13  0.9650,    14  0.9650,    15  1.0000
+F15 1.0000,    F8  1.0006,    F14 0.9650
+
+
+----    512 PARAMETER PCONV  potencia activa inyectada por convertidores en kW
+
+                      ( ALL          0. )
+
+
+----    512 PARAMETER QCONV  potencia reactiva inyectada por convertidores en kvar
+
+                      ( ALL          0. )
+
+
+----    512 PARAMETER dLAMBDAG  incremento de generación distribuida
+
+GP3     1.000,    GP4     1.000,    GP5     1.000,    GB5     1.000,    GFC5    1.000,    GP6     1.000,    GWT7    1.000
+GP8     1.000,    GP9     1.000,    GCHPD9  1.000,    GCHPFC9 1.000,    GP10    1.000,    GB10    1.000,    GFC10   1.000
+GP11    1.000,    GF0     1.000,    GF15    1.000,    GF8     1.000,    GF14    1.000
+
+
+----    512 PARAMETER G_INI  generacion inicial
+
+GP3       323.506,    GP4        89.506,    GP5       272.759,    GB5      8544.600,    GFC5      153.517
+GP6       783.759,    GWT7    37365.000,    GP8       507.759,    GP9       280.759,    GCHPD9   2450.660
+GCHPFC9  3638.900,    GP10     1255.759,    GB10     5632.600,    GFC10     221.517,    GP11      121.253
+
+
+----    512 PARAMETER G_FIN  generacion final tras optimizacion
+
+GP3       323.506,    GP4        89.506,    GP5       272.759,    GB5      8544.600,    GFC5      153.517
+GP6       783.759,    GWT7    37365.000,    GP8       507.759,    GP9       280.759,    GCHPD9   2450.660
+GCHPFC9  3638.900,    GP10     1255.759,    GB10     5632.600,    GFC10     221.517,    GP11      121.253
+
+
+----    512 PARAMETER G_DIF  diferencia generacion final - inicial
+
+                      ( ALL       0.000 )
+
+
+**** REPORT FILE SUMMARY
+
+RESULT_B2B_min1438 C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\RESULT_B2B_min1438.put
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Restart    C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\minuto1438.g0?
+Input      C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\MinPerd_Base_perdidas.gms
+Output     C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\MinPerd_Base_perdidas.lst

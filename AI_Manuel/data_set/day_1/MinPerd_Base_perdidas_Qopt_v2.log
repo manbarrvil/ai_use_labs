@@ -1,0 +1,68 @@
+
+--- Job MinPerd_Base_perdidas_Qopt_v2.gms Start 12/10/25 16:43:17
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- MinPerd_Base_perdidas_Qopt_v2.gms(316) 3 Mb
+--- Starting execution
+--- MinPerd_Base_perdidas_Qopt_v2.gms(467) 4 Mb
+--- Generating NLP model OPF
+--- MinPerd_Base_perdidas_Qopt_v2.gms(468) 6 Mb
+---   206 rows  286 columns  963 non-zeroes
+---   4,964 nl-code  687 nl-non-zeroes
+--- MinPerd_Base_perdidas_Qopt_v2.gms(468) 4 Mb
+--- Executing CONOPT
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ Reading Data
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.6591303976E+01 (Input point)
+                                Pre-triangular equations:        1
+                                Post-triangular equations:      55
+      1   0        2.3591303976E+01 (After pre-processing)
+      2   0        2.3591303976E+01 (After scaling)
+     10   0    20  1.8692211107E+01               0.0E+00      F  F
+     20   0    30  1.8692211107E+01               0.0E+00      F  F
+     30   0    40  1.8692211107E+01               0.0E+00      F  F
+     40   0    50  1.8692211107E+01               0.0E+00      F  F
+     50   0    60  1.8692211107E+01               0.0E+00      F  F
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     60   0    70  1.8692211107E+01               0.0E+00      F  F
+     66   1    69  1.8692198323E+01 3.8E+04    55 1.0E+00    3 T  T
+     71   1    20  7.4307859094E-02 1.0E+00    28 1.0E+00    8 T  T
+ 
+ ** Feasible solution. Value of objective =    4.42017618954
+ 
+ ** Loss of feasibility while tightening tolerances - Return to phase 0.
+ 
+ ** Feasible solution. Value of objective =    4.42017618855
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     76   3        4.4201761885E+00 0.0E+00     3
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- MinPerd_Base_perdidas_Qopt_v2.gms(468) 0 Mb
+--- Reading solution for model OPF
+--- Executing after solve
+--- MinPerd_Base_perdidas_Qopt_v2.gms(493) 3 Mb
+*** Error at line 493: sqrt: FUNC DOMAIN: x < 0
+--- MinPerd_Base_perdidas_Qopt_v2.gms(549) 3 Mb 1 Error
+--- Putfile RESULT_OPF_min0913 C:\workspace\AI\data_set\day_3\RESULT_OPF_min0913.put
+--- MinPerd_Base_perdidas_Qopt_v2.gms(549) 3 Mb 1 Error
+*** Status: Execution error(s)
+--- Job MinPerd_Base_perdidas_Qopt_v2.gms Stop 12/10/25 16:43:17 elapsed 0:00:00.152
+Exit code = 3

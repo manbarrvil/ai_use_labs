@@ -1,0 +1,12 @@
+
+--- Job conv_data.gms Start 03/27/24 20:59:44
+--- Reading parameter(s) from "225a\gmsprm95.scr"
+--- Reading parameter(s) from "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\$gms1.par"
+*** *** Error line 12: Unknown option "DE"
+*** *** Error line 12: Unknown option "BARRAGAN"
+*** *** Error line 12: Option keyword expected, saw " "
+--- Finished reading from "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\$gms1.par"
+--- Finished reading from "225a\gmsprm95.scr"
+*** Status: Terminated due to parameter errors
+--- Job conv_data.gms Stop 03/27/24 20:59:44 elapsed 0:00:00.006
+Exit code = 6

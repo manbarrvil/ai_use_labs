@@ -1,0 +1,350 @@
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * File for data modification
+   2  * In read_data.gms data inputs in physical units
+   3  * in this file the conversion to p.u. is done.
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.gms
+     2        5 INCLUDE        1       5  .C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\read_data.gms
+     3       20 INCLUDE        2      15  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\NL.CSV
+     4       43 INCLUDE        2      21  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\NG.CSV
+     5       74 INCLUDE        2      37  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\BUS_DATA.CSV
+     6       96 INCLUDE        2      42  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\LINE_DATA.CSV
+     7      120 INCLUDE        2      47  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\minuto1438\GEN_DATA.txt
+     8      141 INCLUDE        2      52  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\minuto1438\LOAD_H_DATA.txt
+     9      157 INCLUDE        2      57  ..C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\minuto1438\LOAD_I_DATA.txt
+
+
+COMPILATION TIME     =        0.031 SECONDS      3 Mb  WEX224-147 Feb 13, 2007
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----    184 SET KL  lineas presentes
+
+                     1           2           3           4           5           6           8           9          10
+
+Line_01.0          YES
+Line_1 .1                      YES
+Line_2 .2                                  YES
+Line_3 .3                                              YES
+Line_4 .4                                                          YES
+Line_5 .5                                                                      YES
+Line_7 .7                                                                                  YES
+Line_8 .8                                                                                              YES
+Line_9 .9                                                                                                          YES
+Line_12.8                                  YES
+
+         +          11          12          13          14         F15          F8         F14
+
+Line_02.0                      YES
+Line_10.10         YES
+Line_14.12                                 YES
+Line_15.13                                             YES
+TC1    .8                                                                      YES
+TC2    .14                                                                                 YES
+TC3    .15                                                         YES
+
+
+----    184 SET NDGR  localización de generadores en nudos
+
+                  0           3           4           5           6           7           8           9          10
+
+GP3                         YES
+GP4                                     YES
+GP5                                                 YES
+GB5                                                 YES
+GFC5                                                YES
+GP6                                                             YES
+GWT7                                                                        YES
+GP8                                                                                     YES
+GP9                                                                                                 YES
+GCHPD9                                                                                              YES
+GCHPFC9                                                                                             YES
+GP10                                                                                                            YES
+GB10                                                                                                            YES
+GFC10                                                                                                           YES
+GF0             YES
+
+      +          11         F15          F8         F14
+
+GP11            YES
+GF15                        YES
+GF8                                     YES
+GF14                                                YES
+
+
+----    184 SET NG  nombre de los generadores
+
+GP3    ,    GP4    ,    GP5    ,    GB5    ,    GFC5   ,    GP6    ,    GWT7   ,    GP8    ,    GP9    ,    GCHPD9 
+GCHPFC9,    GP10   ,    GB10   ,    GFC10  ,    GP11   ,    GF0    ,    GF15   ,    GF8    ,    GF14   
+
+
+----    255 PARAMETER DATNUD  datos de los nudos
+
+          Vnom           P           Q
+
+0       20.000
+1       20.000       0.159       0.032
+2       20.000
+3       20.000       0.022       0.014
+4       20.000       0.086       0.053
+5       20.000       0.011       0.007
+6       20.000
+7       20.000       0.015       0.003
+8       20.000       0.036       0.022
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+        255 PARAMETER DATNUD  datos de los nudos
+
+          Vnom           P           Q
+
+9       20.000
+10      20.000       0.057       0.033
+11      20.000       0.048       0.030
+12      20.000       1.833       1.136
+13      20.000       0.005 9.946010E-4
+14      20.000       0.016       0.003
+15       1.100
+
+
+----    255 PARAMETER DATGEN  datos de los generadores
+
+               Pmax        Pmin          p0
+
+GP3           0.002                   0.003
+GP4           0.002             8.950630E-4
+GP5           0.003                   0.003
+GB5           0.050      -0.050       0.085
+GFC5          0.003      -0.003       0.002
+GP6           0.003                   0.008
+GWT7          0.150                   0.374
+GP8           0.003                   0.005
+GP9           0.003                   0.003
+GCHPD9        0.031                   0.025
+GCHPFC9       0.021                   0.036
+GP10          0.004                   0.013
+GB10          0.020      -0.020       0.056
+GFC10         0.001      -0.001       0.002
+GP11          0.001                   0.001
+
+
+----    255 PARAMETER DATLIN  datos de las líneas - caso base
+
+INDEX 1 = Line_01
+
+              R           X      STATUS         Bsh       flmax
+
+0.1 2.500000E-5       0.033       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_02
+
+               R           X      STATUS         Bsh       flmax
+
+0.12 2.500000E-5       0.033       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_1
+
+              R           X      STATUS         Bsh       flmax
+
+1.2       0.002 9.825000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_2
+
+              R           X      STATUS         Bsh       flmax
+
+2.3 7.500000E-4 3.925000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_3
+
+              R           X      STATUS         Bsh       flmax
+
+3.4 1.250000E-4 7.750000E-5       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_4
+
+              R           X      STATUS         Bsh       flmax
+
+4.5 1.875000E-4 7.750000E-5       1.000 1.256637E-8     100.000
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+        255 PARAMETER DATLIN  datos de las líneas - caso base
+
+INDEX 1 = Line_5
+
+              R           X      STATUS         Bsh       flmax
+
+5.6 6.250000E-4 1.975000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_7
+
+              R           X      STATUS         Bsh       flmax
+
+7.8 6.250000E-4 1.975000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_8
+
+              R           X      STATUS         Bsh       flmax
+
+8.9 1.250000E-4 4.000000E-5       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_9
+
+               R           X      STATUS         Bsh       flmax
+
+9.10 2.500000E-4 7.750000E-5       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_10
+
+                R           X      STATUS         Bsh       flmax
+
+10.11 1.250000E-4 4.000000E-5       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_12
+
+              R           X      STATUS         Bsh       flmax
+
+8.3 2.500000E-4 1.575000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = Line_14
+
+                R           X      STATUS         Bsh       flmax
+
+12.13       0.002       0.002       1.000 1.256637E-8     361.000
+
+INDEX 1 = Line_15
+
+                R           X      STATUS         Bsh       flmax
+
+13.14 6.250000E-4 3.925000E-4       1.000 1.256637E-8     100.000
+
+INDEX 1 = TC1
+
+               R           X      STATUS
+
+8.F8       0.037       0.200       1.000
+
+INDEX 1 = TC2
+
+                 R           X      STATUS
+
+14.F14       0.037       0.200       1.000
+
+INDEX 1 = TC3
+
+                 R           X      STATUS
+
+15.F15       0.037       0.200       1.000
+
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----    255 PARAMETER Gij  
+
+             1           2           3           4           5           6           8           9          10          11
+
+0        0.022
+1                  466.519
+2                             1046.673
+3                                         5778.677
+4                                                     4555.117
+5                                                                 1454.736
+7                                                                             1454.736
+8                             2863.483                                                    7256.894
+9                                                                                                     3649.302
+10                                                                                                                7256.894
+
+ +          12          13          14         F15          F8         F14
+
+0        0.022
+8                                                        0.894
+12                 318.140
+13                            1147.460
+14                                                                   0.894
+15                                           0.894
+
+
+----    255 PARAMETER Bij  
+
+             1           2           3           4           5           6           8           9          10          11
+
+0      -30.000
+1                 -305.570
+2                             -547.759
+3                                        -3582.780
+4                                                    -1882.782
+5                                                                 -459.697
+7                                                                             -459.697
+8                            -1803.995                                                   -2322.206
+9                                                                                                    -1131.284
+10                                                                                                               -2322.206
+
+ +          12          13          14         F15          F8         F14
+
+0      -30.000
+8                                                       -4.835
+12                -332.987
+13                            -720.605
+14                                                                  -4.835
+15                                          -4.835
+
+
+----    255 PARAMETER Bsh  
+
+             1           2           3           4           5           6           8           9          10          11
+
+0  1.256637E-8
+1              1.256637E-8
+2                          1.256637E-8
+3                                      1.256637E-8
+4                                                  1.256637E-8
+5                                                              1.256637E-8
+7                                                                          1.256637E-8
+8                          1.256637E-8                                                 1.256637E-8
+9                                                                                                  1.256637E-8
+10                                                                                                             1.256637E-8
+
+ +          12          13          14
+
+0  1.256637E-8
+12             1.256637E-8
+13                         1.256637E-8
+
+GAMS Rev 147  x86_64/MS Windows                                                                    04/08/26 04:40:40 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 Mb  WEX224-147 Feb 13, 2007
+
+
+USER: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+      Universidad de Sevilla                                     DC2441
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.gms
+Output     C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_1\conv_data.lst
+Save       C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_365\minuto1438.g0?
+
+**** WARNING - COMPILER OPTIONS ARE NON DEFAULT     EOLCOM ! 

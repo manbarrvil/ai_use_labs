@@ -1,0 +1,82 @@
+* File for data modification
+* In read_data.gms data inputs in physical units
+* in this file the conversion to p.u. is done.
+$OFFLISTING
+$INCLUDE read_data.gms
+
+$EOLCOM !
+
+SETS
+    CN caracteristicas de los nudos  (kV) (pu) (pu)  / vnom , P, Q  /
+    CG caracteristicas de los generadores (pu) / p0, pmax, pmin /
+    CL característias líneas  R(pu) X(pu) B(pu) flmax(A) / R,X,Bsh, flmax, status /
+    ;
+
+SCALARS
+    SBASE potencia base [MVA] / 10 / ;
+
+PARAMETERS
+    DATNUD(nd,cn)        datos de los nudos
+    DATGEN(ng,cg)        datos de los generadores
+    DATLIN(nl,nd,nd,cl)  datos de las líneas - caso base
+    COS_PHI_CONV        conversion de f.p. 0.85 a f.p. 0.98
+    X_TC                impedancia trafos de conexion
+    X_SE                impedancia trafos de SE
+     ;
+COS_PHI_CONV =  0.5927 ;        ! quitar en nuevos datos minutos
+*COS_PHI_CONV =  1 ;
+X_TC = 0.06 *SBASE/3 ;
+X_SE = 0.10 *SBASE/30 ;
+
+scalar a /0.037 /   !a / 0.015 /  !
+       b /0.0065/
+       c /0.0003648/;    !c / 0 /  ;!
+
+* Datos de los nudos
+DATNUD(nd,'vnom') = BUS_DATA(nd, 'Vnom')  ;
+DATNUD(nd, 'P') = (LOADH_DATA(nd, 'P') + LOADI_DATA(nd, 'P') ) / SBASE ;
+DATNUD(nd, 'Q') = (LOADH_DATA(nd, 'P')*0.6197 + LOADI_DATA(nd, 'P') * 0.2031 ) / SBASE ;
+
+* Datos de los generadores
+DATGEN(ng, 'p0') = SUM(NDGR(ng,nd), GEN_DATA(ng, nd, 'P')) / SBASE  ;
+DATGEN(ng, 'pmin') = SUM(NDGR(ng,nd),GEN_DATA(ng, nd, 'Pmin')) / SBASE  ;
+DATGEN(ng, 'pmax') = SUM(NDGR(ng,nd),GEN_DATA(ng, nd, 'Pmax')) / SBASE  ;
+*DATGEN(ng, 'status') = SUM(NDGR(ng,nd),GEN_DATA(ng, nd, 'status'))   ;
+* Datos de las lineas
+* p.u. conversion
+DATLIN(kl(nl, ni, nf), 'X') = LINE_DATA(nl, ni, nf, 'X') * LINE_DATA(nl, ni, nf, 'L') *
+                                 SBASE / (DATNUD(ni,'Vnom')**2)   ;
+DATLIN(kl(nl, ni, nf), 'R') = LINE_DATA(nl, ni, nf, 'R') * LINE_DATA(nl, ni, nf, 'L') *
+                                 SBASE / (DATNUD(ni,'Vnom')**2)   ;
+DATLIN(kl(nl, ni, nf), 'Bsh') = LINE_DATA(nl, ni, nf, 'C') * LINE_DATA(nl, ni, nf, 'L') *
+                                 2 * pi * 50 * 1e-9 / SBASE * (DATNUD(ni,'Vnom')**2)   ;
+DATLIN(kl(nl, ni, nf), 'flmax') = LINE_DATA(nl, ni, nf, 'Inom')  ;
+DATLIN(kl(nl, ni, nf), 'status') = LINE_DATA(nl, ni, nf, 'status')  ;
+DATLIN('TC1','8','F8','X') = X_TC  ;  DATLIN('TC1','8','F8','status') = 1  ;
+DATLIN('TC1','8','F8','R') = a  ;
+DATLIN('TC2','14','F14','X') = X_TC  ;  DATLIN('TC2','14','F14','status') = 1  ;
+DATLIN('TC2','14','F14','R') = a  ;
+DATLIN('TC3','15','F15','X') = X_TC  ;  DATLIN('TC3','15','F15','status') = 1  ;
+DATLIN('TC3','15','F15','R') = a  ;
+DATLIN('Line_01','0','1','X') = X_SE  ;  DATLIN('Line_01','0','1','status') = 1  ;
+DATLIN('Line_02','0','12','X') = X_SE  ;  DATLIN('Line_02','0','12','status') = 1  ;
+
+PARAMETER
+      Gij(ND,ND)
+      Bij(ND,ND)
+      Bsh(ND,ND)   ;
+
+*Gij(NL,NI,NF)$KL(NL,NI,NF)  = DATLIN(NL,NI,NF,'R') / (DATLIN(NL,NI,NF,'R')**2 + DATLIN(NL,NI,NF,'X')**2)  ;
+Gij(NI,NF) = SUM(NL$(KL(NL,NI,NF)), DATLIN(NL,NI,NF,'R')/(DATLIN(NL,NI,NF,'R')**2 + DATLIN(NL,NI,NF,'X')**2)) ;
+Bij(NI,NF) = SUM(NL$(KL(NL,NI,NF)), - DATLIN(NL,NI,NF,'X')/(DATLIN(NL,NI,NF,'R')**2 + DATLIN(NL,NI,NF,'X')**2)) ;
+Bsh(NI,NF) = SUM(NL$(KL(NL,NI,NF)), DATLIN(NL,NI,NF,'Bsh')) ;
+
+DISPLAY DATNUD, DATGEN, DATLIN, GIJ, BIJ, Bsh
+
+
+* Datos de los trafos
+* p.u. conversion
+*DATTRFO(ktrfo(nt, ni, nf), 'X') = TRFO_DATA(nt, ni, nf, 'X') / 100 * (SBASE /
+*                              TRFO_DATA(nt, ni, nf, 'Snom'))   ;
+*DATTRFO(ktrfo(nt, ni, nf), 'flmax')  = TRFO_DATA(nt, ni, nf, 'Snom') / SBASE   ;
+*DATTRFO(nt, ni, nf, 'status')  = TRFO_DATA(nt, ni, nf, 'status')  ;

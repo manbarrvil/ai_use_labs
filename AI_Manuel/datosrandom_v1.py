@@ -1,10 +1,10 @@
 import numpy as np
 
 media = 0
-desviacion_estandar = 0.3
+desviacion_estandar = 1
+desviacion_estandar_gen = 1
 carpetasminutos = 1443
-directorio = r"C:/workspace/AI/data_set/"
- # directorio = '/Users/Usuario/Desktop/prueba/'
+directorio = r"C:/workspace/AI_USE_labs/AI_Manuel/data_set/"
 
 #for dia in range(5):
 for dia in range(364):
@@ -124,7 +124,7 @@ for dia in range(364):
         fila1 = ['Nombre', 'Nudo', '   P', '   Pmax', 'Pmin']
         new_matrizG.append(fila1)
         for i in range(15):
-            numrandom = round(np.random.normal(loc=media, scale=desviacion_estandar),4)  # Crea numero aleatorio
+            numrandom = abs(round(np.random.normal(loc=media, scale=desviacion_estandar_gen),4))  # Crea numero aleatorio
             modPG = round(numrandom * P_G[i],4)
 
             # Si el nuevo valor al sumarle la potencia es negativo lo sustituye por cero

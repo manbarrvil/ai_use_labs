@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 #directorio = '/OPF_TFM/'
-directorio = 'C:/workspace/AI/data_set/'
+directorio = 'C:/workspace/AI_USE_labs/AI_Manuel/data_set/'
 nudos_red = 14
-rutasalida = 'C:/workspace/AI/inDATA/'
+rutasalida = 'C:/workspace/AI_USE_labs/AI_Manuel/inDATA/'
 dias = 365
 minutos = 1443
 

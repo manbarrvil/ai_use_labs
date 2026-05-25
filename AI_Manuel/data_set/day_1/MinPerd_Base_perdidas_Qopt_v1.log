@@ -1,0 +1,53 @@
+
+--- Job MinPerd_Base_perdidas_Qopt_v1.gms Start 12/10/25 16:11:24
+GAMS Rev 147  Copyright (C) 1987-2007 GAMS Development. All rights reserved
+Licensee: Departamento de Ingenieria Electrica           G070306:1052AP-WIN
+          Universidad de Sevilla                                     DC2441
+          License for teaching and research at degree granting institutions
+--- Starting continued compilation
+--- MinPerd_Base_perdidas_Qopt_v1.gms(405) 3 Mb
+--- Starting execution
+--- MinPerd_Base_perdidas_Qopt_v1.gms(538) 4 Mb
+--- Generating NLP model OPF
+--- MinPerd_Base_perdidas_Qopt_v1.gms(539) 6 Mb
+---   241 rows  286 columns  984 non-zeroes
+---   5,772 nl-code  697 nl-non-zeroes
+--- MinPerd_Base_perdidas_Qopt_v1.gms(539) 4 Mb
+--- Executing CONOPT
+C O N O P T 3 Feb 14, 2007 WEX.CO.CO 22.4 017.059.041.WEI Library 314Q     
+ 
+ 
+    C O N O P T 3   x86_64/MS Windows version 3.14Q-017-059
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ Using default options.
+ 
+ Reading Data
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.6472690168E+01 (Input point)
+                                Pre-triangular equations:       28
+                                Post-triangular equations:      47
+      1   0        2.0703567104E+01 (After pre-processing)
+      2   0        2.0703567104E+01 (After scaling)
+     10   0    23  2.0703567104E+01               0.0E+00      F  F
+     20   0    33  2.0703567104E+01               0.0E+00      F  F
+     31   1     1  2.5082042534E-02 1.0E+00    26 1.0E+00   12 T  T
+ 
+ ** Feasible solution. Value of objective =    2.43609898883
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     32   3        2.4360989888E+00 0.0E+00     1
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- MinPerd_Base_perdidas_Qopt_v1.gms(539) 0 Mb
+--- Reading solution for model OPF
+--- Executing after solve
+--- MinPerd_Base_perdidas_Qopt_v1.gms(639) 3 Mb
+--- Putfile RESULT_OPF_min0913 C:\workspace\AI\data_set\day_3\RESULT_OPF_min0913.put
+*** Status: Normal completion
+--- Job MinPerd_Base_perdidas_Qopt_v1.gms Stop 12/10/25 16:11:24 elapsed 0:00:00.072

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-directorio = 'C:/workspace/AI/data_set/'
+directorio = 'C:/workspace/AI_USE_labs/AI_Manuel/data_set/'
 nudos_red = 14
-rutasalida = 'C:/workspace/AI/outDATA/'
+rutasalida = 'C:/workspace/AI_USE_labs/AI_Manuel/outDATA/'
 dias = 365
 minutos = 1443
 Sb = 10 #MVA
@@ -11,7 +11,8 @@ for dia in range(dias):
     print('Dia:'+str(dia))
     for min in range(3, minutos, 5):
         # Lee el .txt y crea la lista lineas donde cada elemento es una linea del archivo
-        with open(directorio+'day_'+str(dia+1)+'/RESULT_B2B_min'+str(min).zfill(4)+'.put', 'r') as archivo:
+        with open(directorio+'day_'+str(dia+1)+'/RESULT_B2B_min'+str(min).zfill(4)+'.put',
+          'r', encoding='latin-1') as archivo:
             lineas = archivo.readlines()
 
         # Creo una matriz donde guardo la linea de la 10 a la 23 donde están los datos de tensiones

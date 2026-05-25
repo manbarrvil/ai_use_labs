@@ -1,22 +1,22 @@
 import subprocess, os, time
 
-dias = 5
+dias = 365
 minutos = 1443
 
-directorio = 'C:/workspace/AI/data_set/day_1/'
+directorio = 'C:/workspace/AI_USE_labs/AI_Manuel/data_set/day_1/'
 os.chdir(directorio)                                 # Accedo a la carpeta donde se encuentra el modelo GAMS
 for dia in range(1, dias):                              # Ejecuta conv_data para crear todos los .g00
     for min in range(3, minutos, 5):
-        comando = ('gams conv_data.gms s=C:\workspace\AI\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4)+
-                   ' Idir=C:\workspace\AI\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4))
+        comando = ('gams conv_data.gms s=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4)+
+                   ' Idir=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4))
                    #' Idir=minuto'+str(min).zfill(4))
 
         resultado = subprocess.run(comando, shell=True)
         print("Ejecutando:", comando)
         time.sleep(0.01)
 
-        comando1 = ('gams MinPerd_Base_perdidas.gms r=C:\workspace\AI\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4)+
-                   ' Pdir=C:\workspace\AI\data_set\day_'+str(dia+1)+' --Num= min'+str(min).zfill(4))
+        comando1 = ('gams MinPerd_Base_perdidas.gms r=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_'+str(dia+1)+'\minuto'+str(min).zfill(4)+
+                   ' Pdir=C:\workspace\AI_USE_labs\AI_Manuel\data_set\day_'+str(dia+1)+' --Num= min'+str(min).zfill(4))
         resultado1 = subprocess.run(comando1, shell=True)
         print("Ejecutando:", comando1)
         time.sleep(0.01)

@@ -1,0 +1,21 @@
+--- Job conv_data.gms Start 03/29/24 20:59:40 45.7.0 64fbf3ce WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\45\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\conv_data.gms"
+    Save "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\minuto0003.g0?"
+    PageSize 0
+    ScrDir "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\225a\"
+    SysDir C:\GAMS\45\
+    LogOption 3
+    InputDir1 "C:\Users\Usuario\UNIVERSIDAD DE SEVILLA\MANUEL BARRAGAN VILLAREJO - OPFvsDL\datos_originales\day_1\minuto0003\"
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+*** License has expired 31 days ago
+*** More than 30 days since expiration, sorry...
+*** Status: Terminated due to a licensing error
+***         License file: C:\GAMS\45\gamslice.txt
+***         Inspect listing file for more information.
+--- Job conv_data.gms Stop 03/29/24 20:59:40 elapsed 0:00:00.012
