@@ -14,10 +14,14 @@ def pdf_to_markdown(pdf_path: str, output_path: str = None):
     else:
         output_path = Path(output_path)
 
-    md_text = pymupdf4llm.to_markdown(str(pdf_path), write_images=True, image_path=str(output_path.parent))
+    fig_dir = (output_path.parent / f"{pdf_path.stem}_fig").resolve()
+    fig_dir.mkdir(exist_ok=True)
+
+    md_text = pymupdf4llm.to_markdown(str(pdf_path.resolve()), write_images=True, image_path=str(fig_dir))
 
     output_path.write_text(md_text, encoding="utf-8")
     print(f"Convertido: {pdf_path} -> {output_path}")
+    print(f"Figuras:    {fig_dir}")
 
 
 if __name__ == "__main__":
